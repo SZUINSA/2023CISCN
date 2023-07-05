@@ -41,13 +41,13 @@ class app:
         while True:
             ip = self.db.get_ip_no_scan(self.method.name)
             if ip is not None:
-                self.logger.info("SCAN-CHECK %s" % (ip,))
+                self.logger.info("SCAN-CHECK %s %s" % (self.method.name,ip,))
                 self.db.update_ip_scan_timestamp(self.method.name,ip)
                 result = self.method.scan(ip)
                 for item in result:
                     self.db.add_ip(item)
                 self.logger.debug(str(result))
-                self.logger.info("SCNA-CHECK %s SUCCESS" % (ip,))
+                self.logger.info("SCNA-CHECK %s %s SUCCESS" % (self.method.name,ip,))
             else:
                 self.logger.debug("SCAN: sleep")
                 time.sleep(sleep)
