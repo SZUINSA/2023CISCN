@@ -3,7 +3,7 @@ import nmap
 
 
 class method_nmap:
-    name = "scan-nmap"
+    name = "port-nmap"
 
     def __init__(self, db, logger):
         self.db = db
@@ -17,36 +17,38 @@ class method_nmap:
             match = re.search(r"Nmap version (\d+\.\d+(?:\.\d+)?)", version_string)
             if match:
                 version_number = match.group(1)
-                logger.debug(f"SCAN: nmap version {version_number}")
+                logger.debug(f"PORT: nmap version {version_number}")
             else:
-                logger.warning("SCAN: nmap version UNKNOW")
+                logger.warning("PORT: nmap version UNKNOW")
         else:
-            logger.warning("SCAN: nmap not found")
+            logger.warning("PORT: nmap not found")
 
-    def scan(self, target):
+    def port(self, target):
+        # TODO: port
         nm = nmap.PortScanner()
         nm.scan(hosts=target, arguments='-sS')
         return nm.all_hosts()
 
 
 class app:
-    def __init__(self, db, logger,method='scan-nmap'):
+    def __init__(self, db, logger,method='port-nmap'):
         self.db = db
         self.logger = logger
-        if method == 'scan-nmap':
+        if method == 'port-nmap':
             self.method = method_nmap(db,logger)
 
     def run(self, sleep=60):
         while True:
-            ip = self.db.get_ip_no_scan(self.method.name)
+            ip = self.db.get_ip_no_port(self.method.name)
             if ip is not None:
-                self.logger.info("SCAN-CHECK %s %s" % (self.method.name,ip,))
-                self.db.update_ip_scan_timestamp(self.method.name,ip)
-                result = self.method.scan(ip)
+                self.logger.info("PORT-CHECK %s %s" % (self.method.name,ip,))
+                self.db.update_ip_port_timestamp(self.method.name,ip)
+                #TODO: self.method.port(ip)
+                result = self.method.port(ip)
                 for item in result:
                     self.db.add_ip(item)
                 self.logger.debug(str(result))
-                self.logger.info("SCNA-CHECK %s %s SUCCESS" % (self.method.name,ip,))
+                self.logger.info("PORT-CHECK %s %s SUCCESS" % (self.method.name,ip,))
             else:
-                self.logger.debug("SCAN: sleep")
+                self.logger.debug("PORT: sleep")
                 time.sleep(sleep)

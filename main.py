@@ -38,10 +38,17 @@ if __name__ == "__main__":
     if "--scan" in argv or "-s" in argv:
         logger.debug("SCAN Mode")
         import scan
-
         if "scan-xxxx" in argv:
-            app = scan.app(db, logger,method="scan-xxxx")
+            app = scan.app(db, logger, method="scan-xxxx")
         else:
             app = scan.app(db, logger)
+
+    if "--port" in argv or "-p" in argv:
+        logger.debug("PORT Mode")
+        import port
+        if "port-xxxx" in argv:
+            app = port.app(db, logger, method="port-xxxx")
+        else:
+            app = port.app(db, logger)
 
     app.run()

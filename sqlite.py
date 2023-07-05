@@ -76,7 +76,7 @@ class db:
 
     def get_ip_no_port(self, target):
         self.logger.debug("DB: get_ip_no_port %s" % (target,))
-        cursor = self.db.execute("SELECT IP from SERVICES WHERE METHOD NOT LIKE ? LIMIT 1", ("%@" + target + "%",))
+        cursor = self.db.execute("SELECT IP from IP WHERE METHOD NOT LIKE ? LIMIT 1", ("%@" + target + "%",))
         for i in cursor:
             return i[0]
 
@@ -90,6 +90,6 @@ class db:
     def update_ip_port_timestamp(self, target1, target2):
         self.logger.debug("DB: update_ip_port_timestamp %s %s" % (target1, target2))
         cursor = self.db.execute(
-            "UPDATE SERVICES SET METHOD=METHOD||?,TIMESTAMP=DATETIME(CURRENT_TIMESTAMP,'localtime') WHERE IP=?",
+            "UPDATE IP SET METHOD=METHOD||?,TIMESTAMP=DATETIME(CURRENT_TIMESTAMP,'localtime') WHERE IP=?",
             ("@" + target1, target2))
         self.db.commit()
