@@ -1,0 +1,14 @@
+version: '2'
+services:
+  scan:
+    build: .
+    command: "python main.py --scan"
+    restart: always
+    volumes:
+      - ./sqlite.db:/opt/sqlite.db
+  port:
+    build: .
+    command: "python main.py --port"
+    restart: always
+    volumes:
+      - ./sqlite.db:/opt/sqlite.db
