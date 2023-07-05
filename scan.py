@@ -39,7 +39,7 @@ class app:
 
     def run(self, sleep=60):
         while True:
-            ip = self.db.get_ip_no_scan(self.method.name,self.offset)
+            ip = self.db.get_ip_no_scan(self.method.name)
             if ip is not None:
                 self.logger.info("SCAN %s" % (ip,))
                 self.db.update_ip_scan_timestamp(self.method.name,ip)
