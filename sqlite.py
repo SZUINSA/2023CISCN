@@ -67,6 +67,16 @@ class db:
             else:
                 self.logger.debug("DB: add_ip %s exits" % (target,))
             return
+    def add_services(self, target1,target2):
+        self.logger.debug("DB: add_services %s %s" % (target1,target2))
+        cursor = self.db.execute("SELECT count() FROM SERVICES WHERE IP=? and PORT=? ", (target1,target2))
+        for i in cursor:
+            if i[0] == 0:
+                self.db.execute("INSERT INTO IP (IP,PORT) VALUES (?,?)", (target1,target2))
+                self.db.commit()
+            else:
+                self.logger.debug("DB: add_services %s %s exits" % (target1,target2))
+            return
 
     def get_ip_no_scan(self, target):
         self.logger.debug("DB: get_ip_no_scan %s" % (target,))

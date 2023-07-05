@@ -44,9 +44,11 @@ class app:
                 self.logger.info("PORT-CHECK %s %s" % (self.method.name,ip,))
                 self.db.update_ip_port_timestamp(self.method.name,ip)
                 #TODO: self.method.port(ip)
+
                 result = self.method.port(ip)
                 for item in result:
-                    self.db.add_ip(item)
+                    self.db.add_services(ip,port)
+
                 self.logger.debug(str(result))
                 self.logger.info("PORT-CHECK %s %s SUCCESS" % (self.method.name,ip,))
             else:
