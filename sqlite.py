@@ -45,17 +45,25 @@ class db:
 
     def add_scan(self, target):
         self.logger.debug("DB: add_scan %s" % (target,))
-        self.db.execute("INSERT INTO SCAN (IP) VALUES (?)", (target,))
-        self.db.commit()
+        cursor = self.db.execute("SELECT count() FROM SCAN WHERE IP=?", (target,))
+        for i in cursor:
+            if i[0]==0:
+                self.db.execute("INSERT INTO SCAN (IP) VALUES (?)", (target,))
+                self.db.commit()
+            else:
+                self.logger.debug("DB: add_scan %s exits" % (target,))
+            return
 
     def add_ip(self, target):
         self.logger.debug("DB: add_ip %s" % (target,))
-        cursor = self.db.execute("SELECT IP FROM IP WHERE IP=?", (target))
-        if cursor is not None:
-            self.db.execute("INSERT INTO IP (IP) VALUES (?)", (target,))
-            self.db.commit()
-        else:
-            self.logger.debug("DB: add_ip %s exits" % (target,))
+        cursor = self.db.execute("SELECT count() FROM IP WHERE IP=?", (target,))
+        for i in cursor:
+            if i[0]==0:
+                self.db.execute("INSERT INTO IP (IP) VALUES (?)", (target,))
+                self.db.commit()
+            else:
+                self.logger.debug("DB: add_ip %s exits" % (target,))
+            return
 
     def get_ip_no_scan(self, target):
         self.logger.debug("DB: get_ip_no_scan %s" % (target,))

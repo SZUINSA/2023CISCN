@@ -1,6 +1,5 @@
 import sys
 import logging
-import default
 
 def logs(filename='logs.txt', level=logging.DEBUG):
     logger = logging.getLogger(__name__)
@@ -21,20 +20,21 @@ def logs(filename='logs.txt', level=logging.DEBUG):
 if __name__ == "__main__":
     logger = logs()
     logger.info("Program Start")
+
     argv = [x.lower() for x in sys.argv]
     if "--mysql" in argv or "-m" in argv:
         logger.debug("Database: Mysql")
         import mysql
-
         db = mysql.db(logger)
     else:
         logger.debug("Database: Sqlite")
         import sqlite
-
         db = sqlite.db(logger)
 
-    #for item in default.ip_src:
-    #    db.add_scan(item)
+    import default
+    db.build()
+    for item in default.ip_src:
+        db.add_scan(item)
 
     if "--scan" in argv or "-s" in argv:
         logger.debug("SCAN Mode")
