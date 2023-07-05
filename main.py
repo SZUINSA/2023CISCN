@@ -16,14 +16,8 @@ def logs(filename='logs.txt', level=logging.DEBUG):
     return logger
 
 if __name__ == "__main__":
-
     logger = logs()
     logger.info("Program Start")
-
-    if "--SCAN" in sys.argv or "-s" in sys.argv:
-        logger.debug("SCAN Mode")
-        import scan
-        app = scan.app()
 
     if "--MYSQL" in sys.argv or "-m" in sys.argv:
         logger.debug("Database: Mysql")
@@ -34,4 +28,10 @@ if __name__ == "__main__":
         import sqlite
         db = sqlite.db(logger)
 
-    app.run(db,logger)
+    if "--SCAN" in sys.argv or "-s" in sys.argv:
+        logger.debug("SCAN Mode")
+        import scan
+        app = scan.app(db,logger)
+
+
+    app.run()
