@@ -18,11 +18,13 @@ class db:
         self.db.execute('''CREATE TABLE IF NOT EXISTS SCAN(
                     ID INTEGER PRIMARY KEY AUTOINCREMENT,
                     IP TEXT NULL,
+                    METHOD TEXT NULL,
                     TIMESTAMP TIME NULL
                     );''')
         self.db.execute('''CREATE TABLE IF NOT EXISTS IP(
                     ID INTEGER PRIMARY KEY AUTOINCREMENT,
                     IP TEXT NULL,
+                    METHOD TEXT NULL,
                     DEVICEINFO TEXT NULL,
                     HONEYPOT TEXT NULL,
                     TIMESTAMP TIME NULL
@@ -30,6 +32,7 @@ class db:
         self.db.execute('''CREATE TABLE IF NOT EXISTS SERVICES(
                     ID INTEGER PRIMARY KEY AUTOINCREMENT,
                     IP TEXT NULL,
+                    METHOD TEXT NULL,
                     PORT TEXT NULL,
                     PROTOCOL TEXT NULL,
                     SERVICE_APP TEXT NULL,
@@ -44,12 +47,15 @@ class db:
         self.logger.debug("DB: add_ip %s"%(target,))
         self.db.execute("INSERT INTO IP (IP) VALUES (?)", (target,))
         self.db.commit()
-    def get_ip_no_scan(self):
-        self.logger.debug("DB: get_ip_no_scan")
-        cursor = self.db.execute("SELECT IP from SCAN WHERE TIMESTAMP IS NULL LIMIT 1")
+    def get_ip_no_scan(self,target):
+        self.logger.debug("DB: get_ip_no_scan %s"%(target,))
+        cursor = self.db.execute("SELECT IP from SCAN WHERE TIMESTAMP IS NULL and (METHOD IS NULL or METHOD NOT LIKE ?) LIMIT 1",("%@"+target+"%",))
         for i in cursor:
             return i[0]
-    def update_ip_scan_timestamp(self,target):
-        self.logger.debug("DB: update_ip_scan_timestamp %s"%(target,))
-        cursor = self.db.execute("UPDATE SCAN SET TIMESTAMP=DATETIME(CURRENT_TIMESTAMP,'localtime') WHERE IP=?",(target,))
+
+    def update_ip_scan_timestamp(self,target1,target2):
+        self.logger.debug("DB: update_ip_scan_timestamp %s %s"%(target1,target2))
+        cursor = self.db.execute("UPDATE SCAN SET METHOD=METHOD||?,TIMESTAMP=DATETIME(CURRENT_TIMESTAMP,'localtime') WHERE IP=?",("@"+target1,target2))
         self.db.commit()
+
+

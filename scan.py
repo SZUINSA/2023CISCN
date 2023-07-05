@@ -1,10 +1,13 @@
 import time
 import nmap
-class app:
-    def __init__(self,db,logger):
-        self.db=db
-        self.logger=logger
 
+
+class method_nmap:
+    name = "scan-namp"
+
+    def __init__(self, db, logger):
+        self.db = db
+        self.logger = logger
         import subprocess
         cmd = "nmap --version"
         result = subprocess.run(cmd, shell=True, capture_output=True)
@@ -19,17 +22,30 @@ class app:
                 logger.warning("SCAN: nmap version UNKNOW")
         else:
             logger.warning("SCAN: nmap not found")
-    def run(self,sleep=60):
+
+    def scan(self, target):
+        nm = nmap.PortScanner()
+        nm.scan(hosts=target, arguments='-sS')
+        return nm.all_hosts()
+
+
+class app:
+    def __init__(self, db, logger, method='scan-nmap'):
+        self.db = db
+        self.logger = logger
+        if method == 'scan-nmap':
+            self.method = method_nmap(db,logger)
+
+    def run(self, sleep=60):
         while True:
-            ip = self.db.get_ip_no_scan()
+            ip = self.db.get_ip_no_scan(self.method.name)
             if ip is not None:
-                self.logger.info("SCAN %s"%(ip,))
-                nm = nmap.PortScanner()
-                nm.scan(hosts=ip, arguments='-sS')
-                for item in nm.all_hosts():
+                self.logger.info("SCAN %s" % (ip,))
+                result = self.method.scan(ip)
+                for item in result:
                     self.db.add_ip(item)
-                self.logger.debug(str(nm.all_hosts()))
-                self.db.update_ip_scan_timestamp(ip)
+                self.logger.debug(str(result))
+                self.db.update_ip_scan_timestamp(self.method.name,ip)
             else:
                 self.logger.debug("SCAN: sleep")
                 time.sleep(sleep)

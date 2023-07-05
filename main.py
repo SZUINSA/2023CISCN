@@ -1,5 +1,7 @@
 import sys
 import logging
+
+
 def logs(filename='logs.txt', level=logging.DEBUG):
     logger = logging.getLogger(__name__)
     logger.setLevel(level)
@@ -15,23 +17,29 @@ def logs(filename='logs.txt', level=logging.DEBUG):
     logger.addHandler(ch)
     return logger
 
+
 if __name__ == "__main__":
     logger = logs()
     logger.info("Program Start")
-
-    if "--MYSQL" in sys.argv or "-m" in sys.argv:
+    argv = [x.lower() for x in sys.argv]
+    if "--mysql" in argv or "-m" in argv:
         logger.debug("Database: Mysql")
         import mysql
+
         db = mysql.db(logger)
     else:
         logger.debug("Database: Sqlite")
         import sqlite
+
         db = sqlite.db(logger)
 
-    if "--SCAN" in sys.argv or "-s" in sys.argv:
+    if "--scan" in argv or "-s" in argv:
         logger.debug("SCAN Mode")
         import scan
-        app = scan.app(db,logger)
 
+        if "scan-xxxx" in argv:
+            app = scan.app(db, logger,method="sacn-xxxx")
+        else:
+            app = scan.app(db, logger)
 
     app.run()
