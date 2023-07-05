@@ -30,22 +30,23 @@ class method_nmap:
 
 
 class app:
-    def __init__(self, db, logger, method='scan-nmap'):
+    def __init__(self, db, logger,offset=1,method='scan-nmap'):
         self.db = db
         self.logger = logger
+        self.offset = offset
         if method == 'scan-nmap':
             self.method = method_nmap(db,logger)
 
     def run(self, sleep=60):
         while True:
-            ip = self.db.get_ip_no_scan(self.method.name)
+            ip = self.db.get_ip_no_scan(self.method.name,self.offset)
             if ip is not None:
                 self.logger.info("SCAN %s" % (ip,))
+                self.db.update_ip_scan_timestamp(self.method.name,ip)
                 result = self.method.scan(ip)
                 for item in result:
                     self.db.add_ip(item)
                 self.logger.debug(str(result))
-                self.db.update_ip_scan_timestamp(self.method.name,ip)
             else:
                 self.logger.debug("SCAN: sleep")
                 time.sleep(sleep)

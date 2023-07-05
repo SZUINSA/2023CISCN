@@ -41,7 +41,7 @@ if __name__ == "__main__":
         import scan
 
         if "scan-xxxx" in argv:
-            app = scan.app(db, logger,method="sacn-xxxx")
+            app = scan.app(db, logger,method="scan-xxxx")
         else:
             app = scan.app(db, logger)
 
