@@ -1,0 +1,2 @@
+sqlite~=3.41.2
+python-nmap~=0.7.1
