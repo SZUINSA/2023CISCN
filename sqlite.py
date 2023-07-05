@@ -18,13 +18,13 @@ class db:
         self.db.execute('''CREATE TABLE IF NOT EXISTS SCAN(
                     ID INTEGER PRIMARY KEY AUTOINCREMENT,
                     IP TEXT NULL,
-                    METHOD TEXT NULL,
+                    METHOD TEXT DEFAULT '',
                     TIMESTAMP TIME NULL
                     );''')
         self.db.execute('''CREATE TABLE IF NOT EXISTS IP(
                     ID INTEGER PRIMARY KEY AUTOINCREMENT,
                     IP TEXT NULL,
-                    METHOD TEXT NULL,
+                    METHOD TEXT DEFAULT '',
                     DEVICEINFO TEXT NULL,
                     HONEYPOT TEXT NULL,
                     TIMESTAMP TIME NULL
@@ -32,7 +32,7 @@ class db:
         self.db.execute('''CREATE TABLE IF NOT EXISTS SERVICES(
                     ID INTEGER PRIMARY KEY AUTOINCREMENT,
                     IP TEXT NULL,
-                    METHOD TEXT NULL,
+                    METHOD TEXT DEFAULT '',
                     PORT TEXT NULL,
                     PROTOCOL TEXT NULL,
                     SERVICE_APP TEXT NULL,
@@ -49,7 +49,7 @@ class db:
         self.db.commit()
     def get_ip_no_scan(self,target):
         self.logger.debug("DB: get_ip_no_scan %s"%(target,))
-        cursor = self.db.execute("SELECT IP from SCAN WHERE TIMESTAMP IS NULL and (METHOD IS NULL or METHOD NOT LIKE ?) LIMIT 1",("%@"+target+"%",))
+        cursor = self.db.execute("SELECT IP from SCAN WHERE METHOD NOT LIKE ? LIMIT 1",("%@"+target+"%",))
         for i in cursor:
             return i[0]
 

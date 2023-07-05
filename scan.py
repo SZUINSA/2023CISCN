@@ -3,7 +3,7 @@ import nmap
 
 
 class method_nmap:
-    name = "scan-namp"
+    name = "scan-nmap"
 
     def __init__(self, db, logger):
         self.db = db
