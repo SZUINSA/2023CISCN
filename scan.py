@@ -19,7 +19,7 @@ class method_nmap:
                 version_number = match.group(1)
                 logger.debug(f"SCAN: nmap version {version_number}")
             else:
-                logger.warning("SCAN: nmap version UNKNOW")
+                logger.warning("SCAN: nmap version UNKNOWN")
         else:
             logger.warning("SCAN: nmap not found")
 
