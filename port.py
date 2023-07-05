@@ -39,7 +39,7 @@ class method_nmap:
         return nm
 
     def allscan(self, target):
-        self.name = "port-nmap-allscan"
+        self.name = "port-xxxx-allscan"
         nm = nmap.PortScanner()
         nm.scan(hosts=target, arguments='-p1-65535')
 
@@ -76,8 +76,11 @@ class app:
     def __init__(self, db, logger,method='port-nmap'):
         self.db = db
         self.logger = logger
+        self.method_user_input = method
         if method == 'port-nmap':
             self.method = method_nmap(db,logger)
+        else:
+            self.method = method_nmap(db, logger)
 
     def run(self, sleep=60):
 
@@ -89,8 +92,10 @@ class app:
             if ip is not None:
                 self.logger.info("PORT-CHECK %s %s" % (self.method.name,ip,))
                 self.db.update_ip_port_timestamp(self.method.name,ip)
-                result = self.method.port(ip)
-
+                if self.method_user_input == 'port-nmap':
+                    result = self.method.port(ip)
+                else:
+                    result = self.method.port_xxxx(ip)
                 for host in result.all_hosts():
                     for proto in result[host].all_protocols():
                         lport = result[host][proto].keys()
@@ -103,5 +108,4 @@ class app:
             else:
                 self.logger.debug("PORT: sleep")
                 time.sleep(sleep)
-
 
