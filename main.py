@@ -57,4 +57,13 @@ if __name__ == "__main__":
         else:
             app = port.app(db, logger)
 
+    if "--services" in argv or "-se" in argv:
+        logger.debug("SERVICES Mode")
+        import services
+
+        if "services-xxxx" in argv:
+            app = services.app(db, logger, method="services-xxxx")
+        else:
+            app = services.app(db, logger)
+
     app.run()
