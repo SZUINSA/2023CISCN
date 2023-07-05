@@ -24,15 +24,14 @@ if __name__ == "__main__":
     argv = [x.lower() for x in sys.argv]
     if "--mysql" in argv or "-m" in argv:
         logger.debug("Database: Mysql")
-        import mysql
-        db = mysql.db(logger)
+        import mysqldb
+        db = mysqldb.db(logger)
     else:
         logger.debug("Database: Sqlite")
         import sqlite
         db = sqlite.db(logger)
 
     import default
-    db.build()
     for item in default.ip_src:
         db.add_scan(item)
 

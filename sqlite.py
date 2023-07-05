@@ -1,11 +1,11 @@
 import os
-import sqlite3
-
 
 class db:
     def __init__(self, logger):
         self.logger = logger
-        if (os.path.exists('sqlite.db') == False):
+        import sqlite3
+        if not os.path.exists('sqlite.db'):
+            self.logger.info("Sqlite Database Not Exist...")
             self.db = sqlite3.connect('sqlite.db')
             self.logger.info("Building Sqlite Database...")
             self.build()
@@ -13,6 +13,9 @@ class db:
         else:
             self.db = sqlite3.connect('sqlite.db')
             self.logger.info("Connect Sqlite Database Succeed.")
+            self.logger.info("Building Sqlite Database...")
+            self.build()
+            self.logger.info("Building Sqlite Database Succeed.")
         self.db.execute('PRAGMA temp_store=MEMORY;')
         self.db.execute('PRAGMA journal_mode=MEMORY;')
         self.db.execute('PRAGMA auto_vacuum=INCREMENTAL;')
@@ -47,7 +50,7 @@ class db:
         self.logger.debug("DB: add_scan %s" % (target,))
         cursor = self.db.execute("SELECT count() FROM SCAN WHERE IP=?", (target,))
         for i in cursor:
-            if i[0]==0:
+            if i[0] == 0:
                 self.db.execute("INSERT INTO SCAN (IP) VALUES (?)", (target,))
                 self.db.commit()
             else:
@@ -58,7 +61,7 @@ class db:
         self.logger.debug("DB: add_ip %s" % (target,))
         cursor = self.db.execute("SELECT count() FROM IP WHERE IP=?", (target,))
         for i in cursor:
-            if i[0]==0:
+            if i[0] == 0:
                 self.db.execute("INSERT INTO IP (IP) VALUES (?)", (target,))
                 self.db.commit()
             else:
@@ -71,9 +74,22 @@ class db:
         for i in cursor:
             return i[0]
 
+    def get_ip_no_port(self, target):
+        self.logger.debug("DB: get_ip_no_port %s" % (target,))
+        cursor = self.db.execute("SELECT IP from SERVICES WHERE METHOD NOT LIKE ? LIMIT 1", ("%@" + target + "%",))
+        for i in cursor:
+            return i[0]
+
     def update_ip_scan_timestamp(self, target1, target2):
         self.logger.debug("DB: update_ip_scan_timestamp %s %s" % (target1, target2))
         cursor = self.db.execute(
             "UPDATE SCAN SET METHOD=METHOD||?,TIMESTAMP=DATETIME(CURRENT_TIMESTAMP,'localtime') WHERE IP=?",
+            ("@" + target1, target2))
+        self.db.commit()
+
+    def update_ip_port_timestamp(self, target1, target2):
+        self.logger.debug("DB: update_ip_port_timestamp %s %s" % (target1, target2))
+        cursor = self.db.execute(
+            "UPDATE SERVICES SET METHOD=METHOD||?,TIMESTAMP=DATETIME(CURRENT_TIMESTAMP,'localtime') WHERE IP=?",
             ("@" + target1, target2))
         self.db.commit()
