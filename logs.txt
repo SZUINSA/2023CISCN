@@ -1,0 +1,1336 @@
+[2023-07-05 20:21:52,806]	[39836]	[main.py]	[line: 22]	[INFO]	#Program Start
+[2023-07-05 20:21:52,806]	[39836]	[main.py]	[line: 30]	[DEBUG]	#Database: Sqlite
+[2023-07-05 20:21:52,813]	[39836]	[sqlite.py]	[line: 8]	[INFO]	#Sqlite Database Not Exist...
+[2023-07-05 20:21:52,814]	[39836]	[sqlite.py]	[line: 10]	[INFO]	#Building Sqlite Database...
+[2023-07-05 20:21:52,859]	[39836]	[sqlite.py]	[line: 12]	[INFO]	#Building Sqlite Database Succeed.
+[2023-07-05 20:21:52,860]	[39836]	[sqlite.py]	[line: 50]	[DEBUG]	#DB: add_scan 192.168.239.0/24
+[2023-07-05 20:21:52,862]	[39836]	[main.py]	[line: 50]	[DEBUG]	#PORT Mode
+[2023-07-05 20:21:52,940]	[39836]	[port.py]	[line: 20]	[DEBUG]	#PORT: nmap version 7.94
+[2023-07-05 20:21:52,940]	[39836]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap
+[2023-07-05 20:21:52,940]	[39836]	[port.py]	[line: 81]	[DEBUG]	#PORT: sleep
+[2023-07-05 20:22:52,941]	[39836]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap
+[2023-07-05 20:22:52,942]	[39836]	[port.py]	[line: 81]	[DEBUG]	#PORT: sleep
+[2023-07-05 20:23:52,953]	[39836]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap
+[2023-07-05 20:23:52,953]	[39836]	[port.py]	[line: 81]	[DEBUG]	#PORT: sleep
+[2023-07-05 20:24:52,964]	[39836]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap
+[2023-07-05 20:24:52,964]	[39836]	[port.py]	[line: 81]	[DEBUG]	#PORT: sleep
+[2023-07-05 20:25:52,964]	[39836]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap
+[2023-07-05 20:25:52,964]	[39836]	[port.py]	[line: 81]	[DEBUG]	#PORT: sleep
+[2023-07-05 20:26:41,353]	[2720]	[main.py]	[line: 22]	[INFO]	#Program Start
+[2023-07-05 20:26:41,354]	[2720]	[main.py]	[line: 30]	[DEBUG]	#Database: Sqlite
+[2023-07-05 20:26:41,361]	[2720]	[sqlite.py]	[line: 15]	[INFO]	#Connect Sqlite Database Succeed.
+[2023-07-05 20:26:41,361]	[2720]	[sqlite.py]	[line: 16]	[INFO]	#Building Sqlite Database...
+[2023-07-05 20:26:41,362]	[2720]	[sqlite.py]	[line: 18]	[INFO]	#Building Sqlite Database Succeed.
+[2023-07-05 20:26:41,362]	[2720]	[sqlite.py]	[line: 50]	[DEBUG]	#DB: add_scan 192.168.239.0/24
+[2023-07-05 20:26:41,362]	[2720]	[sqlite.py]	[line: 57]	[DEBUG]	#DB: add_scan 192.168.239.0/24 exits
+[2023-07-05 20:27:54,618]	[1196]	[main.py]	[line: 22]	[INFO]	#Program Start
+[2023-07-05 20:27:54,619]	[1196]	[main.py]	[line: 30]	[DEBUG]	#Database: Sqlite
+[2023-07-05 20:27:54,630]	[1196]	[sqlite.py]	[line: 15]	[INFO]	#Connect Sqlite Database Succeed.
+[2023-07-05 20:27:54,630]	[1196]	[sqlite.py]	[line: 16]	[INFO]	#Building Sqlite Database...
+[2023-07-05 20:27:54,633]	[1196]	[sqlite.py]	[line: 18]	[INFO]	#Building Sqlite Database Succeed.
+[2023-07-05 20:27:54,633]	[1196]	[sqlite.py]	[line: 50]	[DEBUG]	#DB: add_scan 192.168.239.0/24
+[2023-07-05 20:27:54,634]	[1196]	[sqlite.py]	[line: 57]	[DEBUG]	#DB: add_scan 192.168.239.0/24 exits
+[2023-07-05 20:27:54,634]	[1196]	[main.py]	[line: 42]	[DEBUG]	#SCAN Mode
+[2023-07-05 20:27:54,724]	[1196]	[scan.py]	[line: 20]	[DEBUG]	#SCAN: nmap version 7.94
+[2023-07-05 20:27:54,724]	[1196]	[sqlite.py]	[line: 82]	[DEBUG]	#DB: get_ip_no_scan scan-nmap
+[2023-07-05 20:27:54,724]	[1196]	[scan.py]	[line: 43]	[INFO]	#SCAN-CHECK scan-nmap 192.168.239.0/24
+[2023-07-05 20:27:54,724]	[1196]	[sqlite.py]	[line: 94]	[DEBUG]	#DB: update_ip_scan_timestamp scan-nmap 192.168.239.0/24
+[2023-07-05 20:30:35,996]	[1196]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.1
+[2023-07-05 20:30:36,001]	[1196]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.11
+[2023-07-05 20:30:36,007]	[1196]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.111
+[2023-07-05 20:30:36,014]	[1196]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.112
+[2023-07-05 20:30:36,022]	[1196]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.113
+[2023-07-05 20:30:36,031]	[1196]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.12
+[2023-07-05 20:30:36,036]	[1196]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.140
+[2023-07-05 20:30:36,040]	[1196]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.150
+[2023-07-05 20:30:36,044]	[1196]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.165
+[2023-07-05 20:30:36,048]	[1196]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.179
+[2023-07-05 20:30:36,054]	[1196]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.187
+[2023-07-05 20:30:36,058]	[1196]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.2
+[2023-07-05 20:30:36,065]	[1196]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.237
+[2023-07-05 20:30:36,070]	[1196]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.238
+[2023-07-05 20:30:36,074]	[1196]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.240
+[2023-07-05 20:30:36,078]	[1196]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.250
+[2023-07-05 20:30:36,082]	[1196]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.251
+[2023-07-05 20:30:36,086]	[1196]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.254
+[2023-07-05 20:30:36,089]	[1196]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.3
+[2023-07-05 20:30:36,092]	[1196]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.33
+[2023-07-05 20:30:36,094]	[1196]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.40
+[2023-07-05 20:30:36,097]	[1196]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.41
+[2023-07-05 20:30:36,101]	[1196]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.42
+[2023-07-05 20:30:36,104]	[1196]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.49
+[2023-07-05 20:30:36,107]	[1196]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.51
+[2023-07-05 20:30:36,109]	[1196]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.61
+[2023-07-05 20:30:36,112]	[1196]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.62
+[2023-07-05 20:30:36,115]	[1196]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.68
+[2023-07-05 20:30:36,118]	[1196]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.76
+[2023-07-05 20:30:36,121]	[1196]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.77
+[2023-07-05 20:30:36,124]	[1196]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.78
+[2023-07-05 20:30:36,127]	[1196]	[scan.py]	[line: 48]	[DEBUG]	#['192.168.239.1', '192.168.239.11', '192.168.239.111', '192.168.239.112', '192.168.239.113', '192.168.239.12', '192.168.239.140', '192.168.239.150', '192.168.239.165', '192.168.239.179', '192.168.239.187', '192.168.239.2', '192.168.239.237', '192.168.239.238', '192.168.239.240', '192.168.239.250', '192.168.239.251', '192.168.239.254', '192.168.239.3', '192.168.239.33', '192.168.239.40', '192.168.239.41', '192.168.239.42', '192.168.239.49', '192.168.239.51', '192.168.239.61', '192.168.239.62', '192.168.239.68', '192.168.239.76', '192.168.239.77', '192.168.239.78']
+[2023-07-05 20:30:36,127]	[1196]	[scan.py]	[line: 49]	[INFO]	#SCNA-CHECK scan-nmap 192.168.239.0/24 SUCCESS
+[2023-07-05 20:30:36,127]	[1196]	[sqlite.py]	[line: 82]	[DEBUG]	#DB: get_ip_no_scan scan-nmap
+[2023-07-05 20:30:36,127]	[1196]	[scan.py]	[line: 51]	[DEBUG]	#SCAN: sleep
+[2023-07-05 20:31:36,140]	[1196]	[sqlite.py]	[line: 82]	[DEBUG]	#DB: get_ip_no_scan scan-nmap
+[2023-07-05 20:31:36,141]	[1196]	[scan.py]	[line: 51]	[DEBUG]	#SCAN: sleep
+[2023-07-05 20:32:36,155]	[1196]	[sqlite.py]	[line: 82]	[DEBUG]	#DB: get_ip_no_scan scan-nmap
+[2023-07-05 20:32:36,155]	[1196]	[scan.py]	[line: 51]	[DEBUG]	#SCAN: sleep
+[2023-07-05 20:33:36,163]	[1196]	[sqlite.py]	[line: 82]	[DEBUG]	#DB: get_ip_no_scan scan-nmap
+[2023-07-05 20:33:36,163]	[1196]	[scan.py]	[line: 51]	[DEBUG]	#SCAN: sleep
+[2023-07-05 20:34:36,174]	[1196]	[sqlite.py]	[line: 82]	[DEBUG]	#DB: get_ip_no_scan scan-nmap
+[2023-07-05 20:34:36,174]	[1196]	[scan.py]	[line: 51]	[DEBUG]	#SCAN: sleep
+[2023-07-05 20:35:36,180]	[1196]	[sqlite.py]	[line: 82]	[DEBUG]	#DB: get_ip_no_scan scan-nmap
+[2023-07-05 20:35:36,180]	[1196]	[scan.py]	[line: 51]	[DEBUG]	#SCAN: sleep
+[2023-07-05 20:36:36,188]	[1196]	[sqlite.py]	[line: 82]	[DEBUG]	#DB: get_ip_no_scan scan-nmap
+[2023-07-05 20:36:36,188]	[1196]	[scan.py]	[line: 51]	[DEBUG]	#SCAN: sleep
+[2023-07-05 20:37:36,191]	[1196]	[sqlite.py]	[line: 82]	[DEBUG]	#DB: get_ip_no_scan scan-nmap
+[2023-07-05 20:37:36,191]	[1196]	[scan.py]	[line: 51]	[DEBUG]	#SCAN: sleep
+[2023-07-05 20:38:36,202]	[1196]	[sqlite.py]	[line: 82]	[DEBUG]	#DB: get_ip_no_scan scan-nmap
+[2023-07-05 20:38:36,202]	[1196]	[scan.py]	[line: 51]	[DEBUG]	#SCAN: sleep
+[2023-07-05 20:39:36,213]	[1196]	[sqlite.py]	[line: 82]	[DEBUG]	#DB: get_ip_no_scan scan-nmap
+[2023-07-05 20:39:36,213]	[1196]	[scan.py]	[line: 51]	[DEBUG]	#SCAN: sleep
+[2023-07-05 20:40:36,223]	[1196]	[sqlite.py]	[line: 82]	[DEBUG]	#DB: get_ip_no_scan scan-nmap
+[2023-07-05 20:40:36,223]	[1196]	[scan.py]	[line: 51]	[DEBUG]	#SCAN: sleep
+[2023-07-05 20:41:36,232]	[1196]	[sqlite.py]	[line: 82]	[DEBUG]	#DB: get_ip_no_scan scan-nmap
+[2023-07-05 20:41:36,232]	[1196]	[scan.py]	[line: 51]	[DEBUG]	#SCAN: sleep
+[2023-07-05 20:42:36,233]	[1196]	[sqlite.py]	[line: 82]	[DEBUG]	#DB: get_ip_no_scan scan-nmap
+[2023-07-05 20:42:36,233]	[1196]	[scan.py]	[line: 51]	[DEBUG]	#SCAN: sleep
+[2023-07-05 20:43:36,243]	[1196]	[sqlite.py]	[line: 82]	[DEBUG]	#DB: get_ip_no_scan scan-nmap
+[2023-07-05 20:43:36,243]	[1196]	[scan.py]	[line: 51]	[DEBUG]	#SCAN: sleep
+[2023-07-05 20:44:36,245]	[1196]	[sqlite.py]	[line: 82]	[DEBUG]	#DB: get_ip_no_scan scan-nmap
+[2023-07-05 20:44:36,245]	[1196]	[scan.py]	[line: 51]	[DEBUG]	#SCAN: sleep
+[2023-07-05 20:45:36,251]	[1196]	[sqlite.py]	[line: 82]	[DEBUG]	#DB: get_ip_no_scan scan-nmap
+[2023-07-05 20:45:36,251]	[1196]	[scan.py]	[line: 51]	[DEBUG]	#SCAN: sleep
+[2023-07-05 20:46:36,256]	[1196]	[sqlite.py]	[line: 82]	[DEBUG]	#DB: get_ip_no_scan scan-nmap
+[2023-07-05 20:46:36,256]	[1196]	[scan.py]	[line: 51]	[DEBUG]	#SCAN: sleep
+[2023-07-05 20:47:36,266]	[1196]	[sqlite.py]	[line: 82]	[DEBUG]	#DB: get_ip_no_scan scan-nmap
+[2023-07-05 20:47:36,266]	[1196]	[scan.py]	[line: 51]	[DEBUG]	#SCAN: sleep
+[2023-07-05 20:48:36,274]	[1196]	[sqlite.py]	[line: 82]	[DEBUG]	#DB: get_ip_no_scan scan-nmap
+[2023-07-05 20:48:36,274]	[1196]	[scan.py]	[line: 51]	[DEBUG]	#SCAN: sleep
+[2023-07-05 20:49:36,287]	[1196]	[sqlite.py]	[line: 82]	[DEBUG]	#DB: get_ip_no_scan scan-nmap
+[2023-07-05 20:49:36,287]	[1196]	[scan.py]	[line: 51]	[DEBUG]	#SCAN: sleep
+[2023-07-05 20:50:36,290]	[1196]	[sqlite.py]	[line: 82]	[DEBUG]	#DB: get_ip_no_scan scan-nmap
+[2023-07-05 20:50:36,290]	[1196]	[scan.py]	[line: 51]	[DEBUG]	#SCAN: sleep
+[2023-07-05 20:51:36,300]	[1196]	[sqlite.py]	[line: 82]	[DEBUG]	#DB: get_ip_no_scan scan-nmap
+[2023-07-05 20:51:36,300]	[1196]	[scan.py]	[line: 51]	[DEBUG]	#SCAN: sleep
+[2023-07-05 20:52:36,315]	[1196]	[sqlite.py]	[line: 82]	[DEBUG]	#DB: get_ip_no_scan scan-nmap
+[2023-07-05 20:52:36,315]	[1196]	[scan.py]	[line: 51]	[DEBUG]	#SCAN: sleep
+[2023-07-05 20:53:36,330]	[1196]	[sqlite.py]	[line: 82]	[DEBUG]	#DB: get_ip_no_scan scan-nmap
+[2023-07-05 20:53:36,330]	[1196]	[scan.py]	[line: 51]	[DEBUG]	#SCAN: sleep
+[2023-07-05 20:54:36,339]	[1196]	[sqlite.py]	[line: 82]	[DEBUG]	#DB: get_ip_no_scan scan-nmap
+[2023-07-05 20:54:36,339]	[1196]	[scan.py]	[line: 51]	[DEBUG]	#SCAN: sleep
+[2023-07-05 20:55:36,351]	[1196]	[sqlite.py]	[line: 82]	[DEBUG]	#DB: get_ip_no_scan scan-nmap
+[2023-07-05 20:55:36,351]	[1196]	[scan.py]	[line: 51]	[DEBUG]	#SCAN: sleep
+[2023-07-05 20:56:36,362]	[1196]	[sqlite.py]	[line: 82]	[DEBUG]	#DB: get_ip_no_scan scan-nmap
+[2023-07-05 20:56:36,362]	[1196]	[scan.py]	[line: 51]	[DEBUG]	#SCAN: sleep
+[2023-07-05 20:57:36,370]	[1196]	[sqlite.py]	[line: 82]	[DEBUG]	#DB: get_ip_no_scan scan-nmap
+[2023-07-05 20:57:36,370]	[1196]	[scan.py]	[line: 51]	[DEBUG]	#SCAN: sleep
+[2023-07-05 20:58:36,373]	[1196]	[sqlite.py]	[line: 82]	[DEBUG]	#DB: get_ip_no_scan scan-nmap
+[2023-07-05 20:58:36,373]	[1196]	[scan.py]	[line: 51]	[DEBUG]	#SCAN: sleep
+[2023-07-05 20:59:36,383]	[1196]	[sqlite.py]	[line: 82]	[DEBUG]	#DB: get_ip_no_scan scan-nmap
+[2023-07-05 20:59:36,383]	[1196]	[scan.py]	[line: 51]	[DEBUG]	#SCAN: sleep
+[2023-07-05 21:10:47,399]	[47800]	[main.py]	[line: 22]	[INFO]	#Program Start
+[2023-07-05 21:10:47,399]	[47800]	[main.py]	[line: 30]	[DEBUG]	#Database: Sqlite
+[2023-07-05 21:10:47,409]	[47800]	[sqlite.py]	[line: 15]	[INFO]	#Connect Sqlite Database Succeed.
+[2023-07-05 21:10:47,409]	[47800]	[sqlite.py]	[line: 16]	[INFO]	#Building Sqlite Database...
+[2023-07-05 21:10:47,410]	[47800]	[sqlite.py]	[line: 18]	[INFO]	#Building Sqlite Database Succeed.
+[2023-07-05 21:10:47,411]	[47800]	[sqlite.py]	[line: 50]	[DEBUG]	#DB: add_scan 192.168.239.0/24
+[2023-07-05 21:10:47,411]	[47800]	[sqlite.py]	[line: 57]	[DEBUG]	#DB: add_scan 192.168.239.0/24 exits
+[2023-07-05 21:12:35,208]	[43324]	[main.py]	[line: 22]	[INFO]	#Program Start
+[2023-07-05 21:12:35,209]	[43324]	[main.py]	[line: 30]	[DEBUG]	#Database: Sqlite
+[2023-07-05 21:12:35,217]	[43324]	[sqlite.py]	[line: 15]	[INFO]	#Connect Sqlite Database Succeed.
+[2023-07-05 21:12:35,218]	[43324]	[sqlite.py]	[line: 16]	[INFO]	#Building Sqlite Database...
+[2023-07-05 21:12:35,218]	[43324]	[sqlite.py]	[line: 18]	[INFO]	#Building Sqlite Database Succeed.
+[2023-07-05 21:12:35,218]	[43324]	[sqlite.py]	[line: 50]	[DEBUG]	#DB: add_scan 192.168.239.0/24
+[2023-07-05 21:12:35,218]	[43324]	[sqlite.py]	[line: 57]	[DEBUG]	#DB: add_scan 192.168.239.0/24 exits
+[2023-07-05 21:12:35,218]	[43324]	[main.py]	[line: 50]	[DEBUG]	#PORT Mode
+[2023-07-05 21:12:35,311]	[43324]	[port.py]	[line: 20]	[DEBUG]	#PORT: nmap version 7.94
+[2023-07-05 21:12:35,311]	[43324]	[port.py]	[line: 102]	[INFO]	#PORT-CHECK port-nmap 192.168.239.61
+[2023-07-05 21:33:55,938]	[16888]	[main.py]	[line: 22]	[INFO]	#Program Start
+[2023-07-05 21:33:55,938]	[16888]	[main.py]	[line: 30]	[DEBUG]	#Database: Sqlite
+[2023-07-05 21:33:55,953]	[16888]	[sqlite.py]	[line: 15]	[INFO]	#Connect Sqlite Database Succeed.
+[2023-07-05 21:33:55,954]	[16888]	[sqlite.py]	[line: 16]	[INFO]	#Building Sqlite Database...
+[2023-07-05 21:33:55,958]	[16888]	[sqlite.py]	[line: 18]	[INFO]	#Building Sqlite Database Succeed.
+[2023-07-05 21:33:55,958]	[16888]	[sqlite.py]	[line: 50]	[DEBUG]	#DB: add_scan 192.168.239.0/24
+[2023-07-05 21:33:55,959]	[16888]	[sqlite.py]	[line: 57]	[DEBUG]	#DB: add_scan 192.168.239.0/24 exits
+[2023-07-05 21:33:55,959]	[16888]	[main.py]	[line: 50]	[DEBUG]	#PORT Mode
+[2023-07-05 21:33:56,047]	[16888]	[port.py]	[line: 20]	[DEBUG]	#PORT: nmap version 7.94
+[2023-07-05 21:33:56,047]	[16888]	[port.py]	[line: 102]	[INFO]	#PORT-CHECK port-nmap 192.168.239.61
+[2023-07-05 21:34:58,936]	[3416]	[main.py]	[line: 22]	[INFO]	#Program Start
+[2023-07-05 21:34:58,936]	[3416]	[main.py]	[line: 30]	[DEBUG]	#Database: Sqlite
+[2023-07-05 21:34:58,942]	[3416]	[sqlite.py]	[line: 15]	[INFO]	#Connect Sqlite Database Succeed.
+[2023-07-05 21:34:58,942]	[3416]	[sqlite.py]	[line: 16]	[INFO]	#Building Sqlite Database...
+[2023-07-05 21:34:58,943]	[3416]	[sqlite.py]	[line: 18]	[INFO]	#Building Sqlite Database Succeed.
+[2023-07-05 21:34:58,943]	[3416]	[sqlite.py]	[line: 50]	[DEBUG]	#DB: add_scan 192.168.239.0/24
+[2023-07-05 21:34:58,943]	[3416]	[sqlite.py]	[line: 57]	[DEBUG]	#DB: add_scan 192.168.239.0/24 exits
+[2023-07-05 21:34:58,943]	[3416]	[main.py]	[line: 50]	[DEBUG]	#PORT Mode
+[2023-07-05 21:34:59,011]	[3416]	[port.py]	[line: 20]	[DEBUG]	#PORT: nmap version 7.94
+[2023-07-05 21:34:59,011]	[3416]	[port.py]	[line: 102]	[INFO]	#PORT-CHECK port-nmap 192.168.239.61
+[2023-07-05 21:35:58,672]	[16444]	[main.py]	[line: 22]	[INFO]	#Program Start
+[2023-07-05 21:35:58,672]	[16444]	[main.py]	[line: 30]	[DEBUG]	#Database: Sqlite
+[2023-07-05 21:35:58,678]	[16444]	[sqlite.py]	[line: 15]	[INFO]	#Connect Sqlite Database Succeed.
+[2023-07-05 21:35:58,678]	[16444]	[sqlite.py]	[line: 16]	[INFO]	#Building Sqlite Database...
+[2023-07-05 21:35:58,678]	[16444]	[sqlite.py]	[line: 18]	[INFO]	#Building Sqlite Database Succeed.
+[2023-07-05 21:35:58,678]	[16444]	[sqlite.py]	[line: 50]	[DEBUG]	#DB: add_scan 192.168.239.0/24
+[2023-07-05 21:35:58,678]	[16444]	[sqlite.py]	[line: 57]	[DEBUG]	#DB: add_scan 192.168.239.0/24 exits
+[2023-07-05 21:35:58,678]	[16444]	[main.py]	[line: 50]	[DEBUG]	#PORT Mode
+[2023-07-05 21:35:58,745]	[16444]	[port.py]	[line: 20]	[DEBUG]	#PORT: nmap version 7.94
+[2023-07-05 21:35:58,745]	[16444]	[port.py]	[line: 102]	[INFO]	#PORT-CHECK port-nmap 192.168.239.61
+[2023-07-05 21:36:14,647]	[24108]	[main.py]	[line: 22]	[INFO]	#Program Start
+[2023-07-05 21:36:14,648]	[24108]	[main.py]	[line: 30]	[DEBUG]	#Database: Sqlite
+[2023-07-05 21:36:14,654]	[24108]	[sqlite.py]	[line: 15]	[INFO]	#Connect Sqlite Database Succeed.
+[2023-07-05 21:36:14,654]	[24108]	[sqlite.py]	[line: 16]	[INFO]	#Building Sqlite Database...
+[2023-07-05 21:36:14,655]	[24108]	[sqlite.py]	[line: 18]	[INFO]	#Building Sqlite Database Succeed.
+[2023-07-05 21:36:14,655]	[24108]	[sqlite.py]	[line: 50]	[DEBUG]	#DB: add_scan 192.168.239.0/24
+[2023-07-05 21:36:14,655]	[24108]	[sqlite.py]	[line: 57]	[DEBUG]	#DB: add_scan 192.168.239.0/24 exits
+[2023-07-05 21:36:14,655]	[24108]	[main.py]	[line: 50]	[DEBUG]	#PORT Mode
+[2023-07-05 21:36:14,794]	[24108]	[port.py]	[line: 20]	[DEBUG]	#PORT: nmap version 7.94
+[2023-07-05 21:36:14,795]	[24108]	[port.py]	[line: 102]	[INFO]	#PORT-CHECK port-nmap 192.168.239.61
+[2023-07-05 21:38:26,195]	[26268]	[main.py]	[line: 22]	[INFO]	#Program Start
+[2023-07-05 21:38:26,195]	[26268]	[main.py]	[line: 30]	[DEBUG]	#Database: Sqlite
+[2023-07-05 21:38:26,201]	[26268]	[sqlite.py]	[line: 15]	[INFO]	#Connect Sqlite Database Succeed.
+[2023-07-05 21:38:26,202]	[26268]	[sqlite.py]	[line: 16]	[INFO]	#Building Sqlite Database...
+[2023-07-05 21:38:26,202]	[26268]	[sqlite.py]	[line: 18]	[INFO]	#Building Sqlite Database Succeed.
+[2023-07-05 21:38:26,202]	[26268]	[sqlite.py]	[line: 50]	[DEBUG]	#DB: add_scan 192.168.239.0/24
+[2023-07-05 21:38:26,202]	[26268]	[sqlite.py]	[line: 57]	[DEBUG]	#DB: add_scan 192.168.239.0/24 exits
+[2023-07-05 21:38:26,202]	[26268]	[main.py]	[line: 50]	[DEBUG]	#PORT Mode
+[2023-07-05 21:38:26,326]	[26268]	[port.py]	[line: 20]	[DEBUG]	#PORT: nmap version 7.94
+[2023-07-05 21:38:26,326]	[26268]	[port.py]	[line: 102]	[INFO]	#PORT-CHECK port-nmap 192.168.239.61
+[2023-07-05 21:40:21,824]	[29464]	[main.py]	[line: 22]	[INFO]	#Program Start
+[2023-07-05 21:40:21,824]	[29464]	[main.py]	[line: 30]	[DEBUG]	#Database: Sqlite
+[2023-07-05 21:40:21,830]	[29464]	[sqlite.py]	[line: 15]	[INFO]	#Connect Sqlite Database Succeed.
+[2023-07-05 21:40:21,830]	[29464]	[sqlite.py]	[line: 16]	[INFO]	#Building Sqlite Database...
+[2023-07-05 21:40:21,830]	[29464]	[sqlite.py]	[line: 18]	[INFO]	#Building Sqlite Database Succeed.
+[2023-07-05 21:40:21,830]	[29464]	[sqlite.py]	[line: 50]	[DEBUG]	#DB: add_scan 192.168.239.0/24
+[2023-07-05 21:40:21,830]	[29464]	[sqlite.py]	[line: 57]	[DEBUG]	#DB: add_scan 192.168.239.0/24 exits
+[2023-07-05 21:40:21,832]	[29464]	[main.py]	[line: 50]	[DEBUG]	#PORT Mode
+[2023-07-05 21:40:21,917]	[29464]	[port.py]	[line: 20]	[DEBUG]	#PORT: nmap version 7.94
+[2023-07-05 21:40:21,917]	[29464]	[port.py]	[line: 102]	[INFO]	#PORT-CHECK port-nmap 192.168.239.61
+[2023-07-05 21:41:08,727]	[46192]	[main.py]	[line: 22]	[INFO]	#Program Start
+[2023-07-05 21:41:08,727]	[46192]	[main.py]	[line: 30]	[DEBUG]	#Database: Sqlite
+[2023-07-05 21:41:08,733]	[46192]	[sqlite.py]	[line: 15]	[INFO]	#Connect Sqlite Database Succeed.
+[2023-07-05 21:41:08,733]	[46192]	[sqlite.py]	[line: 16]	[INFO]	#Building Sqlite Database...
+[2023-07-05 21:41:08,733]	[46192]	[sqlite.py]	[line: 18]	[INFO]	#Building Sqlite Database Succeed.
+[2023-07-05 21:41:08,734]	[46192]	[sqlite.py]	[line: 50]	[DEBUG]	#DB: add_scan 192.168.239.0/24
+[2023-07-05 21:41:08,734]	[46192]	[sqlite.py]	[line: 57]	[DEBUG]	#DB: add_scan 192.168.239.0/24 exits
+[2023-07-05 21:41:08,734]	[46192]	[main.py]	[line: 50]	[DEBUG]	#PORT Mode
+[2023-07-05 21:41:08,813]	[46192]	[port.py]	[line: 20]	[DEBUG]	#PORT: nmap version 7.94
+[2023-07-05 21:41:08,813]	[46192]	[port.py]	[line: 102]	[INFO]	#PORT-CHECK port-nmap 192.168.239.61
+[2023-07-05 22:03:43,828]	[41596]	[main.py]	[line: 22]	[INFO]	#Program Start
+[2023-07-05 22:03:43,828]	[41596]	[main.py]	[line: 30]	[DEBUG]	#Database: Sqlite
+[2023-07-05 22:03:43,843]	[41596]	[sqlite.py]	[line: 15]	[INFO]	#Connect Sqlite Database Succeed.
+[2023-07-05 22:03:43,843]	[41596]	[sqlite.py]	[line: 16]	[INFO]	#Building Sqlite Database...
+[2023-07-05 22:03:43,846]	[41596]	[sqlite.py]	[line: 18]	[INFO]	#Building Sqlite Database Succeed.
+[2023-07-05 22:03:43,846]	[41596]	[sqlite.py]	[line: 50]	[DEBUG]	#DB: add_scan 192.168.239.0/24
+[2023-07-05 22:03:43,847]	[41596]	[sqlite.py]	[line: 57]	[DEBUG]	#DB: add_scan 192.168.239.0/24 exits
+[2023-07-05 22:03:43,847]	[41596]	[main.py]	[line: 50]	[DEBUG]	#PORT Mode
+[2023-07-05 22:03:44,446]	[41596]	[port.py]	[line: 20]	[DEBUG]	#PORT: nmap version 7.94
+[2023-07-05 22:03:44,446]	[41596]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap
+[2023-07-05 22:03:44,446]	[41596]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap 192.168.239.1
+[2023-07-05 22:03:44,447]	[41596]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap 192.168.239.1
+[2023-07-05 22:03:44,981]	[41596]	[port.py]	[line: 128]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x000001441622BE50>
+[2023-07-05 22:03:44,981]	[41596]	[port.py]	[line: 129]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.1 SUCCESS
+[2023-07-05 22:03:44,981]	[41596]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:03:44,981]	[41596]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.1
+[2023-07-05 22:03:44,981]	[41596]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.1
+[2023-07-05 22:03:45,497]	[41596]	[port.py]	[line: 128]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x000001441622F550>
+[2023-07-05 22:03:45,497]	[41596]	[port.py]	[line: 129]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.1 SUCCESS
+[2023-07-05 22:03:45,497]	[41596]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:03:45,497]	[41596]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.11
+[2023-07-05 22:03:45,497]	[41596]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.11
+[2023-07-05 22:03:46,008]	[41596]	[port.py]	[line: 128]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x000001441622BE50>
+[2023-07-05 22:03:46,008]	[41596]	[port.py]	[line: 129]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.11 SUCCESS
+[2023-07-05 22:03:46,008]	[41596]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:03:46,008]	[41596]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.111
+[2023-07-05 22:03:46,008]	[41596]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.111
+[2023-07-05 22:03:46,576]	[41596]	[port.py]	[line: 128]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x000001441622F550>
+[2023-07-05 22:03:46,576]	[41596]	[port.py]	[line: 129]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.111 SUCCESS
+[2023-07-05 22:03:46,576]	[41596]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:03:46,576]	[41596]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.112
+[2023-07-05 22:03:46,576]	[41596]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.112
+[2023-07-05 22:04:00,095]	[41596]	[port.py]	[line: 128]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x000001441622BE50>
+[2023-07-05 22:04:00,095]	[41596]	[port.py]	[line: 129]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.112 SUCCESS
+[2023-07-05 22:04:00,095]	[41596]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:04:00,095]	[41596]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.113
+[2023-07-05 22:04:00,095]	[41596]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.113
+[2023-07-05 22:04:00,666]	[41596]	[port.py]	[line: 128]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x000001441622F550>
+[2023-07-05 22:04:00,667]	[41596]	[port.py]	[line: 129]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.113 SUCCESS
+[2023-07-05 22:04:00,667]	[41596]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:04:00,667]	[41596]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.12
+[2023-07-05 22:04:00,667]	[41596]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.12
+[2023-07-05 22:04:14,168]	[41596]	[port.py]	[line: 128]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x000001441622BE50>
+[2023-07-05 22:04:14,168]	[41596]	[port.py]	[line: 129]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.12 SUCCESS
+[2023-07-05 22:04:14,168]	[41596]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:04:14,168]	[41596]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.140
+[2023-07-05 22:04:14,168]	[41596]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.140
+[2023-07-05 22:04:27,711]	[41596]	[port.py]	[line: 128]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x000001441622F550>
+[2023-07-05 22:04:27,711]	[41596]	[port.py]	[line: 129]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.140 SUCCESS
+[2023-07-05 22:04:27,711]	[41596]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:04:27,711]	[41596]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.150
+[2023-07-05 22:04:27,711]	[41596]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.150
+[2023-07-05 22:04:28,230]	[41596]	[port.py]	[line: 128]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x000001441622BE50>
+[2023-07-05 22:04:28,230]	[41596]	[port.py]	[line: 129]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.150 SUCCESS
+[2023-07-05 22:04:28,230]	[41596]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:04:28,231]	[41596]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.165
+[2023-07-05 22:04:28,231]	[41596]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.165
+[2023-07-05 22:04:28,715]	[41596]	[port.py]	[line: 128]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x000001441622F550>
+[2023-07-05 22:04:28,715]	[41596]	[port.py]	[line: 129]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.165 SUCCESS
+[2023-07-05 22:04:28,715]	[41596]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:04:28,715]	[41596]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.179
+[2023-07-05 22:04:28,715]	[41596]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.179
+[2023-07-05 22:04:29,201]	[41596]	[port.py]	[line: 128]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x000001441622BE50>
+[2023-07-05 22:04:29,201]	[41596]	[port.py]	[line: 129]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.179 SUCCESS
+[2023-07-05 22:04:29,201]	[41596]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:04:29,201]	[41596]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.187
+[2023-07-05 22:04:29,201]	[41596]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.187
+[2023-07-05 22:04:42,687]	[41596]	[port.py]	[line: 128]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x000001441622F550>
+[2023-07-05 22:04:42,688]	[41596]	[port.py]	[line: 129]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.187 SUCCESS
+[2023-07-05 22:04:42,688]	[41596]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:04:42,688]	[41596]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.2
+[2023-07-05 22:04:42,688]	[41596]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.2
+[2023-07-05 22:04:43,193]	[41596]	[port.py]	[line: 128]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x000001441622BE50>
+[2023-07-05 22:04:43,194]	[41596]	[port.py]	[line: 129]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.2 SUCCESS
+[2023-07-05 22:04:43,194]	[41596]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:04:43,194]	[41596]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.237
+[2023-07-05 22:04:43,194]	[41596]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.237
+[2023-07-05 22:04:43,699]	[41596]	[port.py]	[line: 128]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x000001441622F550>
+[2023-07-05 22:04:43,699]	[41596]	[port.py]	[line: 129]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.237 SUCCESS
+[2023-07-05 22:04:43,699]	[41596]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:04:43,699]	[41596]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.238
+[2023-07-05 22:04:43,699]	[41596]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.238
+[2023-07-05 22:04:57,204]	[41596]	[port.py]	[line: 128]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x000001441622BE50>
+[2023-07-05 22:04:57,204]	[41596]	[port.py]	[line: 129]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.238 SUCCESS
+[2023-07-05 22:04:57,204]	[41596]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:04:57,204]	[41596]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.240
+[2023-07-05 22:04:57,204]	[41596]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.240
+[2023-07-05 22:04:57,695]	[41596]	[port.py]	[line: 128]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x000001441622F550>
+[2023-07-05 22:04:57,696]	[41596]	[port.py]	[line: 129]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.240 SUCCESS
+[2023-07-05 22:04:57,696]	[41596]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:04:57,696]	[41596]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.250
+[2023-07-05 22:04:57,696]	[41596]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.250
+[2023-07-05 22:04:58,194]	[41596]	[port.py]	[line: 128]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x000001441622BE50>
+[2023-07-05 22:04:58,194]	[41596]	[port.py]	[line: 129]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.250 SUCCESS
+[2023-07-05 22:04:58,194]	[41596]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:04:58,194]	[41596]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.251
+[2023-07-05 22:04:58,194]	[41596]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.251
+[2023-07-05 22:04:58,742]	[41596]	[port.py]	[line: 128]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x000001441622F550>
+[2023-07-05 22:04:58,742]	[41596]	[port.py]	[line: 129]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.251 SUCCESS
+[2023-07-05 22:04:58,742]	[41596]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:04:58,742]	[41596]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.254
+[2023-07-05 22:04:58,742]	[41596]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.254
+[2023-07-05 22:04:59,245]	[41596]	[port.py]	[line: 128]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x000001441622BE50>
+[2023-07-05 22:04:59,246]	[41596]	[port.py]	[line: 129]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.254 SUCCESS
+[2023-07-05 22:04:59,246]	[41596]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:04:59,246]	[41596]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.3
+[2023-07-05 22:04:59,246]	[41596]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.3
+[2023-07-05 22:05:13,247]	[41596]	[port.py]	[line: 128]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x000001441622F550>
+[2023-07-05 22:05:13,248]	[41596]	[port.py]	[line: 129]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.3 SUCCESS
+[2023-07-05 22:05:13,248]	[41596]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:05:13,248]	[41596]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.33
+[2023-07-05 22:05:13,248]	[41596]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.33
+[2023-07-05 22:05:26,746]	[41596]	[port.py]	[line: 128]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x000001441622BE50>
+[2023-07-05 22:05:26,746]	[41596]	[port.py]	[line: 129]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.33 SUCCESS
+[2023-07-05 22:05:26,746]	[41596]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:05:26,746]	[41596]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.40
+[2023-07-05 22:05:26,746]	[41596]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.40
+[2023-07-05 22:05:27,301]	[41596]	[port.py]	[line: 128]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x000001441622F550>
+[2023-07-05 22:05:27,301]	[41596]	[port.py]	[line: 129]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.40 SUCCESS
+[2023-07-05 22:05:27,301]	[41596]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:05:27,301]	[41596]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.41
+[2023-07-05 22:05:27,301]	[41596]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.41
+[2023-07-05 22:05:27,829]	[41596]	[port.py]	[line: 128]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x000001441622BE50>
+[2023-07-05 22:05:27,829]	[41596]	[port.py]	[line: 129]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.41 SUCCESS
+[2023-07-05 22:05:27,829]	[41596]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:05:27,829]	[41596]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.42
+[2023-07-05 22:05:27,829]	[41596]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.42
+[2023-07-05 22:06:13,763]	[8596]	[main.py]	[line: 22]	[INFO]	#Program Start
+[2023-07-05 22:06:13,763]	[8596]	[main.py]	[line: 30]	[DEBUG]	#Database: Sqlite
+[2023-07-05 22:06:13,769]	[8596]	[sqlite.py]	[line: 15]	[INFO]	#Connect Sqlite Database Succeed.
+[2023-07-05 22:06:13,769]	[8596]	[sqlite.py]	[line: 16]	[INFO]	#Building Sqlite Database...
+[2023-07-05 22:06:13,770]	[8596]	[sqlite.py]	[line: 18]	[INFO]	#Building Sqlite Database Succeed.
+[2023-07-05 22:06:13,770]	[8596]	[sqlite.py]	[line: 50]	[DEBUG]	#DB: add_scan 192.168.239.0/24
+[2023-07-05 22:06:13,770]	[8596]	[sqlite.py]	[line: 57]	[DEBUG]	#DB: add_scan 192.168.239.0/24 exits
+[2023-07-05 22:06:13,770]	[8596]	[main.py]	[line: 50]	[DEBUG]	#PORT Mode
+[2023-07-05 22:06:13,842]	[8596]	[port.py]	[line: 20]	[DEBUG]	#PORT: nmap version 7.94
+[2023-07-05 22:06:13,842]	[8596]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap
+[2023-07-05 22:06:13,843]	[8596]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap 192.168.239.49
+[2023-07-05 22:06:13,843]	[8596]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap 192.168.239.49
+[2023-07-05 22:06:14,377]	[8596]	[port.py]	[line: 129]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x00000258CA52BE50>
+[2023-07-05 22:06:14,377]	[8596]	[port.py]	[line: 130]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.49 SUCCESS
+[2023-07-05 22:06:14,377]	[8596]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:06:14,378]	[8596]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.49
+[2023-07-05 22:06:14,378]	[8596]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.49
+[2023-07-05 22:06:14,937]	[8596]	[port.py]	[line: 129]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x00000258CA52F550>
+[2023-07-05 22:06:14,937]	[8596]	[port.py]	[line: 130]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.49 SUCCESS
+[2023-07-05 22:06:14,937]	[8596]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:06:14,937]	[8596]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.51
+[2023-07-05 22:06:14,938]	[8596]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.51
+[2023-07-05 22:06:15,502]	[8596]	[port.py]	[line: 129]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x00000258CA52BE50>
+[2023-07-05 22:06:15,502]	[8596]	[port.py]	[line: 130]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.51 SUCCESS
+[2023-07-05 22:06:15,502]	[8596]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:06:15,502]	[8596]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.61
+[2023-07-05 22:06:15,502]	[8596]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.61
+[2023-07-05 22:06:16,022]	[8596]	[port.py]	[line: 129]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x00000258CA52F550>
+[2023-07-05 22:06:16,022]	[8596]	[port.py]	[line: 130]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.61 SUCCESS
+[2023-07-05 22:06:16,022]	[8596]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:06:16,022]	[8596]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.62
+[2023-07-05 22:06:16,022]	[8596]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.62
+[2023-07-05 22:06:16,618]	[8596]	[port.py]	[line: 129]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x00000258CA52BE50>
+[2023-07-05 22:06:16,619]	[8596]	[port.py]	[line: 130]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.62 SUCCESS
+[2023-07-05 22:06:16,619]	[8596]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:06:16,619]	[8596]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.68
+[2023-07-05 22:06:16,619]	[8596]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.68
+[2023-07-05 22:09:23,322]	[30120]	[main.py]	[line: 22]	[INFO]	#Program Start
+[2023-07-05 22:09:23,322]	[30120]	[main.py]	[line: 30]	[DEBUG]	#Database: Sqlite
+[2023-07-05 22:09:23,329]	[30120]	[sqlite.py]	[line: 15]	[INFO]	#Connect Sqlite Database Succeed.
+[2023-07-05 22:09:23,329]	[30120]	[sqlite.py]	[line: 16]	[INFO]	#Building Sqlite Database...
+[2023-07-05 22:09:23,329]	[30120]	[sqlite.py]	[line: 18]	[INFO]	#Building Sqlite Database Succeed.
+[2023-07-05 22:09:23,329]	[30120]	[sqlite.py]	[line: 50]	[DEBUG]	#DB: add_scan 192.168.239.0/24
+[2023-07-05 22:09:23,329]	[30120]	[sqlite.py]	[line: 57]	[DEBUG]	#DB: add_scan 192.168.239.0/24 exits
+[2023-07-05 22:09:23,330]	[30120]	[main.py]	[line: 50]	[DEBUG]	#PORT Mode
+[2023-07-05 22:09:23,404]	[30120]	[port.py]	[line: 20]	[DEBUG]	#PORT: nmap version 7.94
+[2023-07-05 22:09:23,404]	[30120]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap
+[2023-07-05 22:09:23,405]	[30120]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap 192.168.239.76
+[2023-07-05 22:09:23,405]	[30120]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap 192.168.239.76
+[2023-07-05 22:09:36,998]	[30120]	[port.py]	[line: 128]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x000001E84758BE80>
+[2023-07-05 22:09:36,998]	[30120]	[port.py]	[line: 129]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.76 SUCCESS
+[2023-07-05 22:09:36,998]	[30120]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:09:36,998]	[30120]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.76
+[2023-07-05 22:09:36,998]	[30120]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.76
+[2023-07-05 22:09:50,584]	[30120]	[port.py]	[line: 128]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x000001E84758F520>
+[2023-07-05 22:09:50,584]	[30120]	[port.py]	[line: 129]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.76 SUCCESS
+[2023-07-05 22:09:50,584]	[30120]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:09:50,584]	[30120]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.77
+[2023-07-05 22:09:50,584]	[30120]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.77
+[2023-07-05 22:10:04,251]	[30120]	[port.py]	[line: 128]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x000001E84758BE80>
+[2023-07-05 22:10:04,251]	[30120]	[port.py]	[line: 129]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.77 SUCCESS
+[2023-07-05 22:10:04,251]	[30120]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:10:04,251]	[30120]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.78
+[2023-07-05 22:10:04,251]	[30120]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.78
+[2023-07-05 22:10:19,675]	[30120]	[port.py]	[line: 128]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x000001E84758F520>
+[2023-07-05 22:10:19,675]	[30120]	[port.py]	[line: 129]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.78 SUCCESS
+[2023-07-05 22:10:19,675]	[30120]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:10:19,675]	[30120]	[port.py]	[line: 131]	[DEBUG]	#PORT: sleep
+[2023-07-05 22:11:19,683]	[30120]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:11:19,683]	[30120]	[port.py]	[line: 131]	[DEBUG]	#PORT: sleep
+[2023-07-05 22:12:19,697]	[30120]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:12:19,697]	[30120]	[port.py]	[line: 131]	[DEBUG]	#PORT: sleep
+[2023-07-05 22:19:09,766]	[22944]	[main.py]	[line: 22]	[INFO]	#Program Start
+[2023-07-05 22:19:09,766]	[22944]	[main.py]	[line: 30]	[DEBUG]	#Database: Sqlite
+[2023-07-05 22:19:09,774]	[22944]	[sqlite.py]	[line: 8]	[INFO]	#Sqlite Database Not Exist...
+[2023-07-05 22:19:09,775]	[22944]	[sqlite.py]	[line: 10]	[INFO]	#Building Sqlite Database...
+[2023-07-05 22:19:09,827]	[22944]	[sqlite.py]	[line: 12]	[INFO]	#Building Sqlite Database Succeed.
+[2023-07-05 22:19:09,827]	[22944]	[sqlite.py]	[line: 50]	[DEBUG]	#DB: add_scan 192.168.239.0/24
+[2023-07-05 22:19:09,832]	[22944]	[main.py]	[line: 42]	[DEBUG]	#SCAN Mode
+[2023-07-05 22:19:09,937]	[22944]	[scan.py]	[line: 20]	[DEBUG]	#SCAN: nmap version 7.94
+[2023-07-05 22:19:09,938]	[22944]	[sqlite.py]	[line: 82]	[DEBUG]	#DB: get_ip_no_scan scan-nmap
+[2023-07-05 22:19:09,938]	[22944]	[scan.py]	[line: 43]	[INFO]	#SCAN-CHECK scan-nmap 192.168.239.0/24
+[2023-07-05 22:19:09,938]	[22944]	[sqlite.py]	[line: 94]	[DEBUG]	#DB: update_ip_scan_timestamp scan-nmap 192.168.239.0/24
+[2023-07-05 22:23:18,247]	[22944]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.1
+[2023-07-05 22:23:18,250]	[22944]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.11
+[2023-07-05 22:23:18,253]	[22944]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.111
+[2023-07-05 22:23:18,256]	[22944]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.112
+[2023-07-05 22:23:18,259]	[22944]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.113
+[2023-07-05 22:23:18,262]	[22944]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.12
+[2023-07-05 22:23:18,265]	[22944]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.140
+[2023-07-05 22:23:18,268]	[22944]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.150
+[2023-07-05 22:23:18,273]	[22944]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.165
+[2023-07-05 22:23:18,281]	[22944]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.179
+[2023-07-05 22:23:18,289]	[22944]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.187
+[2023-07-05 22:23:18,297]	[22944]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.2
+[2023-07-05 22:23:18,307]	[22944]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.237
+[2023-07-05 22:23:18,316]	[22944]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.238
+[2023-07-05 22:23:18,319]	[22944]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.240
+[2023-07-05 22:23:18,324]	[22944]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.250
+[2023-07-05 22:23:18,328]	[22944]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.251
+[2023-07-05 22:23:18,333]	[22944]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.254
+[2023-07-05 22:23:18,338]	[22944]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.3
+[2023-07-05 22:23:18,343]	[22944]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.33
+[2023-07-05 22:23:18,349]	[22944]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.40
+[2023-07-05 22:23:18,359]	[22944]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.41
+[2023-07-05 22:23:18,367]	[22944]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.42
+[2023-07-05 22:23:18,374]	[22944]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.49
+[2023-07-05 22:23:18,379]	[22944]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.51
+[2023-07-05 22:23:18,384]	[22944]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.61
+[2023-07-05 22:23:18,389]	[22944]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.62
+[2023-07-05 22:23:18,393]	[22944]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.68
+[2023-07-05 22:23:18,398]	[22944]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.76
+[2023-07-05 22:23:18,402]	[22944]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.77
+[2023-07-05 22:23:18,406]	[22944]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.78
+[2023-07-05 22:23:18,414]	[22944]	[scan.py]	[line: 48]	[DEBUG]	#['192.168.239.1', '192.168.239.11', '192.168.239.111', '192.168.239.112', '192.168.239.113', '192.168.239.12', '192.168.239.140', '192.168.239.150', '192.168.239.165', '192.168.239.179', '192.168.239.187', '192.168.239.2', '192.168.239.237', '192.168.239.238', '192.168.239.240', '192.168.239.250', '192.168.239.251', '192.168.239.254', '192.168.239.3', '192.168.239.33', '192.168.239.40', '192.168.239.41', '192.168.239.42', '192.168.239.49', '192.168.239.51', '192.168.239.61', '192.168.239.62', '192.168.239.68', '192.168.239.76', '192.168.239.77', '192.168.239.78']
+[2023-07-05 22:23:18,414]	[22944]	[scan.py]	[line: 49]	[INFO]	#SCNA-CHECK scan-nmap 192.168.239.0/24 SUCCESS
+[2023-07-05 22:23:18,414]	[22944]	[sqlite.py]	[line: 82]	[DEBUG]	#DB: get_ip_no_scan scan-nmap
+[2023-07-05 22:23:18,414]	[22944]	[scan.py]	[line: 51]	[DEBUG]	#SCAN: sleep
+[2023-07-05 22:26:24,902]	[13948]	[main.py]	[line: 22]	[INFO]	#Program Start
+[2023-07-05 22:26:24,902]	[13948]	[main.py]	[line: 30]	[DEBUG]	#Database: Sqlite
+[2023-07-05 22:26:24,911]	[13948]	[sqlite.py]	[line: 15]	[INFO]	#Connect Sqlite Database Succeed.
+[2023-07-05 22:26:24,911]	[13948]	[sqlite.py]	[line: 16]	[INFO]	#Building Sqlite Database...
+[2023-07-05 22:26:24,912]	[13948]	[sqlite.py]	[line: 18]	[INFO]	#Building Sqlite Database Succeed.
+[2023-07-05 22:26:24,912]	[13948]	[sqlite.py]	[line: 50]	[DEBUG]	#DB: add_scan 192.168.239.0/24
+[2023-07-05 22:26:24,912]	[13948]	[sqlite.py]	[line: 57]	[DEBUG]	#DB: add_scan 192.168.239.0/24 exits
+[2023-07-05 22:26:24,912]	[13948]	[main.py]	[line: 50]	[DEBUG]	#PORT Mode
+[2023-07-05 22:26:24,975]	[13948]	[port.py]	[line: 24]	[WARNING]	#PORT: nmap not found
+[2023-07-05 22:26:24,975]	[13948]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap
+[2023-07-05 22:26:24,975]	[13948]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap 192.168.239.1
+[2023-07-05 22:26:24,975]	[13948]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap 192.168.239.1
+[2023-07-05 22:27:12,347]	[44384]	[main.py]	[line: 22]	[INFO]	#Program Start
+[2023-07-05 22:27:12,347]	[44384]	[main.py]	[line: 30]	[DEBUG]	#Database: Sqlite
+[2023-07-05 22:27:12,357]	[44384]	[sqlite.py]	[line: 15]	[INFO]	#Connect Sqlite Database Succeed.
+[2023-07-05 22:27:12,357]	[44384]	[sqlite.py]	[line: 16]	[INFO]	#Building Sqlite Database...
+[2023-07-05 22:27:12,358]	[44384]	[sqlite.py]	[line: 18]	[INFO]	#Building Sqlite Database Succeed.
+[2023-07-05 22:27:12,359]	[44384]	[sqlite.py]	[line: 50]	[DEBUG]	#DB: add_scan 192.168.239.0/24
+[2023-07-05 22:27:12,359]	[44384]	[sqlite.py]	[line: 57]	[DEBUG]	#DB: add_scan 192.168.239.0/24 exits
+[2023-07-05 22:27:12,359]	[44384]	[main.py]	[line: 50]	[DEBUG]	#PORT Mode
+[2023-07-05 22:27:12,434]	[44384]	[port.py]	[line: 24]	[WARNING]	#PORT: nmap not found
+[2023-07-05 22:27:12,434]	[44384]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap
+[2023-07-05 22:27:12,435]	[44384]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap 192.168.239.11
+[2023-07-05 22:27:12,435]	[44384]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap 192.168.239.11
+[2023-07-05 22:27:17,755]	[28608]	[main.py]	[line: 22]	[INFO]	#Program Start
+[2023-07-05 22:27:17,755]	[28608]	[main.py]	[line: 30]	[DEBUG]	#Database: Sqlite
+[2023-07-05 22:27:17,761]	[28608]	[sqlite.py]	[line: 15]	[INFO]	#Connect Sqlite Database Succeed.
+[2023-07-05 22:27:17,762]	[28608]	[sqlite.py]	[line: 16]	[INFO]	#Building Sqlite Database...
+[2023-07-05 22:27:17,762]	[28608]	[sqlite.py]	[line: 18]	[INFO]	#Building Sqlite Database Succeed.
+[2023-07-05 22:27:17,762]	[28608]	[sqlite.py]	[line: 50]	[DEBUG]	#DB: add_scan 192.168.239.0/24
+[2023-07-05 22:27:17,762]	[28608]	[sqlite.py]	[line: 57]	[DEBUG]	#DB: add_scan 192.168.239.0/24 exits
+[2023-07-05 22:27:17,762]	[28608]	[main.py]	[line: 50]	[DEBUG]	#PORT Mode
+[2023-07-05 22:27:17,829]	[28608]	[port.py]	[line: 24]	[WARNING]	#PORT: nmap not found
+[2023-07-05 22:27:17,829]	[28608]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap
+[2023-07-05 22:27:17,830]	[28608]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap 192.168.239.111
+[2023-07-05 22:27:17,830]	[28608]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap 192.168.239.111
+[2023-07-05 22:28:58,845]	[13960]	[main.py]	[line: 22]	[INFO]	#Program Start
+[2023-07-05 22:28:58,845]	[13960]	[main.py]	[line: 30]	[DEBUG]	#Database: Sqlite
+[2023-07-05 22:28:58,855]	[13960]	[sqlite.py]	[line: 15]	[INFO]	#Connect Sqlite Database Succeed.
+[2023-07-05 22:28:58,855]	[13960]	[sqlite.py]	[line: 16]	[INFO]	#Building Sqlite Database...
+[2023-07-05 22:28:58,855]	[13960]	[sqlite.py]	[line: 18]	[INFO]	#Building Sqlite Database Succeed.
+[2023-07-05 22:28:58,855]	[13960]	[sqlite.py]	[line: 50]	[DEBUG]	#DB: add_scan 192.168.239.0/24
+[2023-07-05 22:28:58,856]	[13960]	[sqlite.py]	[line: 57]	[DEBUG]	#DB: add_scan 192.168.239.0/24 exits
+[2023-07-05 22:28:58,856]	[13960]	[main.py]	[line: 50]	[DEBUG]	#PORT Mode
+[2023-07-05 22:28:58,916]	[13960]	[port.py]	[line: 24]	[WARNING]	#PORT: nmap not found
+[2023-07-05 22:28:58,916]	[13960]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap
+[2023-07-05 22:28:58,916]	[13960]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap 192.168.239.112
+[2023-07-05 22:28:58,916]	[13960]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap 192.168.239.112
+[2023-07-05 22:35:15,269]	[24404]	[main.py]	[line: 22]	[INFO]	#Program Start
+[2023-07-05 22:35:15,269]	[24404]	[main.py]	[line: 30]	[DEBUG]	#Database: Sqlite
+[2023-07-05 22:35:15,318]	[24404]	[sqlite.py]	[line: 15]	[INFO]	#Connect Sqlite Database Succeed.
+[2023-07-05 22:35:15,318]	[24404]	[sqlite.py]	[line: 16]	[INFO]	#Building Sqlite Database...
+[2023-07-05 22:35:15,319]	[24404]	[sqlite.py]	[line: 18]	[INFO]	#Building Sqlite Database Succeed.
+[2023-07-05 22:35:15,319]	[24404]	[sqlite.py]	[line: 50]	[DEBUG]	#DB: add_scan 192.168.239.0/24
+[2023-07-05 22:35:15,319]	[24404]	[sqlite.py]	[line: 57]	[DEBUG]	#DB: add_scan 192.168.239.0/24 exits
+[2023-07-05 22:35:15,319]	[24404]	[main.py]	[line: 50]	[DEBUG]	#PORT Mode
+[2023-07-05 22:35:15,384]	[24404]	[port.py]	[line: 20]	[DEBUG]	#PORT: nmap version 7.94
+[2023-07-05 22:35:15,385]	[24404]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap
+[2023-07-05 22:35:15,385]	[24404]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap 192.168.239.113
+[2023-07-05 22:35:15,385]	[24404]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap 192.168.239.113
+[2023-07-05 22:35:15,718]	[24404]	[port.py]	[line: 129]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x000001CD492E2D70>
+[2023-07-05 22:35:15,718]	[24404]	[port.py]	[line: 130]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.113 SUCCESS
+[2023-07-05 22:35:15,718]	[24404]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:35:15,718]	[24404]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.1
+[2023-07-05 22:35:15,719]	[24404]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.1
+[2023-07-05 22:35:16,013]	[24404]	[port.py]	[line: 129]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x000001CD492E0400>
+[2023-07-05 22:35:16,013]	[24404]	[port.py]	[line: 130]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.1 SUCCESS
+[2023-07-05 22:35:16,013]	[24404]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:35:16,013]	[24404]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.11
+[2023-07-05 22:35:16,013]	[24404]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.11
+[2023-07-05 22:35:16,314]	[24404]	[port.py]	[line: 129]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x000001CD492E2D70>
+[2023-07-05 22:35:16,314]	[24404]	[port.py]	[line: 130]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.11 SUCCESS
+[2023-07-05 22:35:16,314]	[24404]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:35:16,315]	[24404]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.111
+[2023-07-05 22:35:16,315]	[24404]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.111
+[2023-07-05 22:35:17,153]	[24404]	[port.py]	[line: 129]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x000001CD492E0400>
+[2023-07-05 22:35:17,153]	[24404]	[port.py]	[line: 130]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.111 SUCCESS
+[2023-07-05 22:35:17,153]	[24404]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:35:17,153]	[24404]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.112
+[2023-07-05 22:35:17,153]	[24404]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.112
+[2023-07-05 22:35:17,436]	[24404]	[port.py]	[line: 129]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x000001CD492E2D70>
+[2023-07-05 22:35:17,436]	[24404]	[port.py]	[line: 130]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.112 SUCCESS
+[2023-07-05 22:35:17,436]	[24404]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:35:17,436]	[24404]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.113
+[2023-07-05 22:35:17,437]	[24404]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.113
+[2023-07-05 22:35:17,731]	[24404]	[port.py]	[line: 129]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x000001CD492E0400>
+[2023-07-05 22:35:17,731]	[24404]	[port.py]	[line: 130]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.113 SUCCESS
+[2023-07-05 22:35:17,731]	[24404]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:35:17,731]	[24404]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.12
+[2023-07-05 22:35:17,731]	[24404]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.12
+[2023-07-05 22:35:18,009]	[24404]	[port.py]	[line: 129]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x000001CD492E2D70>
+[2023-07-05 22:35:18,009]	[24404]	[port.py]	[line: 130]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.12 SUCCESS
+[2023-07-05 22:35:18,009]	[24404]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:35:18,009]	[24404]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.140
+[2023-07-05 22:35:18,009]	[24404]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.140
+[2023-07-05 22:35:18,282]	[24404]	[port.py]	[line: 129]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x000001CD492E0400>
+[2023-07-05 22:35:18,283]	[24404]	[port.py]	[line: 130]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.140 SUCCESS
+[2023-07-05 22:35:18,283]	[24404]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:35:18,283]	[24404]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.150
+[2023-07-05 22:35:18,283]	[24404]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.150
+[2023-07-05 22:35:18,585]	[24404]	[port.py]	[line: 129]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x000001CD492E2D70>
+[2023-07-05 22:35:18,585]	[24404]	[port.py]	[line: 130]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.150 SUCCESS
+[2023-07-05 22:35:18,585]	[24404]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:35:18,586]	[24404]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.165
+[2023-07-05 22:35:18,586]	[24404]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.165
+[2023-07-05 22:35:18,864]	[24404]	[port.py]	[line: 129]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x000001CD492E0400>
+[2023-07-05 22:35:18,864]	[24404]	[port.py]	[line: 130]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.165 SUCCESS
+[2023-07-05 22:35:18,864]	[24404]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:35:18,864]	[24404]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.179
+[2023-07-05 22:35:18,864]	[24404]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.179
+[2023-07-05 22:35:19,161]	[24404]	[port.py]	[line: 129]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x000001CD492E2D70>
+[2023-07-05 22:35:19,161]	[24404]	[port.py]	[line: 130]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.179 SUCCESS
+[2023-07-05 22:35:19,161]	[24404]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:35:19,161]	[24404]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.187
+[2023-07-05 22:35:19,161]	[24404]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.187
+[2023-07-05 22:35:19,464]	[24404]	[port.py]	[line: 129]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x000001CD492E0400>
+[2023-07-05 22:35:19,464]	[24404]	[port.py]	[line: 130]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.187 SUCCESS
+[2023-07-05 22:35:19,464]	[24404]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:35:19,464]	[24404]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.2
+[2023-07-05 22:35:19,464]	[24404]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.2
+[2023-07-05 22:35:19,760]	[24404]	[port.py]	[line: 129]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x000001CD492E2D70>
+[2023-07-05 22:35:19,761]	[24404]	[port.py]	[line: 130]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.2 SUCCESS
+[2023-07-05 22:35:19,761]	[24404]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:35:19,761]	[24404]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.237
+[2023-07-05 22:35:19,761]	[24404]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.237
+[2023-07-05 22:35:20,027]	[24404]	[port.py]	[line: 129]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x000001CD492E0400>
+[2023-07-05 22:35:20,027]	[24404]	[port.py]	[line: 130]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.237 SUCCESS
+[2023-07-05 22:35:20,027]	[24404]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:35:20,027]	[24404]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.238
+[2023-07-05 22:35:20,027]	[24404]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.238
+[2023-07-05 22:35:20,295]	[24404]	[port.py]	[line: 129]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x000001CD492E2D70>
+[2023-07-05 22:35:20,295]	[24404]	[port.py]	[line: 130]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.238 SUCCESS
+[2023-07-05 22:35:20,295]	[24404]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:35:20,295]	[24404]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.240
+[2023-07-05 22:35:20,295]	[24404]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.240
+[2023-07-05 22:35:20,565]	[24404]	[port.py]	[line: 129]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x000001CD492E0400>
+[2023-07-05 22:35:20,565]	[24404]	[port.py]	[line: 130]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.240 SUCCESS
+[2023-07-05 22:35:20,565]	[24404]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:35:20,565]	[24404]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.250
+[2023-07-05 22:35:20,565]	[24404]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.250
+[2023-07-05 22:35:20,847]	[24404]	[port.py]	[line: 129]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x000001CD492E2D70>
+[2023-07-05 22:35:20,847]	[24404]	[port.py]	[line: 130]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.250 SUCCESS
+[2023-07-05 22:35:20,847]	[24404]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:35:20,847]	[24404]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.251
+[2023-07-05 22:35:20,847]	[24404]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.251
+[2023-07-05 22:35:21,117]	[24404]	[port.py]	[line: 129]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x000001CD492E0400>
+[2023-07-05 22:35:21,117]	[24404]	[port.py]	[line: 130]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.251 SUCCESS
+[2023-07-05 22:35:21,117]	[24404]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:35:21,117]	[24404]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.254
+[2023-07-05 22:35:21,117]	[24404]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.254
+[2023-07-05 22:35:21,381]	[24404]	[port.py]	[line: 129]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x000001CD492E2D70>
+[2023-07-05 22:35:21,381]	[24404]	[port.py]	[line: 130]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.254 SUCCESS
+[2023-07-05 22:35:21,381]	[24404]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:35:21,381]	[24404]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.3
+[2023-07-05 22:35:21,381]	[24404]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.3
+[2023-07-05 22:35:21,680]	[24404]	[port.py]	[line: 129]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x000001CD492E0400>
+[2023-07-05 22:35:21,680]	[24404]	[port.py]	[line: 130]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.3 SUCCESS
+[2023-07-05 22:35:21,680]	[24404]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:35:21,680]	[24404]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.33
+[2023-07-05 22:35:21,680]	[24404]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.33
+[2023-07-05 22:35:21,952]	[24404]	[port.py]	[line: 129]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x000001CD492E2D70>
+[2023-07-05 22:35:21,952]	[24404]	[port.py]	[line: 130]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.33 SUCCESS
+[2023-07-05 22:35:21,952]	[24404]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:35:21,952]	[24404]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.40
+[2023-07-05 22:35:21,952]	[24404]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.40
+[2023-07-05 22:35:22,216]	[24404]	[port.py]	[line: 129]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x000001CD492E0400>
+[2023-07-05 22:35:22,216]	[24404]	[port.py]	[line: 130]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.40 SUCCESS
+[2023-07-05 22:35:22,216]	[24404]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:35:22,216]	[24404]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.41
+[2023-07-05 22:35:22,217]	[24404]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.41
+[2023-07-05 22:35:22,495]	[24404]	[port.py]	[line: 129]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x000001CD492E2D70>
+[2023-07-05 22:35:22,495]	[24404]	[port.py]	[line: 130]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.41 SUCCESS
+[2023-07-05 22:35:22,495]	[24404]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:35:22,496]	[24404]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.42
+[2023-07-05 22:35:22,496]	[24404]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.42
+[2023-07-05 22:35:22,783]	[24404]	[port.py]	[line: 129]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x000001CD492E0400>
+[2023-07-05 22:35:22,783]	[24404]	[port.py]	[line: 130]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.42 SUCCESS
+[2023-07-05 22:35:22,783]	[24404]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:35:22,783]	[24404]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.49
+[2023-07-05 22:35:22,783]	[24404]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.49
+[2023-07-05 22:35:23,068]	[24404]	[port.py]	[line: 129]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x000001CD492E2D70>
+[2023-07-05 22:35:23,068]	[24404]	[port.py]	[line: 130]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.49 SUCCESS
+[2023-07-05 22:35:23,068]	[24404]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:35:23,068]	[24404]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.51
+[2023-07-05 22:35:23,068]	[24404]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.51
+[2023-07-05 22:35:23,366]	[24404]	[port.py]	[line: 129]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x000001CD492E0400>
+[2023-07-05 22:35:23,366]	[24404]	[port.py]	[line: 130]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.51 SUCCESS
+[2023-07-05 22:35:23,366]	[24404]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:35:23,366]	[24404]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.61
+[2023-07-05 22:35:23,366]	[24404]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.61
+[2023-07-05 22:35:23,657]	[24404]	[port.py]	[line: 129]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x000001CD492E2D70>
+[2023-07-05 22:35:23,657]	[24404]	[port.py]	[line: 130]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.61 SUCCESS
+[2023-07-05 22:35:23,657]	[24404]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:35:23,657]	[24404]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.62
+[2023-07-05 22:35:23,657]	[24404]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.62
+[2023-07-05 22:35:23,956]	[24404]	[port.py]	[line: 129]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x000001CD492E0400>
+[2023-07-05 22:35:23,956]	[24404]	[port.py]	[line: 130]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.62 SUCCESS
+[2023-07-05 22:35:23,956]	[24404]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:35:23,956]	[24404]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.68
+[2023-07-05 22:35:23,956]	[24404]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.68
+[2023-07-05 22:35:24,261]	[24404]	[port.py]	[line: 129]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x000001CD492E2D70>
+[2023-07-05 22:35:24,261]	[24404]	[port.py]	[line: 130]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.68 SUCCESS
+[2023-07-05 22:35:24,261]	[24404]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:35:24,261]	[24404]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.76
+[2023-07-05 22:35:24,261]	[24404]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.76
+[2023-07-05 22:35:24,571]	[24404]	[port.py]	[line: 129]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x000001CD492E0400>
+[2023-07-05 22:35:24,571]	[24404]	[port.py]	[line: 130]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.76 SUCCESS
+[2023-07-05 22:35:24,572]	[24404]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:35:24,572]	[24404]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.77
+[2023-07-05 22:35:24,572]	[24404]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.77
+[2023-07-05 22:35:25,068]	[24404]	[port.py]	[line: 129]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x000001CD492E2D70>
+[2023-07-05 22:35:25,068]	[24404]	[port.py]	[line: 130]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.77 SUCCESS
+[2023-07-05 22:35:25,068]	[24404]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:35:25,068]	[24404]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.78
+[2023-07-05 22:35:25,068]	[24404]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.78
+[2023-07-05 22:35:25,433]	[24404]	[port.py]	[line: 129]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x000001CD492E0400>
+[2023-07-05 22:35:25,433]	[24404]	[port.py]	[line: 130]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.78 SUCCESS
+[2023-07-05 22:35:25,434]	[24404]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:35:25,434]	[24404]	[port.py]	[line: 132]	[DEBUG]	#PORT: sleep
+[2023-07-05 22:39:12,625]	[4252]	[main.py]	[line: 22]	[INFO]	#Program Start
+[2023-07-05 22:39:12,625]	[4252]	[main.py]	[line: 30]	[DEBUG]	#Database: Sqlite
+[2023-07-05 22:39:12,630]	[4252]	[sqlite.py]	[line: 8]	[INFO]	#Sqlite Database Not Exist...
+[2023-07-05 22:39:12,631]	[4252]	[sqlite.py]	[line: 10]	[INFO]	#Building Sqlite Database...
+[2023-07-05 22:39:12,671]	[4252]	[sqlite.py]	[line: 12]	[INFO]	#Building Sqlite Database Succeed.
+[2023-07-05 22:39:12,672]	[4252]	[sqlite.py]	[line: 50]	[DEBUG]	#DB: add_scan 192.168.239.0/24
+[2023-07-05 22:39:12,674]	[4252]	[main.py]	[line: 42]	[DEBUG]	#SCAN Mode
+[2023-07-05 22:39:12,726]	[4252]	[scan.py]	[line: 20]	[DEBUG]	#SCAN: nmap version 7.94
+[2023-07-05 22:39:12,726]	[4252]	[sqlite.py]	[line: 82]	[DEBUG]	#DB: get_ip_no_scan scan-nmap
+[2023-07-05 22:39:12,726]	[4252]	[scan.py]	[line: 43]	[INFO]	#SCAN-CHECK scan-nmap 192.168.239.0/24
+[2023-07-05 22:39:12,726]	[4252]	[sqlite.py]	[line: 94]	[DEBUG]	#DB: update_ip_scan_timestamp scan-nmap 192.168.239.0/24
+[2023-07-05 22:41:57,771]	[4252]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.1
+[2023-07-05 22:41:57,775]	[4252]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.11
+[2023-07-05 22:41:57,778]	[4252]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.111
+[2023-07-05 22:41:57,781]	[4252]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.112
+[2023-07-05 22:41:57,784]	[4252]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.113
+[2023-07-05 22:41:57,787]	[4252]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.12
+[2023-07-05 22:41:57,790]	[4252]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.140
+[2023-07-05 22:41:57,793]	[4252]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.165
+[2023-07-05 22:41:57,796]	[4252]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.187
+[2023-07-05 22:41:57,798]	[4252]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.2
+[2023-07-05 22:41:57,801]	[4252]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.238
+[2023-07-05 22:41:57,804]	[4252]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.250
+[2023-07-05 22:41:57,807]	[4252]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.251
+[2023-07-05 22:41:57,809]	[4252]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.3
+[2023-07-05 22:41:57,812]	[4252]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.33
+[2023-07-05 22:41:57,815]	[4252]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.40
+[2023-07-05 22:41:57,818]	[4252]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.41
+[2023-07-05 22:41:57,821]	[4252]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.42
+[2023-07-05 22:41:57,824]	[4252]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.49
+[2023-07-05 22:41:57,826]	[4252]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.62
+[2023-07-05 22:41:57,829]	[4252]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.68
+[2023-07-05 22:41:57,832]	[4252]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.76
+[2023-07-05 22:41:57,835]	[4252]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.77
+[2023-07-05 22:41:57,838]	[4252]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.78
+[2023-07-05 22:41:57,840]	[4252]	[scan.py]	[line: 48]	[DEBUG]	#['192.168.239.1', '192.168.239.11', '192.168.239.111', '192.168.239.112', '192.168.239.113', '192.168.239.12', '192.168.239.140', '192.168.239.165', '192.168.239.187', '192.168.239.2', '192.168.239.238', '192.168.239.250', '192.168.239.251', '192.168.239.3', '192.168.239.33', '192.168.239.40', '192.168.239.41', '192.168.239.42', '192.168.239.49', '192.168.239.62', '192.168.239.68', '192.168.239.76', '192.168.239.77', '192.168.239.78']
+[2023-07-05 22:41:57,840]	[4252]	[scan.py]	[line: 49]	[INFO]	#SCNA-CHECK scan-nmap 192.168.239.0/24 SUCCESS
+[2023-07-05 22:41:57,840]	[4252]	[sqlite.py]	[line: 82]	[DEBUG]	#DB: get_ip_no_scan scan-nmap
+[2023-07-05 22:41:57,841]	[4252]	[scan.py]	[line: 51]	[DEBUG]	#SCAN: sleep
+[2023-07-05 22:42:40,970]	[22540]	[main.py]	[line: 22]	[INFO]	#Program Start
+[2023-07-05 22:42:40,970]	[22540]	[main.py]	[line: 30]	[DEBUG]	#Database: Sqlite
+[2023-07-05 22:42:41,011]	[22540]	[sqlite.py]	[line: 15]	[INFO]	#Connect Sqlite Database Succeed.
+[2023-07-05 22:42:41,011]	[22540]	[sqlite.py]	[line: 16]	[INFO]	#Building Sqlite Database...
+[2023-07-05 22:42:41,012]	[22540]	[sqlite.py]	[line: 18]	[INFO]	#Building Sqlite Database Succeed.
+[2023-07-05 22:42:41,012]	[22540]	[sqlite.py]	[line: 50]	[DEBUG]	#DB: add_scan 192.168.239.0/24
+[2023-07-05 22:42:41,012]	[22540]	[sqlite.py]	[line: 57]	[DEBUG]	#DB: add_scan 192.168.239.0/24 exits
+[2023-07-05 22:42:41,012]	[22540]	[main.py]	[line: 50]	[DEBUG]	#PORT Mode
+[2023-07-05 22:42:41,070]	[22540]	[port.py]	[line: 20]	[DEBUG]	#PORT: nmap version 7.94
+[2023-07-05 22:42:41,071]	[22540]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap
+[2023-07-05 22:42:41,071]	[22540]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap 192.168.239.1
+[2023-07-05 22:42:41,071]	[22540]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap 192.168.239.1
+[2023-07-05 22:42:43,707]	[22540]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.1 22
+[2023-07-05 22:43:17,954]	[14472]	[main.py]	[line: 22]	[INFO]	#Program Start
+[2023-07-05 22:43:17,954]	[14472]	[main.py]	[line: 30]	[DEBUG]	#Database: Sqlite
+[2023-07-05 22:43:17,960]	[14472]	[sqlite.py]	[line: 15]	[INFO]	#Connect Sqlite Database Succeed.
+[2023-07-05 22:43:17,961]	[14472]	[sqlite.py]	[line: 16]	[INFO]	#Building Sqlite Database...
+[2023-07-05 22:43:17,961]	[14472]	[sqlite.py]	[line: 18]	[INFO]	#Building Sqlite Database Succeed.
+[2023-07-05 22:43:17,961]	[14472]	[sqlite.py]	[line: 50]	[DEBUG]	#DB: add_scan 192.168.239.0/24
+[2023-07-05 22:43:17,961]	[14472]	[sqlite.py]	[line: 57]	[DEBUG]	#DB: add_scan 192.168.239.0/24 exits
+[2023-07-05 22:43:17,961]	[14472]	[main.py]	[line: 50]	[DEBUG]	#PORT Mode
+[2023-07-05 22:43:18,011]	[14472]	[port.py]	[line: 20]	[DEBUG]	#PORT: nmap version 7.94
+[2023-07-05 22:43:18,011]	[14472]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap
+[2023-07-05 22:43:18,011]	[14472]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap 192.168.239.11
+[2023-07-05 22:43:18,011]	[14472]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap 192.168.239.11
+[2023-07-05 22:43:23,927]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.11 22
+[2023-07-05 22:43:23,931]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.11 25
+[2023-07-05 22:43:23,934]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.11 110
+[2023-07-05 22:43:23,937]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.11 143
+[2023-07-05 22:43:23,940]	[14472]	[port.py]	[line: 129]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x0000021FEB0F0B80>
+[2023-07-05 22:43:23,940]	[14472]	[port.py]	[line: 130]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.11 SUCCESS
+[2023-07-05 22:43:23,940]	[14472]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:43:23,940]	[14472]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.1
+[2023-07-05 22:43:23,940]	[14472]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.1
+[2023-07-05 22:43:26,239]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.1 22
+[2023-07-05 22:43:26,244]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.1 25
+[2023-07-05 22:43:26,246]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.1 80
+[2023-07-05 22:43:26,249]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.1 110
+[2023-07-05 22:43:26,252]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.1 143
+[2023-07-05 22:43:26,255]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.1 443
+[2023-07-05 22:43:26,258]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.1 8000
+[2023-07-05 22:43:26,261]	[14472]	[port.py]	[line: 129]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x0000021FEB0F0970>
+[2023-07-05 22:43:26,261]	[14472]	[port.py]	[line: 130]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.1 SUCCESS
+[2023-07-05 22:43:26,261]	[14472]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:43:26,261]	[14472]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.11
+[2023-07-05 22:43:26,261]	[14472]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.11
+[2023-07-05 22:43:32,189]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.11 22
+[2023-07-05 22:43:32,190]	[14472]	[sqlite.py]	[line: 78]	[DEBUG]	#DB: add_services 192.168.239.11 22 exits
+[2023-07-05 22:43:32,190]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.11 25
+[2023-07-05 22:43:32,190]	[14472]	[sqlite.py]	[line: 78]	[DEBUG]	#DB: add_services 192.168.239.11 25 exits
+[2023-07-05 22:43:32,190]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.11 110
+[2023-07-05 22:43:32,190]	[14472]	[sqlite.py]	[line: 78]	[DEBUG]	#DB: add_services 192.168.239.11 110 exits
+[2023-07-05 22:43:32,190]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.11 143
+[2023-07-05 22:43:32,190]	[14472]	[sqlite.py]	[line: 78]	[DEBUG]	#DB: add_services 192.168.239.11 143 exits
+[2023-07-05 22:43:32,190]	[14472]	[port.py]	[line: 129]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x0000021FEB0F0B80>
+[2023-07-05 22:43:32,190]	[14472]	[port.py]	[line: 130]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.11 SUCCESS
+[2023-07-05 22:43:32,190]	[14472]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:43:32,190]	[14472]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.111
+[2023-07-05 22:43:32,190]	[14472]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.111
+[2023-07-05 22:43:38,140]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.111 22
+[2023-07-05 22:43:38,144]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.111 25
+[2023-07-05 22:43:38,147]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.111 80
+[2023-07-05 22:43:38,150]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.111 110
+[2023-07-05 22:43:38,152]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.111 143
+[2023-07-05 22:43:38,155]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.111 443
+[2023-07-05 22:43:38,158]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.111 5900
+[2023-07-05 22:43:38,161]	[14472]	[port.py]	[line: 129]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x0000021FEB0F0970>
+[2023-07-05 22:43:38,161]	[14472]	[port.py]	[line: 130]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.111 SUCCESS
+[2023-07-05 22:43:38,161]	[14472]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:43:38,161]	[14472]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.112
+[2023-07-05 22:43:38,161]	[14472]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.112
+[2023-07-05 22:43:44,087]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.112 22
+[2023-07-05 22:43:44,091]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.112 25
+[2023-07-05 22:43:44,097]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.112 80
+[2023-07-05 22:43:44,101]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.112 110
+[2023-07-05 22:43:44,105]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.112 143
+[2023-07-05 22:43:44,109]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.112 443
+[2023-07-05 22:43:44,114]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.112 5900
+[2023-07-05 22:43:44,117]	[14472]	[port.py]	[line: 129]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x0000021FEB0F0B80>
+[2023-07-05 22:43:44,117]	[14472]	[port.py]	[line: 130]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.112 SUCCESS
+[2023-07-05 22:43:44,117]	[14472]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:43:44,117]	[14472]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.113
+[2023-07-05 22:43:44,117]	[14472]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.113
+[2023-07-05 22:43:53,206]	[14472]	[port.py]	[line: 129]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x0000021FEB0F0970>
+[2023-07-05 22:43:53,206]	[14472]	[port.py]	[line: 130]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.113 SUCCESS
+[2023-07-05 22:43:53,206]	[14472]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:43:53,206]	[14472]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.12
+[2023-07-05 22:43:53,206]	[14472]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.12
+[2023-07-05 22:43:59,152]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.12 22
+[2023-07-05 22:43:59,156]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.12 25
+[2023-07-05 22:43:59,159]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.12 110
+[2023-07-05 22:43:59,161]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.12 143
+[2023-07-05 22:43:59,164]	[14472]	[port.py]	[line: 129]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x0000021FEB0F0B80>
+[2023-07-05 22:43:59,164]	[14472]	[port.py]	[line: 130]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.12 SUCCESS
+[2023-07-05 22:43:59,165]	[14472]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:43:59,165]	[14472]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.140
+[2023-07-05 22:43:59,165]	[14472]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.140
+[2023-07-05 22:44:05,089]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.140 22
+[2023-07-05 22:44:05,094]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.140 25
+[2023-07-05 22:44:05,099]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.140 110
+[2023-07-05 22:44:05,104]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.140 143
+[2023-07-05 22:44:05,109]	[14472]	[port.py]	[line: 129]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x0000021FEB0F0970>
+[2023-07-05 22:44:05,109]	[14472]	[port.py]	[line: 130]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.140 SUCCESS
+[2023-07-05 22:44:05,109]	[14472]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:44:05,109]	[14472]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.165
+[2023-07-05 22:44:05,109]	[14472]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.165
+[2023-07-05 22:44:12,363]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.165 135
+[2023-07-05 22:44:12,366]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.165 139
+[2023-07-05 22:44:12,369]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.165 445
+[2023-07-05 22:44:12,372]	[14472]	[port.py]	[line: 129]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x0000021FEB0F0B80>
+[2023-07-05 22:44:12,372]	[14472]	[port.py]	[line: 130]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.165 SUCCESS
+[2023-07-05 22:44:12,372]	[14472]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:44:12,372]	[14472]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.187
+[2023-07-05 22:44:12,372]	[14472]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.187
+[2023-07-05 22:44:23,074]	[14472]	[port.py]	[line: 129]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x0000021FEB0F0970>
+[2023-07-05 22:44:23,074]	[14472]	[port.py]	[line: 130]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.187 SUCCESS
+[2023-07-05 22:44:23,074]	[14472]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:44:23,074]	[14472]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.2
+[2023-07-05 22:44:23,074]	[14472]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.2
+[2023-07-05 22:44:25,146]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.2 22
+[2023-07-05 22:44:25,150]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.2 25
+[2023-07-05 22:44:25,153]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.2 80
+[2023-07-05 22:44:25,156]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.2 110
+[2023-07-05 22:44:25,159]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.2 143
+[2023-07-05 22:44:25,162]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.2 443
+[2023-07-05 22:44:25,165]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.2 8000
+[2023-07-05 22:44:25,167]	[14472]	[port.py]	[line: 129]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x0000021FEB0F0B80>
+[2023-07-05 22:44:25,168]	[14472]	[port.py]	[line: 130]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.2 SUCCESS
+[2023-07-05 22:44:25,168]	[14472]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:44:25,168]	[14472]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.238
+[2023-07-05 22:44:25,168]	[14472]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.238
+[2023-07-05 22:44:31,085]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.238 22
+[2023-07-05 22:44:31,092]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.238 25
+[2023-07-05 22:44:31,096]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.238 110
+[2023-07-05 22:44:31,100]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.238 143
+[2023-07-05 22:44:31,106]	[14472]	[port.py]	[line: 129]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x0000021FEB0F0970>
+[2023-07-05 22:44:31,106]	[14472]	[port.py]	[line: 130]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.238 SUCCESS
+[2023-07-05 22:44:31,106]	[14472]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:44:31,106]	[14472]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.250
+[2023-07-05 22:44:31,106]	[14472]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.250
+[2023-07-05 22:44:38,235]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.250 80
+[2023-07-05 22:44:38,239]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.250 111
+[2023-07-05 22:44:38,242]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.250 135
+[2023-07-05 22:44:38,244]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.250 139
+[2023-07-05 22:44:38,247]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.250 445
+[2023-07-05 22:44:38,250]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.250 2049
+[2023-07-05 22:44:38,253]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.250 2121
+[2023-07-05 22:44:38,256]	[14472]	[port.py]	[line: 129]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x0000021FEB0F0B80>
+[2023-07-05 22:44:38,256]	[14472]	[port.py]	[line: 130]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.250 SUCCESS
+[2023-07-05 22:44:38,256]	[14472]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:44:38,256]	[14472]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.251
+[2023-07-05 22:44:38,256]	[14472]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.251
+[2023-07-05 22:44:45,837]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.251 22
+[2023-07-05 22:44:45,841]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.251 25
+[2023-07-05 22:44:45,845]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.251 80
+[2023-07-05 22:44:45,848]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.251 110
+[2023-07-05 22:44:45,851]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.251 143
+[2023-07-05 22:44:45,854]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.251 443
+[2023-07-05 22:44:45,858]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.251 8000
+[2023-07-05 22:44:45,861]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.251 8080
+[2023-07-05 22:44:45,864]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.251 8443
+[2023-07-05 22:44:45,867]	[14472]	[port.py]	[line: 129]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x0000021FEB0F0970>
+[2023-07-05 22:44:45,867]	[14472]	[port.py]	[line: 130]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.251 SUCCESS
+[2023-07-05 22:44:45,867]	[14472]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:44:45,867]	[14472]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.3
+[2023-07-05 22:44:45,867]	[14472]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.3
+[2023-07-05 22:44:53,658]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.3 22
+[2023-07-05 22:44:53,662]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.3 25
+[2023-07-05 22:44:53,665]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.3 80
+[2023-07-05 22:44:53,669]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.3 110
+[2023-07-05 22:44:53,672]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.3 143
+[2023-07-05 22:44:53,675]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.3 443
+[2023-07-05 22:44:53,678]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.3 8000
+[2023-07-05 22:44:53,681]	[14472]	[port.py]	[line: 129]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x0000021FEB0F0B80>
+[2023-07-05 22:44:53,681]	[14472]	[port.py]	[line: 130]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.3 SUCCESS
+[2023-07-05 22:44:53,681]	[14472]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:44:53,681]	[14472]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.33
+[2023-07-05 22:44:53,681]	[14472]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.33
+[2023-07-05 22:44:59,604]	[14472]	[port.py]	[line: 129]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x0000021FEB0F0970>
+[2023-07-05 22:44:59,604]	[14472]	[port.py]	[line: 130]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.33 SUCCESS
+[2023-07-05 22:44:59,604]	[14472]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:44:59,604]	[14472]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.40
+[2023-07-05 22:44:59,604]	[14472]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.40
+[2023-07-05 22:45:05,579]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.40 22
+[2023-07-05 22:45:05,582]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.40 25
+[2023-07-05 22:45:05,585]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.40 80
+[2023-07-05 22:45:05,588]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.40 110
+[2023-07-05 22:45:05,592]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.40 143
+[2023-07-05 22:45:05,595]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.40 443
+[2023-07-05 22:45:05,598]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.40 5900
+[2023-07-05 22:45:05,604]	[14472]	[port.py]	[line: 129]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x0000021FEB0F0B80>
+[2023-07-05 22:45:05,604]	[14472]	[port.py]	[line: 130]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.40 SUCCESS
+[2023-07-05 22:45:05,605]	[14472]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:45:05,605]	[14472]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.41
+[2023-07-05 22:45:05,605]	[14472]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.41
+[2023-07-05 22:45:12,683]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.41 135
+[2023-07-05 22:45:12,687]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.41 139
+[2023-07-05 22:45:12,690]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.41 445
+[2023-07-05 22:45:12,693]	[14472]	[port.py]	[line: 129]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x0000021FEB0F0970>
+[2023-07-05 22:45:12,693]	[14472]	[port.py]	[line: 130]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.41 SUCCESS
+[2023-07-05 22:45:12,693]	[14472]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:45:12,693]	[14472]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.42
+[2023-07-05 22:45:12,693]	[14472]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.42
+[2023-07-05 22:45:20,494]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.42 21
+[2023-07-05 22:45:20,496]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.42 5357
+[2023-07-05 22:45:20,499]	[14472]	[port.py]	[line: 129]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x0000021FEB0F0B80>
+[2023-07-05 22:45:20,499]	[14472]	[port.py]	[line: 130]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.42 SUCCESS
+[2023-07-05 22:45:20,500]	[14472]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:45:20,500]	[14472]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.49
+[2023-07-05 22:45:20,500]	[14472]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.49
+[2023-07-05 22:45:27,597]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.49 21
+[2023-07-05 22:45:27,601]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.49 135
+[2023-07-05 22:45:27,604]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.49 139
+[2023-07-05 22:45:27,606]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.49 443
+[2023-07-05 22:45:27,609]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.49 445
+[2023-07-05 22:45:27,612]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.49 1025
+[2023-07-05 22:45:27,615]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.49 5357
+[2023-07-05 22:45:27,617]	[14472]	[port.py]	[line: 129]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x0000021FEB0F0970>
+[2023-07-05 22:45:27,617]	[14472]	[port.py]	[line: 130]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.49 SUCCESS
+[2023-07-05 22:45:27,617]	[14472]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:45:27,617]	[14472]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.62
+[2023-07-05 22:45:27,617]	[14472]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.62
+[2023-07-05 22:45:37,214]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.62 80
+[2023-07-05 22:45:37,219]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.62 135
+[2023-07-05 22:45:37,223]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.62 139
+[2023-07-05 22:45:37,228]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.62 445
+[2023-07-05 22:45:37,232]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.62 3389
+[2023-07-05 22:45:37,236]	[14472]	[port.py]	[line: 129]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x0000021FEB0F0B80>
+[2023-07-05 22:45:37,236]	[14472]	[port.py]	[line: 130]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.62 SUCCESS
+[2023-07-05 22:45:37,237]	[14472]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:45:37,237]	[14472]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.68
+[2023-07-05 22:45:37,237]	[14472]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.68
+[2023-07-05 22:45:46,363]	[14472]	[port.py]	[line: 129]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x0000021FEB0F0970>
+[2023-07-05 22:45:46,363]	[14472]	[port.py]	[line: 130]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.68 SUCCESS
+[2023-07-05 22:45:46,363]	[14472]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:45:46,363]	[14472]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.76
+[2023-07-05 22:45:46,363]	[14472]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.76
+[2023-07-05 22:45:53,473]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.76 21
+[2023-07-05 22:45:53,477]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.76 22
+[2023-07-05 22:45:53,480]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.76 80
+[2023-07-05 22:45:53,483]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.76 111
+[2023-07-05 22:45:53,486]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.76 135
+[2023-07-05 22:45:53,489]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.76 139
+[2023-07-05 22:45:53,492]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.76 443
+[2023-07-05 22:45:53,495]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.76 445
+[2023-07-05 22:45:53,498]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.76 2049
+[2023-07-05 22:45:53,508]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.76 5000
+[2023-07-05 22:45:53,521]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.76 49152
+[2023-07-05 22:45:53,529]	[14472]	[port.py]	[line: 129]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x0000021FEB0F0B80>
+[2023-07-05 22:45:53,529]	[14472]	[port.py]	[line: 130]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.76 SUCCESS
+[2023-07-05 22:45:53,529]	[14472]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:45:53,530]	[14472]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.77
+[2023-07-05 22:45:53,530]	[14472]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.77
+[2023-07-05 22:46:00,666]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.77 21
+[2023-07-05 22:46:00,669]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.77 22
+[2023-07-05 22:46:00,672]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.77 80
+[2023-07-05 22:46:00,674]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.77 111
+[2023-07-05 22:46:00,677]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.77 135
+[2023-07-05 22:46:00,680]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.77 139
+[2023-07-05 22:46:00,683]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.77 443
+[2023-07-05 22:46:00,685]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.77 445
+[2023-07-05 22:46:00,688]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.77 873
+[2023-07-05 22:46:00,691]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.77 2049
+[2023-07-05 22:46:00,693]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.77 5000
+[2023-07-05 22:46:00,696]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.77 5357
+[2023-07-05 22:46:00,699]	[14472]	[port.py]	[line: 129]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x0000021FEB0F0970>
+[2023-07-05 22:46:00,699]	[14472]	[port.py]	[line: 130]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.77 SUCCESS
+[2023-07-05 22:46:00,699]	[14472]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:46:00,699]	[14472]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.78
+[2023-07-05 22:46:00,699]	[14472]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.78
+[2023-07-05 22:46:02,976]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.78 21
+[2023-07-05 22:46:02,979]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.78 22
+[2023-07-05 22:46:02,982]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.78 25
+[2023-07-05 22:46:02,985]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.78 80
+[2023-07-05 22:46:02,988]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.78 110
+[2023-07-05 22:46:02,991]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.78 143
+[2023-07-05 22:46:02,994]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.78 443
+[2023-07-05 22:46:02,997]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.78 3306
+[2023-07-05 22:46:03,000]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.78 8000
+[2023-07-05 22:46:03,003]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.78 8009
+[2023-07-05 22:46:03,006]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.78 8888
+[2023-07-05 22:46:03,009]	[14472]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.78 10000
+[2023-07-05 22:46:03,018]	[14472]	[port.py]	[line: 129]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x0000021FEB0F0B80>
+[2023-07-05 22:46:03,018]	[14472]	[port.py]	[line: 130]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.78 SUCCESS
+[2023-07-05 22:46:03,018]	[14472]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:46:03,019]	[14472]	[port.py]	[line: 132]	[DEBUG]	#PORT: sleep
+[2023-07-05 22:47:03,030]	[14472]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:47:03,030]	[14472]	[port.py]	[line: 132]	[DEBUG]	#PORT: sleep
+[2023-07-05 22:48:03,034]	[14472]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 22:48:03,034]	[14472]	[port.py]	[line: 132]	[DEBUG]	#PORT: sleep
+[2023-07-05 22:50:47,407]	[1364]	[main.py]	[line: 22]	[INFO]	#Program Start
+[2023-07-05 22:50:47,407]	[1364]	[main.py]	[line: 30]	[DEBUG]	#Database: Sqlite
+[2023-07-05 22:50:47,412]	[1364]	[sqlite.py]	[line: 8]	[INFO]	#Sqlite Database Not Exist...
+[2023-07-05 22:50:47,412]	[1364]	[sqlite.py]	[line: 10]	[INFO]	#Building Sqlite Database...
+[2023-07-05 22:50:47,445]	[1364]	[sqlite.py]	[line: 12]	[INFO]	#Building Sqlite Database Succeed.
+[2023-07-05 22:50:47,445]	[1364]	[sqlite.py]	[line: 50]	[DEBUG]	#DB: add_scan 192.168.239.0/24
+[2023-07-05 22:50:47,448]	[1364]	[main.py]	[line: 42]	[DEBUG]	#SCAN Mode
+[2023-07-05 22:50:47,501]	[1364]	[scan.py]	[line: 20]	[DEBUG]	#SCAN: nmap version 7.94
+[2023-07-05 22:50:47,502]	[1364]	[sqlite.py]	[line: 82]	[DEBUG]	#DB: get_ip_no_scan scan-nmap
+[2023-07-05 22:50:47,502]	[1364]	[scan.py]	[line: 43]	[INFO]	#SCAN-CHECK scan-nmap 192.168.239.0/24
+[2023-07-05 22:50:47,502]	[1364]	[sqlite.py]	[line: 94]	[DEBUG]	#DB: update_ip_scan_timestamp scan-nmap 192.168.239.0/24
+[2023-07-05 22:53:46,580]	[1364]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.1
+[2023-07-05 22:53:46,586]	[1364]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.11
+[2023-07-05 22:53:46,591]	[1364]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.111
+[2023-07-05 22:53:46,594]	[1364]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.112
+[2023-07-05 22:53:46,598]	[1364]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.113
+[2023-07-05 22:53:46,603]	[1364]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.12
+[2023-07-05 22:53:46,607]	[1364]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.140
+[2023-07-05 22:53:46,610]	[1364]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.165
+[2023-07-05 22:53:46,613]	[1364]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.187
+[2023-07-05 22:53:46,615]	[1364]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.2
+[2023-07-05 22:53:46,618]	[1364]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.238
+[2023-07-05 22:53:46,620]	[1364]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.250
+[2023-07-05 22:53:46,623]	[1364]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.251
+[2023-07-05 22:53:46,626]	[1364]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.3
+[2023-07-05 22:53:46,629]	[1364]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.33
+[2023-07-05 22:53:46,632]	[1364]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.40
+[2023-07-05 22:53:46,635]	[1364]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.41
+[2023-07-05 22:53:46,638]	[1364]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.42
+[2023-07-05 22:53:46,640]	[1364]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.49
+[2023-07-05 22:53:46,643]	[1364]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.62
+[2023-07-05 22:53:46,646]	[1364]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.68
+[2023-07-05 22:53:46,649]	[1364]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.76
+[2023-07-05 22:53:46,652]	[1364]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.77
+[2023-07-05 22:53:46,655]	[1364]	[sqlite.py]	[line: 61]	[DEBUG]	#DB: add_ip 192.168.239.78
+[2023-07-05 22:53:46,658]	[1364]	[scan.py]	[line: 48]	[DEBUG]	#['192.168.239.1', '192.168.239.11', '192.168.239.111', '192.168.239.112', '192.168.239.113', '192.168.239.12', '192.168.239.140', '192.168.239.165', '192.168.239.187', '192.168.239.2', '192.168.239.238', '192.168.239.250', '192.168.239.251', '192.168.239.3', '192.168.239.33', '192.168.239.40', '192.168.239.41', '192.168.239.42', '192.168.239.49', '192.168.239.62', '192.168.239.68', '192.168.239.76', '192.168.239.77', '192.168.239.78']
+[2023-07-05 22:53:46,658]	[1364]	[scan.py]	[line: 49]	[INFO]	#SCNA-CHECK scan-nmap 192.168.239.0/24 SUCCESS
+[2023-07-05 22:53:46,658]	[1364]	[sqlite.py]	[line: 82]	[DEBUG]	#DB: get_ip_no_scan scan-nmap
+[2023-07-05 22:53:46,658]	[1364]	[scan.py]	[line: 51]	[DEBUG]	#SCAN: sleep
+[2023-07-05 22:54:46,660]	[1364]	[sqlite.py]	[line: 82]	[DEBUG]	#DB: get_ip_no_scan scan-nmap
+[2023-07-05 22:54:46,660]	[1364]	[scan.py]	[line: 51]	[DEBUG]	#SCAN: sleep
+[2023-07-05 22:55:46,669]	[1364]	[sqlite.py]	[line: 82]	[DEBUG]	#DB: get_ip_no_scan scan-nmap
+[2023-07-05 22:55:46,669]	[1364]	[scan.py]	[line: 51]	[DEBUG]	#SCAN: sleep
+[2023-07-05 22:56:46,676]	[1364]	[sqlite.py]	[line: 82]	[DEBUG]	#DB: get_ip_no_scan scan-nmap
+[2023-07-05 22:56:46,676]	[1364]	[scan.py]	[line: 51]	[DEBUG]	#SCAN: sleep
+[2023-07-05 22:57:46,685]	[1364]	[sqlite.py]	[line: 82]	[DEBUG]	#DB: get_ip_no_scan scan-nmap
+[2023-07-05 22:57:46,685]	[1364]	[scan.py]	[line: 51]	[DEBUG]	#SCAN: sleep
+[2023-07-05 22:58:46,688]	[1364]	[sqlite.py]	[line: 82]	[DEBUG]	#DB: get_ip_no_scan scan-nmap
+[2023-07-05 22:58:46,688]	[1364]	[scan.py]	[line: 51]	[DEBUG]	#SCAN: sleep
+[2023-07-05 22:59:46,690]	[1364]	[sqlite.py]	[line: 82]	[DEBUG]	#DB: get_ip_no_scan scan-nmap
+[2023-07-05 22:59:46,690]	[1364]	[scan.py]	[line: 51]	[DEBUG]	#SCAN: sleep
+[2023-07-05 23:00:46,695]	[1364]	[sqlite.py]	[line: 82]	[DEBUG]	#DB: get_ip_no_scan scan-nmap
+[2023-07-05 23:00:46,695]	[1364]	[scan.py]	[line: 51]	[DEBUG]	#SCAN: sleep
+[2023-07-05 23:01:46,701]	[1364]	[sqlite.py]	[line: 82]	[DEBUG]	#DB: get_ip_no_scan scan-nmap
+[2023-07-05 23:01:46,701]	[1364]	[scan.py]	[line: 51]	[DEBUG]	#SCAN: sleep
+[2023-07-05 23:02:46,713]	[1364]	[sqlite.py]	[line: 82]	[DEBUG]	#DB: get_ip_no_scan scan-nmap
+[2023-07-05 23:02:46,713]	[1364]	[scan.py]	[line: 51]	[DEBUG]	#SCAN: sleep
+[2023-07-05 23:03:46,714]	[1364]	[sqlite.py]	[line: 82]	[DEBUG]	#DB: get_ip_no_scan scan-nmap
+[2023-07-05 23:03:46,714]	[1364]	[scan.py]	[line: 51]	[DEBUG]	#SCAN: sleep
+[2023-07-05 23:04:46,723]	[1364]	[sqlite.py]	[line: 82]	[DEBUG]	#DB: get_ip_no_scan scan-nmap
+[2023-07-05 23:04:46,723]	[1364]	[scan.py]	[line: 51]	[DEBUG]	#SCAN: sleep
+[2023-07-05 23:05:46,731]	[1364]	[sqlite.py]	[line: 82]	[DEBUG]	#DB: get_ip_no_scan scan-nmap
+[2023-07-05 23:05:46,731]	[1364]	[scan.py]	[line: 51]	[DEBUG]	#SCAN: sleep
+[2023-07-05 23:06:46,732]	[1364]	[sqlite.py]	[line: 82]	[DEBUG]	#DB: get_ip_no_scan scan-nmap
+[2023-07-05 23:06:46,732]	[1364]	[scan.py]	[line: 51]	[DEBUG]	#SCAN: sleep
+[2023-07-05 23:07:46,733]	[1364]	[sqlite.py]	[line: 82]	[DEBUG]	#DB: get_ip_no_scan scan-nmap
+[2023-07-05 23:07:46,733]	[1364]	[scan.py]	[line: 51]	[DEBUG]	#SCAN: sleep
+[2023-07-05 23:08:22,592]	[14440]	[main.py]	[line: 22]	[INFO]	#Program Start
+[2023-07-05 23:08:22,592]	[14440]	[main.py]	[line: 30]	[DEBUG]	#Database: Sqlite
+[2023-07-05 23:08:22,596]	[14440]	[sqlite.py]	[line: 15]	[INFO]	#Connect Sqlite Database Succeed.
+[2023-07-05 23:08:22,596]	[14440]	[sqlite.py]	[line: 16]	[INFO]	#Building Sqlite Database...
+[2023-07-05 23:08:22,597]	[14440]	[sqlite.py]	[line: 18]	[INFO]	#Building Sqlite Database Succeed.
+[2023-07-05 23:08:22,597]	[14440]	[sqlite.py]	[line: 50]	[DEBUG]	#DB: add_scan 192.168.239.0/24
+[2023-07-05 23:08:22,597]	[14440]	[sqlite.py]	[line: 57]	[DEBUG]	#DB: add_scan 192.168.239.0/24 exits
+[2023-07-05 23:08:22,597]	[14440]	[main.py]	[line: 50]	[DEBUG]	#PORT Mode
+[2023-07-05 23:08:22,656]	[14440]	[port.py]	[line: 20]	[DEBUG]	#PORT: nmap version 7.94
+[2023-07-05 23:08:22,656]	[14440]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap
+[2023-07-05 23:08:22,656]	[14440]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap 192.168.239.1
+[2023-07-05 23:08:22,656]	[14440]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap 192.168.239.1
+[2023-07-05 23:08:24,928]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.1 25
+[2023-07-05 23:08:24,933]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.1 80
+[2023-07-05 23:08:24,937]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.1 110
+[2023-07-05 23:08:24,940]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.1 143
+[2023-07-05 23:08:24,943]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.1 443
+[2023-07-05 23:08:24,946]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.1 8000
+[2023-07-05 23:08:24,949]	[14440]	[port.py]	[line: 130]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x0000020CC4F7BE80>
+[2023-07-05 23:08:24,949]	[14440]	[port.py]	[line: 131]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.1 SUCCESS
+[2023-07-05 23:08:24,949]	[14440]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 23:08:24,949]	[14440]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.1
+[2023-07-05 23:08:24,949]	[14440]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.1
+[2023-07-05 23:08:27,270]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.1 25
+[2023-07-05 23:08:27,270]	[14440]	[sqlite.py]	[line: 78]	[DEBUG]	#DB: add_services 192.168.239.1 25 exits
+[2023-07-05 23:08:27,270]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.1 80
+[2023-07-05 23:08:27,270]	[14440]	[sqlite.py]	[line: 78]	[DEBUG]	#DB: add_services 192.168.239.1 80 exits
+[2023-07-05 23:08:27,270]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.1 110
+[2023-07-05 23:08:27,270]	[14440]	[sqlite.py]	[line: 78]	[DEBUG]	#DB: add_services 192.168.239.1 110 exits
+[2023-07-05 23:08:27,270]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.1 143
+[2023-07-05 23:08:27,270]	[14440]	[sqlite.py]	[line: 78]	[DEBUG]	#DB: add_services 192.168.239.1 143 exits
+[2023-07-05 23:08:27,270]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.1 443
+[2023-07-05 23:08:27,270]	[14440]	[sqlite.py]	[line: 78]	[DEBUG]	#DB: add_services 192.168.239.1 443 exits
+[2023-07-05 23:08:27,270]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.1 8000
+[2023-07-05 23:08:27,270]	[14440]	[sqlite.py]	[line: 78]	[DEBUG]	#DB: add_services 192.168.239.1 8000 exits
+[2023-07-05 23:08:27,270]	[14440]	[port.py]	[line: 130]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x0000020CC4F7EB00>
+[2023-07-05 23:08:27,270]	[14440]	[port.py]	[line: 131]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.1 SUCCESS
+[2023-07-05 23:08:27,270]	[14440]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 23:08:27,270]	[14440]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.11
+[2023-07-05 23:08:27,270]	[14440]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.11
+[2023-07-05 23:08:33,209]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.11 22
+[2023-07-05 23:08:33,213]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.11 25
+[2023-07-05 23:08:33,216]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.11 110
+[2023-07-05 23:08:33,218]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.11 143
+[2023-07-05 23:08:33,221]	[14440]	[port.py]	[line: 130]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x0000020CC4F7BE80>
+[2023-07-05 23:08:33,221]	[14440]	[port.py]	[line: 131]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.11 SUCCESS
+[2023-07-05 23:08:33,221]	[14440]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 23:08:33,221]	[14440]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.111
+[2023-07-05 23:08:33,221]	[14440]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.111
+[2023-07-05 23:08:39,157]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.111 22
+[2023-07-05 23:08:39,161]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.111 25
+[2023-07-05 23:08:39,164]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.111 80
+[2023-07-05 23:08:39,167]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.111 110
+[2023-07-05 23:08:39,170]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.111 143
+[2023-07-05 23:08:39,173]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.111 443
+[2023-07-05 23:08:39,176]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.111 5900
+[2023-07-05 23:08:39,179]	[14440]	[port.py]	[line: 130]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x0000020CC4F7EB00>
+[2023-07-05 23:08:39,179]	[14440]	[port.py]	[line: 131]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.111 SUCCESS
+[2023-07-05 23:08:39,179]	[14440]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 23:08:39,179]	[14440]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.112
+[2023-07-05 23:08:39,179]	[14440]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.112
+[2023-07-05 23:08:45,099]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.112 22
+[2023-07-05 23:08:45,103]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.112 25
+[2023-07-05 23:08:45,106]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.112 80
+[2023-07-05 23:08:45,109]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.112 110
+[2023-07-05 23:08:45,112]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.112 143
+[2023-07-05 23:08:45,114]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.112 443
+[2023-07-05 23:08:45,117]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.112 5900
+[2023-07-05 23:08:45,120]	[14440]	[port.py]	[line: 130]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x0000020CC4F7BE80>
+[2023-07-05 23:08:45,120]	[14440]	[port.py]	[line: 131]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.112 SUCCESS
+[2023-07-05 23:08:45,120]	[14440]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 23:08:45,120]	[14440]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.113
+[2023-07-05 23:08:45,120]	[14440]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.113
+[2023-07-05 23:08:56,736]	[14440]	[port.py]	[line: 130]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x0000020CC4F7EB00>
+[2023-07-05 23:08:56,736]	[14440]	[port.py]	[line: 131]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.113 SUCCESS
+[2023-07-05 23:08:56,736]	[14440]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 23:08:56,736]	[14440]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.12
+[2023-07-05 23:08:56,736]	[14440]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.12
+[2023-07-05 23:08:59,695]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.12 22
+[2023-07-05 23:08:59,699]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.12 25
+[2023-07-05 23:08:59,702]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.12 110
+[2023-07-05 23:08:59,705]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.12 143
+[2023-07-05 23:08:59,708]	[14440]	[port.py]	[line: 130]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x0000020CC4F7BE80>
+[2023-07-05 23:08:59,708]	[14440]	[port.py]	[line: 131]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.12 SUCCESS
+[2023-07-05 23:08:59,708]	[14440]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 23:08:59,708]	[14440]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.140
+[2023-07-05 23:08:59,708]	[14440]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.140
+[2023-07-05 23:09:05,679]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.140 22
+[2023-07-05 23:09:05,684]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.140 25
+[2023-07-05 23:09:05,689]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.140 110
+[2023-07-05 23:09:05,693]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.140 143
+[2023-07-05 23:09:05,698]	[14440]	[port.py]	[line: 130]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x0000020CC4F7EB00>
+[2023-07-05 23:09:05,698]	[14440]	[port.py]	[line: 131]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.140 SUCCESS
+[2023-07-05 23:09:05,698]	[14440]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 23:09:05,698]	[14440]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.165
+[2023-07-05 23:09:05,698]	[14440]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.165
+[2023-07-05 23:09:12,989]	[14440]	[port.py]	[line: 130]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x0000020CC4F7BE80>
+[2023-07-05 23:09:12,989]	[14440]	[port.py]	[line: 131]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.165 SUCCESS
+[2023-07-05 23:09:12,989]	[14440]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 23:09:12,989]	[14440]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.187
+[2023-07-05 23:09:12,989]	[14440]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.187
+[2023-07-05 23:09:23,625]	[14440]	[port.py]	[line: 130]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x0000020CC4F7EB00>
+[2023-07-05 23:09:23,625]	[14440]	[port.py]	[line: 131]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.187 SUCCESS
+[2023-07-05 23:09:23,625]	[14440]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 23:09:23,625]	[14440]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.2
+[2023-07-05 23:09:23,625]	[14440]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.2
+[2023-07-05 23:09:25,719]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.2 22
+[2023-07-05 23:09:25,723]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.2 25
+[2023-07-05 23:09:25,726]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.2 80
+[2023-07-05 23:09:25,729]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.2 110
+[2023-07-05 23:09:25,732]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.2 143
+[2023-07-05 23:09:25,734]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.2 443
+[2023-07-05 23:09:25,737]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.2 8000
+[2023-07-05 23:09:25,741]	[14440]	[port.py]	[line: 130]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x0000020CC4F7BE80>
+[2023-07-05 23:09:25,741]	[14440]	[port.py]	[line: 131]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.2 SUCCESS
+[2023-07-05 23:09:25,741]	[14440]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 23:09:25,741]	[14440]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.238
+[2023-07-05 23:09:25,741]	[14440]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.238
+[2023-07-05 23:09:26,171]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.238 22
+[2023-07-05 23:09:26,175]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.238 25
+[2023-07-05 23:09:26,178]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.238 110
+[2023-07-05 23:09:26,181]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.238 143
+[2023-07-05 23:09:26,184]	[14440]	[port.py]	[line: 130]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x0000020CC4F7EB00>
+[2023-07-05 23:09:26,184]	[14440]	[port.py]	[line: 131]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.238 SUCCESS
+[2023-07-05 23:09:26,184]	[14440]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 23:09:26,184]	[14440]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.250
+[2023-07-05 23:09:26,184]	[14440]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.250
+[2023-07-05 23:09:33,301]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.250 80
+[2023-07-05 23:09:33,305]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.250 111
+[2023-07-05 23:09:33,308]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.250 2049
+[2023-07-05 23:09:33,311]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.250 2121
+[2023-07-05 23:09:33,313]	[14440]	[port.py]	[line: 130]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x0000020CC4F7BE80>
+[2023-07-05 23:09:33,314]	[14440]	[port.py]	[line: 131]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.250 SUCCESS
+[2023-07-05 23:09:33,314]	[14440]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 23:09:33,314]	[14440]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.251
+[2023-07-05 23:09:33,314]	[14440]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.251
+[2023-07-05 23:09:41,289]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.251 22
+[2023-07-05 23:09:41,294]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.251 25
+[2023-07-05 23:09:41,298]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.251 80
+[2023-07-05 23:09:41,301]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.251 110
+[2023-07-05 23:09:41,304]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.251 143
+[2023-07-05 23:09:41,307]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.251 443
+[2023-07-05 23:09:41,310]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.251 8000
+[2023-07-05 23:09:41,313]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.251 8080
+[2023-07-05 23:09:41,315]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.251 8443
+[2023-07-05 23:09:41,318]	[14440]	[port.py]	[line: 130]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x0000020CC4F7EB00>
+[2023-07-05 23:09:41,318]	[14440]	[port.py]	[line: 131]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.251 SUCCESS
+[2023-07-05 23:09:41,318]	[14440]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 23:09:41,319]	[14440]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.3
+[2023-07-05 23:09:41,319]	[14440]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.3
+[2023-07-05 23:09:49,125]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.3 22
+[2023-07-05 23:09:49,129]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.3 25
+[2023-07-05 23:09:49,133]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.3 80
+[2023-07-05 23:09:49,138]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.3 110
+[2023-07-05 23:09:49,142]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.3 143
+[2023-07-05 23:09:49,146]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.3 443
+[2023-07-05 23:09:49,150]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.3 8000
+[2023-07-05 23:09:49,155]	[14440]	[port.py]	[line: 130]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x0000020CC4F7BE80>
+[2023-07-05 23:09:49,155]	[14440]	[port.py]	[line: 131]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.3 SUCCESS
+[2023-07-05 23:09:49,155]	[14440]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 23:09:49,155]	[14440]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.33
+[2023-07-05 23:09:49,155]	[14440]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.33
+[2023-07-05 23:09:55,079]	[14440]	[port.py]	[line: 130]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x0000020CC4F7EB00>
+[2023-07-05 23:09:55,080]	[14440]	[port.py]	[line: 131]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.33 SUCCESS
+[2023-07-05 23:09:55,080]	[14440]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 23:09:55,080]	[14440]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.40
+[2023-07-05 23:09:55,080]	[14440]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.40
+[2023-07-05 23:10:01,030]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.40 22
+[2023-07-05 23:10:01,033]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.40 25
+[2023-07-05 23:10:01,036]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.40 80
+[2023-07-05 23:10:01,039]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.40 110
+[2023-07-05 23:10:01,042]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.40 143
+[2023-07-05 23:10:01,045]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.40 443
+[2023-07-05 23:10:01,048]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.40 5900
+[2023-07-05 23:10:01,050]	[14440]	[port.py]	[line: 130]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x0000020CC4F7BE80>
+[2023-07-05 23:10:01,050]	[14440]	[port.py]	[line: 131]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.40 SUCCESS
+[2023-07-05 23:10:01,050]	[14440]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 23:10:01,051]	[14440]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.41
+[2023-07-05 23:10:01,051]	[14440]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.41
+[2023-07-05 23:10:08,178]	[14440]	[port.py]	[line: 130]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x0000020CC4F7EB00>
+[2023-07-05 23:10:08,178]	[14440]	[port.py]	[line: 131]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.41 SUCCESS
+[2023-07-05 23:10:08,178]	[14440]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 23:10:08,178]	[14440]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.42
+[2023-07-05 23:10:08,178]	[14440]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.42
+[2023-07-05 23:10:15,777]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.42 21
+[2023-07-05 23:10:15,781]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.42 5357
+[2023-07-05 23:10:15,785]	[14440]	[port.py]	[line: 130]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x0000020CC4F7BE80>
+[2023-07-05 23:10:15,785]	[14440]	[port.py]	[line: 131]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.42 SUCCESS
+[2023-07-05 23:10:15,785]	[14440]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 23:10:15,785]	[14440]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.49
+[2023-07-05 23:10:15,785]	[14440]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.49
+[2023-07-05 23:10:22,905]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.49 21
+[2023-07-05 23:10:22,908]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.49 443
+[2023-07-05 23:10:22,911]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.49 1025
+[2023-07-05 23:10:22,914]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.49 5357
+[2023-07-05 23:10:22,918]	[14440]	[port.py]	[line: 130]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x0000020CC4F7EB00>
+[2023-07-05 23:10:22,918]	[14440]	[port.py]	[line: 131]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.49 SUCCESS
+[2023-07-05 23:10:22,918]	[14440]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 23:10:22,918]	[14440]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.62
+[2023-07-05 23:10:22,919]	[14440]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.62
+[2023-07-05 23:10:32,516]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.62 3389
+[2023-07-05 23:10:32,520]	[14440]	[port.py]	[line: 130]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x0000020CC4F7BE80>
+[2023-07-05 23:10:32,520]	[14440]	[port.py]	[line: 131]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.62 SUCCESS
+[2023-07-05 23:10:32,520]	[14440]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 23:10:32,520]	[14440]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.68
+[2023-07-05 23:10:32,520]	[14440]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.68
+[2023-07-05 23:10:41,643]	[14440]	[port.py]	[line: 130]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x0000020CC4F7EB00>
+[2023-07-05 23:10:41,644]	[14440]	[port.py]	[line: 131]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.68 SUCCESS
+[2023-07-05 23:10:41,644]	[14440]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 23:10:41,644]	[14440]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.76
+[2023-07-05 23:10:41,644]	[14440]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.76
+[2023-07-05 23:10:48,800]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.76 21
+[2023-07-05 23:10:48,803]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.76 22
+[2023-07-05 23:10:48,806]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.76 80
+[2023-07-05 23:10:48,810]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.76 111
+[2023-07-05 23:10:48,813]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.76 443
+[2023-07-05 23:10:48,816]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.76 2049
+[2023-07-05 23:10:48,819]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.76 5000
+[2023-07-05 23:10:48,822]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.76 49152
+[2023-07-05 23:10:48,825]	[14440]	[port.py]	[line: 130]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x0000020CC4F7BE80>
+[2023-07-05 23:10:48,825]	[14440]	[port.py]	[line: 131]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.76 SUCCESS
+[2023-07-05 23:10:48,825]	[14440]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 23:10:48,825]	[14440]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.77
+[2023-07-05 23:10:48,825]	[14440]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.77
+[2023-07-05 23:10:55,934]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.77 21
+[2023-07-05 23:10:55,940]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.77 22
+[2023-07-05 23:10:55,946]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.77 80
+[2023-07-05 23:10:55,950]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.77 111
+[2023-07-05 23:10:55,955]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.77 443
+[2023-07-05 23:10:55,960]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.77 873
+[2023-07-05 23:10:55,965]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.77 2049
+[2023-07-05 23:10:55,971]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.77 5000
+[2023-07-05 23:10:55,977]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.77 5357
+[2023-07-05 23:10:55,981]	[14440]	[port.py]	[line: 130]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x0000020CC4F7EB00>
+[2023-07-05 23:10:55,981]	[14440]	[port.py]	[line: 131]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.77 SUCCESS
+[2023-07-05 23:10:55,981]	[14440]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 23:10:55,981]	[14440]	[port.py]	[line: 108]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.78
+[2023-07-05 23:10:55,981]	[14440]	[sqlite.py]	[line: 101]	[DEBUG]	#DB: update_ip_port_timestamp port-nmap-fastscan 192.168.239.78
+[2023-07-05 23:10:58,115]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.78 21
+[2023-07-05 23:10:58,117]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.78 22
+[2023-07-05 23:10:58,120]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.78 25
+[2023-07-05 23:10:58,123]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.78 80
+[2023-07-05 23:10:58,126]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.78 110
+[2023-07-05 23:10:58,128]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.78 143
+[2023-07-05 23:10:58,131]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.78 443
+[2023-07-05 23:10:58,134]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.78 3306
+[2023-07-05 23:10:58,137]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.78 8000
+[2023-07-05 23:10:58,140]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.78 8009
+[2023-07-05 23:10:58,142]	[14440]	[sqlite.py]	[line: 71]	[DEBUG]	#DB: add_services 192.168.239.78 8888
+[2023-07-05 23:10:58,145]	[14440]	[port.py]	[line: 130]	[DEBUG]	#<nmap.nmap.PortScanner object at 0x0000020CC4F7BE80>
+[2023-07-05 23:10:58,145]	[14440]	[port.py]	[line: 131]	[INFO]	#PORT-CHECK port-nmap-fastscan 192.168.239.78 SUCCESS
+[2023-07-05 23:10:58,145]	[14440]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 23:10:58,145]	[14440]	[port.py]	[line: 133]	[DEBUG]	#PORT: sleep
+[2023-07-05 23:11:58,155]	[14440]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 23:11:58,155]	[14440]	[port.py]	[line: 133]	[DEBUG]	#PORT: sleep
+[2023-07-05 23:12:58,159]	[14440]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 23:12:58,159]	[14440]	[port.py]	[line: 133]	[DEBUG]	#PORT: sleep
+[2023-07-05 23:13:58,170]	[14440]	[sqlite.py]	[line: 88]	[DEBUG]	#DB: get_ip_no_port port-nmap-fastscan
+[2023-07-05 23:13:58,170]	[14440]	[port.py]	[line: 133]	[DEBUG]	#PORT: sleep
