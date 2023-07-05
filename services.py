@@ -8,26 +8,49 @@ class method_kscan:
     def __init__(self, db, logger):
         self.db = db
         self.logger = logger
+        import os
 
-        '''import subprocess
-        cmd = "nmap --version"
+        if os.name == 'posix':
+            if not os.path.exists('tools/kscan/kscan'):
+                self.logger.warning("SERVICES: kscan not found")
+            else:
+                self.logger.info("SERVICES: kscan found")
+
+        elif os.name == 'nt':
+            if not os.path.exists('tools/kscan/kscan.exe'):
+                self.logger.warning("SERVICES: kscan not found")
+            else:
+                self.logger.info("SERVICES: kscan found")
+        else:
+            self.logger.info("SERVICES: kscan not support")
+
+    def randstr(self,len=8):
+        import string
+        import random
+        d=string.ascii_letters + string.digits
+        str_list = [random.choice(d) for i in range(len)]
+        random_str = ''.join(str_list)
+        return random_str
+    def services(self, ip,port):
+        import os
+        import json
+        import subprocess
+        if os.name == 'nt':
+            cmd="tools\\kscan\\kscan.exe"
+        elif os.name == 'posix':
+            cmd="tools\\kscan\\kscan"
+        file = self.randstr()+'.txt'
+        cmd = cmd + f" --target {ip} --port {port} -oJ tmp\\{file}"
         result = subprocess.run(cmd, shell=True, capture_output=True)
         if result.returncode == 0:
-            import re
-            version_string = result.stdout.decode()
-            match = re.search(r"Nmap version (\d+\.\d+(?:\.\d+)?)", version_string)
-            if match:
-                version_number = match.group(1)
-                logger.debug(f"PORT: nmap version {version_number}")
-            else:
-                logger.warning("PORT: nmap version UNKNOWN")
+            self.logger.debug("SERVICE: kscan run")
+            with open('tmp\\'+file,"rb") as f:
+                load=f.read()
+                self.logger.debug("SERVICE: "+ load.decode("UTF-8"));
+                json=json.loads(load)
+                return json[0]['Service']
         else:
-            logger.warning("PORT: nmap not found")'''
-
-    def service(self, target):
-        return "RSS"
-
-
+            self.logger.warning("SERVICE: kscan error")
 class app:
     def __init__(self, db, logger,method='service-kscan'):
         self.db = db
@@ -43,7 +66,7 @@ class app:
                     self.logger.info("SERVICES-CHECK %s %s %s" % (self.method.name,ip,port))
                     self.db.update_ip_services_timestamp(self.method.name,ip,port)
 
-                    result = self.method.service(ip)
+                    result = self.method.services(ip,port)
                     self.db.add_protocol(ip,port,result)
 
                     self.logger.debug(str(result))
@@ -51,7 +74,7 @@ class app:
                 else:
                     self.logger.debug("SERVICES: sleep")
                     time.sleep(sleep)
-            finally:
+            except Exception:
                 self.logger.debug("SERVICES: sleep")
                 time.sleep(sleep)
 

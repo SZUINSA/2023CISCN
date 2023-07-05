@@ -46,7 +46,7 @@ class app:
                 for item in result:
                     self.db.add_ip(item)
                 self.logger.debug(str(result))
-                self.logger.info("SCNA-CHECK %s %s SUCCESS" % (self.method.name,ip,))
+                self.logger.info("SCAN-CHECK %s %s SUCCESS" % (self.method.name,ip,))
             else:
                 self.logger.debug("SCAN: sleep")
                 time.sleep(sleep)
