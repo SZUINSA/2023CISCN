@@ -90,14 +90,19 @@ class app:
                         self.logger.info("SERVICES-CHECK %s %s %s" % (self.method.name,ip,port))
                         self.db.update_ip_services_timestamp(self.method.name,ip,port)
 
-                        protocol,services_app=self.method.services(ip,port)
-                        if not protocol is None:
-                            self.db.add_protocol(ip, port, protocol)
+                        try:
+                            protocol,services_app=self.method.services(ip,port)
+                            if not protocol is None:
+                                self.db.add_protocol(ip, port, protocol)
 
-                        if not services_app is None:
-                            self.db.add_service_app(ip, port, services_app)
+                            if not services_app is None:
+                                self.db.add_service_app(ip, port, services_app)
 
-                        self.logger.debug(str(result))
+                            self.logger.debug(str(protocol), str(services_app))
+
+                        except Exception:
+                            pass
+
                         self.logger.info("SERVICES-CHECK %s %s %s SUCCESS" % (self.method.name,ip,port))
                 else:
                     self.logger.debug("SERVICES: sleep")
