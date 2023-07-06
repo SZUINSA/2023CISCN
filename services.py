@@ -94,11 +94,11 @@ class app:
                             protocol,services_app=self.method.services(ip,port)
                             if not protocol is None:
                                 self.db.add_protocol(ip, port, protocol)
+                                self.logger.debug(str(protocol))
 
                             if not services_app is None:
                                 self.db.add_service_app(ip, port, services_app)
-
-                            self.logger.debug(str(protocol), str(services_app))
+                                self.logger.debug(str(services_app))
 
                         except Exception:
                             pass
