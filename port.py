@@ -3,11 +3,11 @@ import nmap
 
 
 class method_nmap:
-    name = "port-nmap"
 
-    def __init__(self, db, logger):
+    def __init__(self, db, logger, name = "port-nmap"):
         self.db = db
         self.logger = logger
+        self.name = name
         import subprocess
         cmd = "nmap --version"
         result = subprocess.run(cmd, shell=True, capture_output=True)
@@ -29,6 +29,9 @@ class method_nmap:
     def port_xxxx(self, target):
         return self.allscan(target)
 
+    def port_fscan(self,target):
+        return self.fscan_port(target)
+
     def fastscan(self,target):
         self.name = "port-nmap-fastscan"
         nm = nmap.PortScanner()
@@ -40,6 +43,35 @@ class method_nmap:
         nm = nmap.PortScanner()
         nm.scan(hosts=target, arguments='-p1-65535')
         return nm
+
+    def fscan_port(self,target):
+        import os
+        import subprocess
+
+        if os.name == 'nt':
+            cmd = ".\\tools\\fscan\\fscan.exe"
+        elif os.name == 'posix':
+            cmd = "tools/fscan/fscan"
+
+        cmd = cmd + f" -nopoc -h {target}"
+        result = subprocess.run(cmd, shell=True, capture_output=True)
+
+        if result.returncode == 0:
+            self.logger.debug("SERVICE: fscan run")
+
+            import re
+            output_string = result.stdout.decode()
+
+            regx = r"(\d+\.\d+\.\d+\.\d+)\:(\d+)\sopen"
+            match = re.search(regx, output_string)
+            if match:
+                ip_list = re.findall(regx, output_string)
+                return ip_list
+            else:
+                self.logger.debug("PORT: fscan can't find ports")
+
+        else:
+            self.logger.debug("SERVICE: fscan error")
 
 class method_nmap_xxx:
     name = "port-nmap"
@@ -71,24 +103,32 @@ class app:
     def __init__(self, db, logger,method='port-nmap'):
         self.db = db
         self.logger = logger
-        self.method_user_input = method
         if method == 'port-nmap':
-            self.method = method_nmap(db, logger)
+            self.method = method_nmap(db, logger, method)
+        elif method == "port-fscan":
+            self.method = method_nmap(db, logger, method)
         else:
             self.method = method_nmap(db, logger)
 
     def run(self, sleep=60):
 
-        ## 端口探测
-        # ip = "192.168.239.61"
 
         while True:
             ip = self.db.get_ip_no_port(self.method.name)
             if ip is not None:
                 self.logger.info("PORT-CHECK %s %s" % (self.method.name,ip,))
                 self.db.update_ip_port_timestamp(self.method.name,ip)
-                if self.method_user_input == 'port-nmap':
+                if self.method.name == 'port-nmap':
                     result = self.method.port(ip)
+                elif self.method.name == 'port-fscan':
+                    result = self.method.port_fscan(ip)
+                    for alive_ip in result:
+                        self.db.add_services(alive_ip[0],alive_ip[1])
+                    self.logger.debug(str(result))
+                    self.logger.info("PORT-CHECK %s %s SUCCESS" % (self.method.name, ip,))
+
+                    continue
+
                 else:
                     result = self.method.port_xxxx(ip)
                 for host in result.all_hosts():
