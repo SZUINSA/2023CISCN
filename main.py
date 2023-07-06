@@ -45,9 +45,7 @@ if __name__ == "__main__":
         logger.debug("SCAN Mode")
         import scan
 
-        if "scan-xxxx" in argv:
-            app = scan.app(db, logger, method="scan-xxxx")
-        elif "scan-fscan" in argv:
+        if "scan-fscan" in argv:
             app = scan.app(db, logger, method="scan-fscan")
         else:
             app = scan.app(db, logger)
