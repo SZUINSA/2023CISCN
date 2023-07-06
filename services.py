@@ -45,6 +45,7 @@ class method_kscan:
         cmd = cmd + f" --target {ip} --port {port} -oJ {file}"
 
         result = subprocess.run(cmd, shell=True, capture_output=True)
+
         if result.returncode == 0:
             self.logger.debug("SERVICE: kscan run")
             with open(file,"rb") as f:
@@ -52,11 +53,28 @@ class method_kscan:
                 self.logger.debug("SERVICE: "+ load.decode("UTF-8"));
                 json=json.loads(load)
                 try:
-                    return json[0]['Service']
+                    self.db.add_protocol(ip, port, json[0]['Service'])
                 except Exception:
-                    return ''
+                    pass
+
+                try:
+                    self.db.add_service_app(ip, port, json[0]['FingerPrint'])
+                except Exception:
+                    pass
+
+                try:
+                    try:
+                        version=json[0]['Version']
+                    except Exception:
+                        version='N'
+                    self.db.add_service_app(ip, port, json[0]['ProductName']+'/'+version)
+                except Exception:
+                    pass
+
+            return None,None
         else:
             self.logger.warning("SERVICE: kscan error")
+            return None,None
 class app:
     def __init__(self, db, logger,method='service-kscan'):
         self.db = db
@@ -69,14 +87,18 @@ class app:
             try:
                 ip,port = self.db.get_ip_no_services(self.method.name)
                 if ip is not None:
-                    self.logger.info("SERVICES-CHECK %s %s %s" % (self.method.name,ip,port))
-                    self.db.update_ip_services_timestamp(self.method.name,ip,port)
+                        self.logger.info("SERVICES-CHECK %s %s %s" % (self.method.name,ip,port))
+                        self.db.update_ip_services_timestamp(self.method.name,ip,port)
 
-                    result = self.method.services(ip,port)
-                    self.db.add_protocol(ip,port,result)
+                        protocol,services_app=self.method.services(ip,port)
+                        if not protocol is None:
+                            self.db.add_protocol(ip, port, protocol)
 
-                    self.logger.debug(str(result))
-                    self.logger.info("SERVICES-CHECK %s %s %s SUCCESS" % (self.method.name,ip,port))
+                        if not services_app is None:
+                            self.db.add_service_app(ip, port, services_app)
+
+                        self.logger.debug(str(result))
+                        self.logger.info("SERVICES-CHECK %s %s %s SUCCESS" % (self.method.name,ip,port))
                 else:
                     self.logger.debug("SERVICES: sleep")
                     time.sleep(sleep)

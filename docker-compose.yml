@@ -2,19 +2,19 @@ version: '2'
 services:
   scan:
     build: .
-    command: "python main.py --scan"
+    command: "python main.py --scan --scale"
     restart: always
     volumes:
       - .:/opt/
   port:
     build: .
-    command: "python main.py --port"
+    command: "python main.py --port --scale"
     restart: always
     volumes:
       - .:/opt/
   services:
     build: .
-    command: "python main.py --services"
+    command: "python main.py --services --scale"
     restart: always
     volumes:
       - .:/opt/
