@@ -24,8 +24,6 @@ class method_nmap:
             logger.warning("PORT: nmap not found")
 
     def port(self, target):
-        # TODO: port
-
         return self.fastscan(target)
 
     def port_xxxx(self, target):
@@ -35,14 +33,12 @@ class method_nmap:
         self.name = "port-nmap-fastscan"
         nm = nmap.PortScanner()
         nm.scan(hosts=target, arguments='-F')
-
         return nm
 
     def allscan(self, target):
         self.name = "port-xxxx-allscan"
         nm = nmap.PortScanner()
         nm.scan(hosts=target, arguments='-p1-65535')
-
         return nm
 
 class method_nmap_xxx:
@@ -67,7 +63,6 @@ class method_nmap_xxx:
             logger.warning("PORT: nmap not found")
 
     def port(self, target):
-        # TODO: port
         nm = nmap.PortScanner()
         nm.scan(hosts=target, arguments='-sS')
         return nm
@@ -78,7 +73,7 @@ class app:
         self.logger = logger
         self.method_user_input = method
         if method == 'port-nmap':
-            self.method = method_nmap(db,logger)
+            self.method = method_nmap(db, logger)
         else:
             self.method = method_nmap(db, logger)
 

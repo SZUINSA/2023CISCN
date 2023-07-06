@@ -39,12 +39,15 @@ if __name__ == "__main__":
     for item in default.ip_src:
          db.add_scan(item)
 
+
     if "--scan" in argv or "-s" in argv:
         logger.debug("SCAN Mode")
         import scan
 
         if "scan-xxxx" in argv:
             app = scan.app(db, logger, method="scan-xxxx")
+        elif "scan-fscan" in argv:
+            app = scan.app(db, logger, method="scan-fscan")
         else:
             app = scan.app(db, logger)
 
