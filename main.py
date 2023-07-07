@@ -69,6 +69,15 @@ if __name__ == "__main__":
         else:
             app = services.app(db, logger)
 
+    if "--honeypot" in argv or "-h" in argv:
+        logger.debug("HONEYPOT Mode")
+
+        import honeypot
+        if "honeypot-quake" in argv:
+            app = honeypot.app(db, logger, method="honeypot-quake")
+        else:
+            app = honeypot.app(db, logger)
+
     if "--scale" in argv:
         logger.debug("SCALE Mode")
         import time
