@@ -49,6 +49,7 @@ class db:
         for i in cursor:
             if i[0] == 0:
                 self.db.execute("INSERT INTO SCAN (IP) VALUES (?)", (target,))
+                self.db.commit()
             else:
                 self.logger.debug("DB: add_scan %s exits" % (target,))
             return
@@ -59,6 +60,7 @@ class db:
         for i in cursor:
             if i[0] == 0:
                 self.db.execute("INSERT INTO IP (IP) VALUES (?)", (target,))
+                self.db.commit()
             else:
                 self.logger.debug("DB: add_ip %s exits" % (target,))
             return
@@ -69,6 +71,7 @@ class db:
         for i in cursor:
             if i[0] == 0:
                 self.db.execute("INSERT INTO SERVICES (IP,PORT) VALUES (?,?)", (target1, target2))
+                self.db.commit()
             else:
                 self.logger.debug("DB: add_services %s %s exits" % (target1, target2))
             return
@@ -96,23 +99,27 @@ class db:
         cursor = self.db.execute(
             "UPDATE IP SET HONEYPOT=HONEYPOT||?,TIMESTAMP=DATETIME(CURRENT_TIMESTAMP,'localtime') WHERE IP=?",
             ("@#" + target2, target1))
+        self.db.commit()
 
     def add_deviceinfo(self, target1, target2):
         self.logger.debug("DB: add_deviceinfo %s %s" % (target1, target2))
         cursor = self.db.execute(
             "UPDATE IP SET DEVICEINFO=DEVICEINFO||?,TIMESTAMP=DATETIME(CURRENT_TIMESTAMP,'localtime') WHERE IP=?",
             ("@#" + target2, target1))
+        self.db.commit()
     def add_protocol(self, target1, target2, target3):
         self.logger.debug("DB: add_protocol %s %s %s" % (target1, target2, target3))
         cursor = self.db.execute(
             "UPDATE SERVICES SET PROTOCOL=PROTOCOL||?,TIMESTAMP=DATETIME(CURRENT_TIMESTAMP,'localtime') WHERE IP=? and PORT=?",
             ("@#" + target3, target1, target2))
+        self.db.commit()
 
     def add_service_app(self, target1, target2, target3):
         self.logger.debug("DB: add_service_app %s %s %s" % (target1, target2, target3))
         cursor = self.db.execute(
             "UPDATE SERVICES SET SERVICE_APP=SERVICE_APP||?,TIMESTAMP=DATETIME(CURRENT_TIMESTAMP,'localtime') WHERE IP=? and PORT=?",
             ("@#" + target3, target1, target2))
+        self.db.commit()
 
 
 
@@ -121,15 +128,18 @@ class db:
         cursor = self.db.execute(
             "UPDATE SCAN SET METHOD=METHOD||?,TIMESTAMP=DATETIME(CURRENT_TIMESTAMP,'localtime') WHERE IP=?",
             ("@#" + target1, target2))
+        self.db.commit()
 
     def update_ip_port_timestamp(self, target1, target2):
         self.logger.debug("DB: update_ip_port_timestamp %s %s" % (target1, target2))
         cursor = self.db.execute(
             "UPDATE IP SET METHOD=METHOD||?,TIMESTAMP=DATETIME(CURRENT_TIMESTAMP,'localtime') WHERE IP=?",
             ("@#" + target1, target2))
+        self.db.commit()
 
     def update_ip_services_timestamp(self, target1, target2 , target3):
         self.logger.debug("DB: update_ip_services_timestamp %s %s %s" % (target1, target2 , target3))
         cursor = self.db.execute(
             "UPDATE SERVICES SET METHOD=METHOD||?,TIMESTAMP=DATETIME(CURRENT_TIMESTAMP,'localtime') WHERE IP=? and PORT=?",
             ("@#" +target1, target2, target3))
+        self.db.commit()
