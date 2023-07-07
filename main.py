@@ -51,8 +51,8 @@ if __name__ == "__main__":
         logger.debug("PORT Mode")
         import port
 
-        if "port-xxxx" in argv:
-            app = port.app(db, logger, method="port-xxxx")
+        if "port-allscan" in argv:
+            app = port.app(db, logger, method="port-allscan")
         elif "port-fscan" in argv:
             app = port.app(db, logger, method="port-fscan")
         else:
