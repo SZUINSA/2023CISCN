@@ -32,7 +32,20 @@ class method_fscan:
         self.db = db
         self.logger = logger
         self.name = name
-        logger.info("SCAN: fscan load")
+
+        if os.name == 'posix':
+            if not os.path.exists('tools/fscan/fscan'):
+                self.logger.warning("SCAN: fscan not found")
+            else:
+                self.logger.info("SCAN: fscan found")
+
+        elif os.name == 'nt':
+            if not os.path.exists('tools/fscan/fscan.exe'):
+                self.logger.warning("SCAN: fscan not found")
+            else:
+                self.logger.info("SCAN: fscan found")
+        else:
+            self.logger.info("SCAN: fscan not support")
 
     def scan(self, target):
 
