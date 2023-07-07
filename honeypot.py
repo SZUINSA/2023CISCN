@@ -18,9 +18,9 @@ class method_fofa:
         logger.debug(response.text)
         json=json.loads(response.text)
         if json['error']==False:
-            self.logger.info("HONEYPOT: Fofa apikey load")
+            self.logger.info("HONEYPOT: fofa apikey load")
         else:
-            self.logger.info("HONEYPOT: Fofa apikey error")
+            self.logger.info("HONEYPOT: fofa apikey error")
 
     def honeypot(self, target):
 
@@ -32,6 +32,11 @@ class method_fofa:
         response = requests.get(url,proxies=self.proxies)
         json = json.loads(response.text)
         self.logger.debug(json)
+        if json['error']==False:
+
+            self.logger.debug("HINEYPOT: fofa run")
+        else:
+            self.logger.debug("HINEYPOT: fofa error")
 
 class app:
     def __init__(self, db, logger,method='honeypot-fofa'):

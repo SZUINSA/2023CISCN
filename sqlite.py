@@ -98,6 +98,19 @@ class db:
         for i in cursor:
             return i[0],i[1]
 
+    def add_honeypot(self, target1, target2):
+        self.logger.debug("DB: add_honeypot %s %s %s" % (target1, target2))
+        cursor = self.db.execute(
+            "UPDATE IP SET HONEYPOT=HONEYPOT||?,TIMESTAMP=DATETIME(CURRENT_TIMESTAMP,'localtime') WHERE IP=?",
+            ("@#" + target2, target1))
+        self.db.commit()
+
+    def add_deviceinfo(self, target1, target2):
+        self.logger.debug("DB: add_deviceinfo %s %s %s" % (target1, target2))
+        cursor = self.db.execute(
+            "UPDATE IP SET DEVICEINFO=DEVICEINFO||?,TIMESTAMP=DATETIME(CURRENT_TIMESTAMP,'localtime') WHERE IP=?",
+            ("@#" + target2, target1))
+        self.db.commit()
     def add_protocol(self, target1, target2, target3):
         self.logger.debug("DB: add_protocol %s %s %s" % (target1, target2, target3))
         cursor = self.db.execute(
