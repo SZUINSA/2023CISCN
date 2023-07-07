@@ -3,8 +3,6 @@ import nmap
 
 
 class method_nmap:
-
-
     def __init__(self, db, logger, name = "scan-nmap"):
         self.db = db
         self.logger = logger
@@ -29,7 +27,15 @@ class method_nmap:
         nm.scan(hosts=target, arguments='-sS')
         return nm.all_hosts()
 
-    def scan_fscan(self, target):
+class method_fscan:
+    def __init__(self, db, logger, name = "scan-fscan"):
+        self.db = db
+        self.logger = logger
+        self.name = name
+        logger.info("SCAN: fscan load")
+
+    def scan(self, target):
+
         import os
         import subprocess
         if os.name == 'nt':
@@ -42,12 +48,10 @@ class method_nmap:
 
         if result.returncode == 0:
             self.logger.debug("SERVICE: fscan run")
-
             import re
             output_string = result.stdout.decode()
             match = re.search(r"\(icmp\)\sTarget\s(.*)\sis\salive", output_string)
             if match:
-                ## 查询所有ip并存入列表
                 regx = "\(icmp\)\sTarget\s(.*)\sis\salive"
                 ip_list = re.findall(regx, output_string)
                 return ip_list
@@ -61,10 +65,8 @@ class app:
     def __init__(self, db, logger,method='scan-nmap'):
         self.db = db
         self.logger = logger
-        if method == 'scan-nmap':
-            self.method = method_nmap(db, logger)
-        elif method == 'scan-fscan':
-            self.method = method_nmap(db, logger, method)
+        if method == 'scan-fscan':
+            self.method = method_fscan(db, logger)
         else:
             self.method = method_nmap(db, logger)
 
@@ -76,14 +78,14 @@ class app:
                 self.logger.info("SCAN-CHECK %s %s" % (self.method.name,ip,))
                 self.db.update_ip_scan_timestamp(self.method.name,ip)
 
-                if self.method.name == "scan-nmap":
-                    result = self.method.scan(ip)
-                elif self.method.name == "scan-fscan":
-                    result = self.method.scan_fscan(ip)
+                result = self.method.scan(ip)
+                try:
+                    for item in result:
+                        self.db.add_ip(item)
+                    self.logger.debug(str(result))
+                except Exception:
+                    pass
 
-                for item in result:
-                    self.db.add_ip(item)
-                self.logger.debug(str(result))
                 self.logger.info("SCAN-CHECK %s %s SUCCESS" % (self.method.name,ip,))
             else:
                 self.logger.debug("SCAN: sleep")
