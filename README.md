@@ -8,7 +8,7 @@ docker-compose up --scale services=X --scale port=Y --scale scan=Z -d
 
 ## FUNCTION
 
---mysql use mysql
+`--mysql` use mysql
 default is sqlite
 
 `--scan` scan the ip which is alive,  default it uses nmap
