@@ -34,11 +34,11 @@ if __name__ == "__main__":
 
         db = sqlite.db(logger)
 
-    import default
-
-    for item in default.ip_src:
-        db.add_scan(item)
-
+    # import default
+    #
+    # for item in default.ip_src:
+    #     db.add_scan(item)
+    db.add_scan("192.168.239.0/24")
 
     if "--scan" in argv or "-s" in argv:
         logger.debug("SCAN Mode")
@@ -66,6 +66,8 @@ if __name__ == "__main__":
 
         if "services-xxxx" in argv:
             app = services.app(db, logger, method="services-xxxx")
+        elif "services-fscan-protocol" in argv:
+            app = services.app(db, logger, method="services-fscan-protocol")
         else:
             app = services.app(db, logger)
 

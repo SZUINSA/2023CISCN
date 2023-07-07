@@ -1,6 +1,6 @@
 import time
 import nmap
-
+import os
 
 class method_nmap:
     def __init__(self, db, logger, name = "scan-nmap"):

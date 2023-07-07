@@ -1,11 +1,57 @@
-
+# -*- coding: utf-8 -*-
 import re
 import os
-import json
 import subprocess
 
+def fscan_output_file(result, target):
+    import os
+    if os.name == 'nt':
+        filepath = "tmp\\fscan\\"
+    elif os.name == 'posix':
+        filepath = "tmp/fscan/"
+    if "/" in target:
+        target = "result"
+    with open(f'{filepath}fscan_{target.strip()}.txt', 'w') as f:
+        f.write(result)
 
+def Oslist(filepath,ip):
+    if "/" in ip:
+        ip = "result"
+    with open(f'{filepath}fscan_{ip}.txt', 'r') as f:
+        datalist = f.readlines()
+    flag = 0
+    for data in datalist:
+        if "start vulscan" in data:
+            flag = 1
+        if flag:
+            p = re.findall(r"\[\*\]\s(.*?)\:\s", data)
+            if p:
+                # print(p)
+                # print(data)
+                if "WebTitle" in p:
+                    # continue
+                    web = re.findall(r"\[\*\] WebTitle: (http|https)\:\/\/(\d+\.\d+\.\d+\.\d+)\:*(\d*).*title\:(.*)\s",
+                                     data)
+                    # print(web)
+                    # print(web[0])
+                    try:
+                        if "http" in web[0][0]:
+                            if web[0][2] == "":
+                                port = "80"
+                            else:
+                                port = web[0][2]
+                            print("protocol: " + web[0][0] + "  ip: " + web[0][
+                                1] + "  port: " + port + "  service(web title): " + web[0][3])
+                    except:
+                        continue
 
+                elif "NetBios" in p:
+                    # print(data)
+                    netbios = re.findall(r"\[\*\] NetBios: (.*?)\s(\w+\\*\w+)", data)
+                    # print(netbios[0])
+                    print("protocol: " + "NetBios" + "  ip: " + netbios[0][0] + "  service: " + netbios[0][1])
+                else:
+                    print(data)
 
 
 def randstr( len=8):
@@ -17,19 +63,20 @@ def randstr( len=8):
     return random_str
 
 
-ip = "192.168.239.62"
-
+ip = "45.126.125.0/24"
+ip = "192.168.239.0/24"
+ip = "159.65.92.0/24"
+ip = "66.151.67.0/24"
 
 if os.name == 'nt':
     cmd=".\\tools\\fscan\\fscan.exe"
-    file = 'tmp\\'+ randstr() +'.txt'
-    # print(file)
+    filepath = "tmp\\fscan\\"
 elif os.name == 'posix':
     cmd="tools/fscan/fscan"
-    file = 'tmp/'+ randstr() +'.txt'
+    filepath = "tmp/fscan/"
 
-cmd = cmd + f" -nopoc -h {ip}"
-# print(cmd)
+cmd = cmd + f" -nopoc -nobr -h {ip}"
+print(cmd)
 result = subprocess.run(cmd, shell=True, capture_output=True)
 
 if result.returncode == 0:
@@ -39,56 +86,25 @@ if result.returncode == 0:
     import re
     output_string = result.stdout.decode()
     print(output_string)
+    fscan_output_file(output_string,ip)
     print("-------------------------------------------")
-    regx = r"(\d+\.\d+\.\d+\.\d+)\:(\d+)\sopen"
-    match = re.search(regx, output_string)
-    if match:
-        ## 查询所有ip并存入列表
-        ip_list = re.findall(regx, output_string)
-        for alive_ip in ip_list:
-            print(alive_ip)
-    else:
-        print("PORT: fscan version UNKNOWN")
+    # regx = r"(\d+\.\d+\.\d+\.\d+)\:(\d+)\sopen"
+    # match = re.search(regx, output_string)
+    # if match:
+    #     ## 查询所有ip并存入列表
+    #     ip_list = re.findall(regx, output_string)
+    #     for alive_ip in ip_list:
+    #         print(alive_ip)
+    # else:
+    #     print("PORT: fscan version UNKNOWN")
 
 else:
     print("SERVICE: fscan error")
 
-#输出IP段内存货数量
-def AliveIp(datalist):
 
-    sheetList = [['IP段', '段存活数量']]
+#### --service
 
-    for t in datalist:
-        Ip_d = re.findall(r"\[\*]\sLiveTop\s\d+\.\d+\.\d+\.\d+/\d+.*", t)
+Oslist(filepath,ip)
 
-        if len(Ip_d) != 0:
-            p1 = list(Ip_d)
 
-            for u in p1:
-                ip_duan = re.findall(r"\d+\.\d+\.\d+\.\d+/\d+", u)
-                No = re.findall(r"\d+$", u)
-                ip_duan.append(No[0])
-                sheetList.append(ip_duan)
-    print(sheetList)
 
-#输出识别到的系统
-def Oslist(datalist):
-
-    replaceList = ["[*]", '\t', "\x01", '\x02']
-
-    sheetList = [['ip', 'os']]
-
-    for t in datalist:
-        p = re.findall(r"\[\*]\s\d+\.\d+\.\d+\.\d+.*", t)
-
-        if len(p) != 0:
-            p1 = list(p)
-
-            for u in p1:
-                ip = re.findall(r"\d+\.\d+\.\d+\.\d+", u)
-                #删除无用字符
-                for q in replaceList:
-                    u = u.replace(q, "")
-
-                ip.append(u.replace(ip[0], '').strip())
-                sheetList.append(ip)

@@ -53,7 +53,8 @@ class method_nmap:
         elif os.name == 'posix':
             cmd = "tools/fscan/fscan"
 
-        cmd = cmd + f" -nopoc -h {target}"
+        cmd = cmd + f" -nopoc -nobr -h {target}"
+        print(cmd)
         result = subprocess.run(cmd, shell=True, capture_output=True)
 
         if result.returncode == 0:
@@ -61,7 +62,7 @@ class method_nmap:
 
             import re
             output_string = result.stdout.decode()
-
+            self.fscan_output_file(output_string, target)
             regx = r"(\d+\.\d+\.\d+\.\d+)\:(\d+)\sopen"
             match = re.search(regx, output_string)
             if match:
@@ -69,9 +70,22 @@ class method_nmap:
                 return ip_list
             else:
                 self.logger.debug("PORT: fscan can't find ports")
-
+                return []
         else:
             self.logger.debug("SERVICE: fscan error")
+            return []
+
+    def fscan_output_file(self, result, target):
+        import os
+        print(os.name)
+        if os.name == 'nt':
+            filepath = "tmp\\fscan\\"
+        elif os.name == 'posix':
+            filepath = "tmp/fscan/"
+
+        with open(f'{filepath}fscan_{target.strip()}.txt', 'w') as f:
+            f.write(result)
+
 
 class method_nmap_xxx:
     name = "port-nmap"
@@ -122,10 +136,11 @@ class app:
                     result = self.method.port(ip)
                 elif self.method.name == 'port-fscan':
                     result = self.method.port_fscan(ip)
-                    for alive_ip in result:
-                        self.db.add_services(alive_ip[0],alive_ip[1])
-                    self.logger.debug(str(result))
-                    self.logger.info("PORT-CHECK %s %s SUCCESS" % (self.method.name, ip,))
+                    if result:
+                        for alive_ip in result:
+                            self.db.add_services(alive_ip[0],alive_ip[1])
+                        self.logger.debug(str(result))
+                        self.logger.info("PORT-CHECK %s %s SUCCESS" % (self.method.name, ip,))
 
                     continue
 
