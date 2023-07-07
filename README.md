@@ -23,3 +23,4 @@ default is sqlite
 `--port port-fscan`, use fscan which is faster than the default one
 
 
+`--services` find the web service fingerprint, protocol and more information on certain ip
