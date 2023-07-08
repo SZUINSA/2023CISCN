@@ -121,8 +121,6 @@ class db:
             ("@#" + target3, target1, target2))
         self.db.commit()
 
-
-
     def update_ip_scan_timestamp(self, target1, target2):
         self.logger.debug("DB: update_ip_scan_timestamp %s %s" % (target1, target2))
         cursor = self.db.execute(
