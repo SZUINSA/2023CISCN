@@ -30,6 +30,6 @@ default is sqlite
 
 `--honeypot` 木大你来写吧
 
-`--scale` 木大好像在玩一种很新的东西，弟弟看不懂了
+`--scale` if you use scale mode in docker-compose, please make sure you have this options to hava a random delay before running
 
 
