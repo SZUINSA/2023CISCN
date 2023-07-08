@@ -98,7 +98,7 @@ class db:
         self.logger.debug("DB: add_honeypot %s %s" % (target1, target2))
         cursor = self.db.execute(
             "UPDATE IP SET HONEYPOT=HONEYPOT||?,TIMESTAMP=DATETIME(CURRENT_TIMESTAMP,'localtime') WHERE IP=?",
-            ("@#" + target2, target1))
+            ("@#" + target2, ''+target1))
         self.db.commit()
 
     def add_deviceinfo(self, target1, target2):
@@ -141,3 +141,70 @@ class db:
             "UPDATE SERVICES SET METHOD=METHOD||?,TIMESTAMP=DATETIME(CURRENT_TIMESTAMP,'localtime') WHERE IP=? and PORT=?",
             ("@#" +target1, target2, target3))
         self.db.commit()
+
+
+    def get_all_ip(self):
+        self.logger.debug("DB: SELECT ip FROM IP")
+        # 执行查询语句
+        cursor = self.db.execute("SELECT ip FROM IP")
+
+        # 获取所有查询结果
+        results = cursor.fetchall()
+
+        # 去空格
+        ip_list = []
+        ip_lists = [result[0] for result in results]
+        for ip in ip_lists:
+            ip = ip.strip()
+            # print(ip+"#")
+            ip_list.append(ip)
+        # 返回一个含全部ip的数组
+        return ip_list
+
+    def get_service_from_ip(self,ip):
+        # todo: 查询出端口，协议，service_app
+        port = ''
+        protocol = ''
+        service_app = ''
+
+        return port, protocol, service_app
+
+    def get_deviceinfo_from_ip(self,ip):
+        # SELECT DEVICEINFO FROM "IP" where IP = '64.226.68.124'
+
+        self.logger.debug("DB: SELECT DEVICEINFO FROM \"IP\" where IP = %s" % (ip))
+        cursor = self.db.execute(
+            "SELECT DEVICEINFO FROM IP where IP LIKE ?",
+            (ip,))
+        self.db.commit()
+        results = cursor.fetchall()
+
+        # 这个估计还得修
+        return results[0][0]
+
+
+
+    def get_honeypot_from_ip(self,ip):
+        # SELECT HONEYPOT FROM "IP" where IP = '64.226.68.124'
+
+        self.logger.debug("DB: SELECT HONEYPOT FROM \"IP\" where IP = %s" % (ip))
+        cursor = self.db.execute(
+            "SELECT HONEYPOT FROM IP where IP LIKE ?",
+            (ip,))
+        self.db.commit()
+        results = cursor.fetchall()
+
+        return results[0][0]
+    def get_timestamp_from_ip(self,ip):
+        # "SELECT TIMESTAMP FROM "IP" where IP = '64.226.68.124' ",
+
+
+        self.logger.debug("DB: SELECT HONEYPOT FROM \"IP\" where IP = %s" % (ip))
+        cursor = self.db.execute(
+            "SELECT TIMESTAMP FROM IP where IP LIKE ?",
+            (ip,))
+        self.db.commit()
+        results = cursor.fetchall()
+
+        return results[0][0]
+
