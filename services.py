@@ -38,18 +38,22 @@ class method_kscan:
         import subprocess
         if os.name == 'nt':
             cmd="tools\\kscan\\kscan.exe"
-            file = 'tmp\\'+self.randstr()+'.txt'
+            file = 'tmp\\kscan\\'
         elif os.name == 'posix':
             cmd="tools/kscan/kscan"
-            file = 'tmp/'+self.randstr()+'.txt'
+            file = 'tmp/kscan/'
 
-        cmd = cmd + f" --target {ip} --port {port} -oJ {file}"
+        if not os.path.exists(file):
+            os.mkdir(file)
+
+        name = self.randstr()+'.txt'
+        cmd = cmd + f" --target {ip} --port {port} -oJ {file+name}"
 
         result = subprocess.run(cmd, shell=True, capture_output=True)
 
         if result.returncode == 0:
             self.logger.debug("SERVICE: kscan run")
-            with open(file,"rb") as f:
+            with open(file+name,"rb") as f:
                 load=f.read()
                 self.logger.debug("SERVICE: "+ load.decode("UTF-8"));
                 json=json.loads(load)

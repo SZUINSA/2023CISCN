@@ -104,21 +104,21 @@ class db:
     def add_deviceinfo(self, target1, target2):
         self.logger.debug("DB: add_deviceinfo %s %s" % (target1, target2))
         self.db.execute(
-            "UPDATE IP SET DEVICEINFO=CONCAT(DEVICEINFO,%s),TIMESTAMP=DATETIME(CURRENT_TIMESTAMP,'localtime') WHERE IP=%s",
+            "UPDATE IP SET DEVICEINFO=CONCAT(DEVICEINFO,%s),TIMESTAMP=NOW() WHERE IP=%s",
             ("@#" + target2, target1))
         self.db_conn.commit()
 
     def add_protocol(self, target1, target2, target3):
         self.logger.debug("DB: add_protocol %s %s %s" % (target1, target2, target3))
         self.db.execute(
-            "UPDATE SERVICES SET PROTOCOL=CONCAT(PROTOCOL,%s),TIMESTAMP=DATETIME(CURRENT_TIMESTAMP,'localtime') WHERE IP=%s and PORT=%s",
+            "UPDATE SERVICES SET PROTOCOL=CONCAT(PROTOCOL,%s),TIMESTAMP=NOW() WHERE IP=%s and PORT=%s",
             ("@#" + target3, target1, target2))
         self.db_conn.commit()
 
     def add_service_app(self, target1, target2, target3):
         self.logger.debug("DB: add_service_app %s %s %s" % (target1, target2, target3))
         self.db.execute(
-            "UPDATE SERVICES SET SERVICE_APP=CONCAT(SERVICE_APP,%s),TIMESTAMP=DATETIME(CURRENT_TIMESTAMP,'localtime') WHERE IP=%s and PORT=%s",
+            "UPDATE SERVICES SET SERVICE_APP=CONCAT(SERVICE_APP,%s),TIMESTAMP=NOW() WHERE IP=%s and PORT=%s",
             ("@#" + target3, target1, target2))
         self.db_conn.commit()
 
@@ -132,13 +132,13 @@ class db:
     def update_ip_port_timestamp(self, target1, target2):
         self.logger.debug("DB: update_ip_port_timestamp %s %s" % (target1, target2))
         self.db.execute(
-            "UPDATE IP SET METHOD=CONCAT(METHOD,%s),TIMESTAMP=DATETIME(CURRENT_TIMESTAMP,'localtime') WHERE IP=%s",
+            "UPDATE IP SET METHOD=CONCAT(METHOD,%s),TIMESTAMP=NOW() WHERE IP=%s",
             ("@#" + target1, target2))
         self.db_conn.commit()
 
     def update_ip_services_timestamp(self, target1, target2, target3):
         self.logger.debug("DB: update_ip_services_timestamp %s %s %s" % (target1, target2, target3))
         self.db.execute(
-            "UPDATE SERVICES SET METHOD=CONCAT(METHOD,%s),TIMESTAMP=DATETIME(CURRENT_TIMESTAMP,'localtime') WHERE IP=%s and PORT=%s",
+            "UPDATE SERVICES SET METHOD=CONCAT(METHOD,%s),TIMESTAMP=NOW() WHERE IP=%s and PORT=%s",
             ("@#" + target1, target2, target3))
         self.db_conn.commit()

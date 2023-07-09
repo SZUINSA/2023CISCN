@@ -76,25 +76,25 @@ class method_nmap_allscan:
 
 
 class method_fscan_port:
-    name = "fscan_port"
 
-    def __init__(self, db, logger):
+    def __init__(self, db, logger,name = "port-fscan-port"):
         self.db = db
         self.logger = logger
-        import subprocess
-        cmd = "nmap --version"
-        result = subprocess.run(cmd, shell=True, capture_output=True)
-        if result.returncode == 0:
-            import re
-            version_string = result.stdout.decode()
-            match = re.search(r"Nmap version (\d+\.\d+(?:\.\d+)?)", version_string)
-            if match:
-                version_number = match.group(1)
-                logger.debug(f"PORT: nmap version {version_number}")
+        self.name=name
+        import os
+        if os.name == 'posix':
+            if not os.path.exists('tools/fscan/fscan'):
+                self.logger.warning("PORT: fscan not found")
             else:
-                logger.warning("PORT: nmap version UNKNOW")
+                self.logger.info("PORT: fscan found")
+
+        elif os.name == 'nt':
+            if not os.path.exists('tools/fscan/fscan.exe'):
+                self.logger.warning("PORT: fscan not found")
+            else:
+                self.logger.info("PORT: fscan found")
         else:
-            logger.warning("PORT: nmap not found")
+            self.logger.info("PORT: fscan not support")
     def port(self, target):
 
         result = self.fscan_port(target)
@@ -102,7 +102,6 @@ class method_fscan_port:
             for alive_ip in result:
                 self.db.add_services(alive_ip[0], alive_ip[1])
             self.logger.debug(str(result))
-            self.logger.info("PORT-CHECK %s %s SUCCESS" % (self.name, target,))
 
         return []
 
@@ -120,7 +119,7 @@ class method_fscan_port:
         result = subprocess.run(cmd, shell=True, capture_output=True)
 
         if result.returncode == 0:
-            self.logger.debug("SERVICE: fscan run")
+            self.logger.debug("PORT: fscan run")
 
             import re
             output_string = result.stdout.decode()
@@ -135,7 +134,7 @@ class method_fscan_port:
                 self.logger.debug("PORT: fscan can't find ports")
                 return []
         else:
-            self.logger.debug("SERVICE: fscan error")
+            self.logger.debug("PORT: fscan error")
             return []
 
     def fscan_output_file(self, result, target):
@@ -145,7 +144,8 @@ class method_fscan_port:
             filepath = "tmp\\fscan\\"
         elif os.name == 'posix':
             filepath = "tmp/fscan/"
-
+        if not os.path.exists(filepath):
+            os.mkdir(filepath)
         with open(f'{filepath}fscan_{target.strip()}.txt', 'w') as f:
             f.write(result)
 

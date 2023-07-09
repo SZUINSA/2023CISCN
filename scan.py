@@ -1,3 +1,4 @@
+import logging
 import time
 import nmap
 import os
@@ -67,7 +68,7 @@ class method_fscan:
             if match:
                 regx = "\(icmp\)\sTarget\s(.*)\sis\salive"
                 ip_list = re.findall(regx, output_string)
-                return ip_list
+                return [ip.strip() for ip in ip_list]
             else:
                 self.logger.debug("PORT: fscan version UNKNOWN")
         else:
@@ -84,7 +85,6 @@ class app:
             self.method = method_nmap(db, logger)
 
     def run(self, sleep=60):
-
         while True:
             ip = self.db.get_ip_no_scan(self.method.name)
             if ip is not None:

@@ -2,19 +2,25 @@ version: '2'
 services:
   scan:
     build: .
-    command: "python main.py --scan --scale"
+    command: "python main.py --scan --scale --mysql"
     restart: always
     volumes:
       - .:/opt/
   port:
     build: .
-    command: "python main.py --port port-fscan --scale"
+    command: "python main.py --port --scale --mysql"
+    restart: always
+    volumes:
+      - .:/opt/
+  port-fscan:
+    build: .
+    command: "python main.py --port port-fscan --scale --mysql"
     restart: always
     volumes:
       - .:/opt/
   services:
     build: .
-    command: "python main.py --services --scale"
+    command: "python main.py --services --scale --mysql"
     restart: always
     volumes:
       - .:/opt/

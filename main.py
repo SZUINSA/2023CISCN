@@ -37,9 +37,6 @@ if __name__ == "__main__":
     # import default
     # for item in default.ip_src:
     #      db.add_scan(item)
-    db.add_scan("192.168.239.0/24")
-    db.add_scan("216.71.192.0/19")
-
 
     if "--scan" in argv or "-s" in argv:
         logger.debug("SCAN Mode")
@@ -78,6 +75,8 @@ if __name__ == "__main__":
         import honeypot
         if "honeypot-quake" in argv:
             app = honeypot.app(db, logger, method="honeypot-quake")
+        elif "honeypot-quake-dump" in argv:
+            app = honeypot.app(db, logger, method="honeypot-quake-dump")
         else:
             app = honeypot.app(db, logger)
 
