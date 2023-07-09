@@ -72,35 +72,50 @@ def real_add_honeypot():
                     # db.add_honeypot('16.163.13.106', honeypot)
                     db.add_honeypot('\''+ip+'\'',honeypot)
 
-# real_add_honeypot()
+def manage_honeypot(honeypot):
+    honeypot_list = []
+    if honeypot == '':
+        honeypot_list = ["null"]
+        return honeypot_list
+    pattern_honeypot = re.compile("@#([\d|\/|\w]+)")
+    ipname_list = re.findall(pattern_honeypot, honeypot)
+    for ipname in ipname_list:
+        if ipname not in honeypot_list:
+            honeypot_list.append(ipname)
+    return honeypot_list
 
+honeypot = db.get_honeypot_from_ip("16.163.13.0")
+print(honeypot)
+print(manage_honeypot(honeypot))
 
 json_ip_list = []
 json_ip = ''
 
 ip_list = []
 ip_list = db.get_all_ip()
-
 # print(ip_list)
 
 for ip in ip_list:
-    # print(ip)  #16.163.13.0
 
     deviceinfo = db.get_deviceinfo_from_ip(ip) #缺乏数据，理论上可以了
-    # print(deviceinfo)
 
     honeypot = db.get_honeypot_from_ip(ip) # 测试可以
-    # print(honeypot)
+    honeypot = manage_honeypot(honeypot)
 
     timestamp = db.get_timestamp_from_ip(ip) # 测试可以
-    # print(timestamp)
 
-    ipdata = '{' \
-             '"services": [],' \
-             '"deviceinfo": "%s",' \
-             '"honeypot": [%s],' \
-             '"timestamp": %s'\
-             '}' % (deviceinfo, honeypot, timestamp)
-    json_ip = '{"%s": %s}' % (ip,ipdata)
-    print(json_ip)
+
+    ipdata = {
+        "services": [],
+        "deviceinfo": deviceinfo,
+        "honeypot": honeypot,
+        "timestamp": timestamp
+    }
+
+
+    json_ip = {ip: ipdata}
+    # if honeypot != ["null"]:
+    #     print(json.dumps(json_ip))
     json_ip_list.append(json_ip)
+
+
