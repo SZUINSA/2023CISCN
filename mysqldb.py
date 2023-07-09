@@ -148,3 +148,37 @@ class db:
             "UPDATE SERVICES SET METHOD=CONCAT(METHOD,%s),TIMESTAMP=NOW() WHERE IP=%s and PORT=%s",
             ("@#" + target1, target2, target3))
         self.db_conn.commit()
+
+    def get_all_ip(self):
+        self.logger.debug("DB: get_all_ip")
+        self.db.execute("SELECT IP FROM IP")
+        self.db_conn.commit()
+        cursor = self.db.fetchall()
+        return [(i['IP'],) for i in cursor]
+
+    def get_service_from_ip(self,target):
+        # todo: 查询出端口，协议，service_app
+        port = ''
+        protocol = ''
+        service_app = ''
+        return port, protocol, service_app
+
+    def get_deviceinfo_from_ip(self,target):
+        self.logger.debug("DB: get_deviceinfo_from_ip %s" % (target,))
+        self.db.execute("SELECT DEVICEINFO FROM IP where IP LIKE %s",(target,))
+        self.db_conn.commit()
+        i = self.db.fetchone()
+        return i['DEVICEINFO']
+
+    def get_honeypot_from_ip(self,target):
+        self.logger.debug("DB: get_honeypot_from_ip %s" % (target,))
+        self.db.execute("SELECT HONEYPOT FROM IP where IP=%s",(target,))
+        self.db_conn.commit()
+        i = self.db.fetchone()
+        return i['HONEYPOT']
+    def get_timestamp_from_ip(self,target):
+        self.logger.debug("DB: get_timestamp_from_ip %s" % (target,))
+        self.db.execute("SELECT TIMESTAMP FROM IP where IP=%s",(target,))
+        self.db_conn.commit()
+        i = self.db.fetchone()
+        return i['TIMESTAMP']

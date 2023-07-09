@@ -173,7 +173,6 @@ class db:
         self.logger.debug("DB: get_honeypot_from_ip %s" % (target,))
         cursor = self.db.execute("SELECT HONEYPOT FROM IP where IP=?",(target,))
         self.db.commit()
-        results = cursor.fetchall()
         for i in cursor:
             return i[0]
     def get_timestamp_from_ip(self,target):
