@@ -1,4 +1,5 @@
 import time
+import base64
 import nmap
 
 
@@ -74,7 +75,42 @@ class method_nmap_allscan:
 
         return nm
 
-
+class method_fofa:
+    name = "port-fofa"
+    def __init__(self, db, logger, name="port-fofa"):
+        self.db = db
+        self.logger = logger
+        self.name = name
+        import os
+        import json
+        import requests
+        self.email = os.environ['fofa_email']
+        self.key = os.environ['fofa_key']
+        self.proxies = {"http": "", "https": ""}
+        url = f"https://fofa.info/api/v1/info/my?email={self.email}&key={self.key}"
+        response = requests.get(url, proxies=self.proxies)
+        logger.debug(response.text)
+        json = json.loads(response.text)
+        if json['error'] == False:
+            self.logger.info("PORT: fofa apikey load")
+        else:
+            self.logger.info("PORT: fofa apikey error")
+    def port(self, target):
+        import json
+        import requests
+        query = f"ip=\"{target}\"";
+        query = base64.b64encode(query.encode()).decode()
+        url = f"https://fofa.info/api/v1/search/all?email={self.email}&key={self.key}&qbase64={query}&fields=host,ip,port,server,product,product_category"
+        response = requests.get(url, proxies=self.proxies)
+        json = json.loads(response.text)
+        self.logger.debug(json)
+        if json['error'] == False:
+            self.db.add_api(target,self.name,response.text)
+            self.logger.debug("PORT: fofa run")
+        else:
+            self.logger.debug("PORT: fofa error")
+        time.sleep(1)
+        return None
 class method_fscan_port:
 
     def __init__(self, db, logger,name = "port-fscan-port"):
@@ -154,12 +190,15 @@ class app:
     def __init__(self, db, logger,method='port-nmap'):
         self.db = db
         self.logger = logger
-        if method == 'port-nmap':
-            self.method = method_nmap(db, logger)
+        if method == 'port-fofa':
+            self.method = method_fofa(db, logger)
         elif method == "port-fscan":
             self.method = method_fscan_port(db, logger)
         elif method == "port-allscan":
             self.method = method_nmap_allscan(db, logger)
+        else:
+            self.method = method_nmap(db, logger)
+
 
     def run(self, sleep=60):
 

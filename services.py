@@ -1,4 +1,5 @@
 import logging
+import base64
 import time
 import nmap
 
@@ -80,7 +81,6 @@ class method_kscan:
         else:
             self.logger.warning("SERVICE: kscan error")
             return None,None
-
 
 class method_fscan:
     name = "service-fscan"
@@ -167,10 +167,12 @@ class app:
     def __init__(self, db, logger,method='service-kscan'):
         self.db = db
         self.logger = logger
-        if method == 'service-kscan':
-            self.method = method_kscan(db,logger)
+        if method == 'service-fofa':
+            self.method = method_fofa(db,logger)
         elif method == "services-fscan-protocol":
             self.method = method_fscan(db,logger)
+        else:
+            self.method = method_kscan(db,logger)
 
 
     def run(self, sleep=60):
