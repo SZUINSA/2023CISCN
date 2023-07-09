@@ -153,7 +153,7 @@ class db:
         self.logger.debug("DB: get_all_ip")
         cursor = self.db.execute("SELECT IP FROM IP")
         self.db.commit()
-        return [(i[0],) for i in cursor]
+        return [i[0] for i in cursor]
 
     def get_service_from_ip(self,target):
         # todo: 查询出端口，协议，service_app
