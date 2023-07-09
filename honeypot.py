@@ -70,7 +70,7 @@ class method_quake_dump:
         pattern_honneypot = re.compile("\s\'(\d+\/.*?)\'")
         honneypot_list = re.findall(pattern_honneypot, datastr)
         return honneypot_list
-    def real_add_honeypot(self,target):
+    def honeypot(self,target):
         import os
         import json
         filepath = self.path
@@ -88,28 +88,6 @@ class method_quake_dump:
                             self.logger.warning("HONEYPOT: ip in file not available")
             except Exception:
                 pass
-    def honeypot(self, target):
-        import json
-        import requests
-        query = f"app=\"蜜罐\" && ip=\"{target}\"";
-        query = base64.b64encode(query.encode()).decode()
-        url = f"https://fofa.info/api/v1/search/all?email={self.email}&key={self.key}&qbase64={query}&fields=host,ip,port,server"
-        response = requests.get(url, proxies=self.proxies)
-        json = json.loads(response.text)
-        self.logger.debug(json)
-        if json['error'] == False:
-            for item in json['results']:
-                import re
-                match = re.match(r"^(.*?)/", item[3])
-                if match:
-                    result = item[2] + "/" + match.group(1)
-                else:
-                    result = item[2] + "/" + item[3]
-                self.logger.debug(result)
-                self.db.add_honeypot(target,result)
-            self.logger.debug("HINEYPOT: fofa run")
-        else:
-            self.logger.debug("HINEYPOT: fofa error")
 
 
 class app:

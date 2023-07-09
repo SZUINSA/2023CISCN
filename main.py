@@ -55,6 +55,8 @@ if __name__ == "__main__":
             app = port.app(db, logger, method="port-allscan")
         elif "port-fscan" in argv:
             app = port.app(db, logger, method="port-fscan")
+        elif "port-fofa" in argv:
+            app = port.app(db, logger, method="port-fofa")
         else:
             app = port.app(db, logger)
 
@@ -62,16 +64,13 @@ if __name__ == "__main__":
         logger.debug("SERVICES Mode")
         import services
 
-        if "services-xxxx" in argv:
-            app = services.app(db, logger, method="services-xxxx")
-        elif "services-fscan-protocol" in argv:
+        if "services-fscan-protocol" in argv:
             app = services.app(db, logger, method="services-fscan-protocol")
         else:
             app = services.app(db, logger)
 
     if "--honeypot" in argv or "-h" in argv:
         logger.debug("HONEYPOT Mode")
-
         import honeypot
         if "honeypot-quake" in argv:
             app = honeypot.app(db, logger, method="honeypot-quake")

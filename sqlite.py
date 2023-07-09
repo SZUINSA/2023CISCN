@@ -42,6 +42,13 @@ class db:
                     SERVICE_APP TEXT DEFAULT '',
                     TIMESTAMP TIME NULL
                     );''')
+        self.db.execute('''CREATE TABLE IF NOT EXISTS API(
+                            ID INTEGER PRIMARY KEY AUTOINCREMENT,
+                            IP VARCHAR(16) NULL,
+                            METHOD VARCHAR(1000) DEFAULT '',
+                            CONTENT VARCHAR(10000) DEFAULT ''
+                            );''')
+        self.db.commit()
 
     def add_scan(self, target):
         self.logger.debug("DB: add_scan %s" % (target,))
@@ -125,6 +132,16 @@ class db:
         cursor = self.db.execute(
             "UPDATE SERVICES SET SERVICE_APP=SERVICE_APP||?,TIMESTAMP=DATETIME(CURRENT_TIMESTAMP,'localtime') WHERE IP=? and PORT=?",
             ("@#" + target3, target1, target2))
+        self.db.commit()
+
+    def add_api(self, target1, target2, target3):
+        self.logger.debug("DB: add_api %s %s %s" % (target1, target2, target3))
+        self.db.execute(
+            "DELETE FROM API WHERE IP=? AND METHOD=?",
+            (target1, target2))
+        self.db.execute(
+            "INSERT INTO API (IP,METHOD,CONTENT) VALUES (?,?,?)",
+            (target1, target2, target3))
         self.db.commit()
 
     def update_ip_scan_timestamp(self, target1, target2):

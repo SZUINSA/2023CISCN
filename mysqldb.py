@@ -1,4 +1,6 @@
 import os
+
+
 class db:
 
     def __init__(self, logger):
@@ -15,7 +17,6 @@ class db:
         self.logger.info("Building Mysql Database...")
         self.build()
         self.logger.info("Building Mysql Database Succeed.")
-
 
     def build(self):
 
@@ -42,6 +43,12 @@ class db:
                     SERVICE_APP VARCHAR(10000) DEFAULT '',
                     TIMESTAMP DATETIME NULL
                     );''')
+        self.db.execute('''CREATE TABLE IF NOT EXISTS API(
+                            ID INTEGER PRIMARY KEY AUTO_INCREMENT,
+                            IP VARCHAR(16) NULL,
+                            METHOD VARCHAR(1000) DEFAULT '',
+                            CONTENT VARCHAR(10000) DEFAULT ''
+                            );''')
         self.db_conn.commit()
 
     def add_scan(self, target):
@@ -72,7 +79,7 @@ class db:
         self.logger.debug("DB: add_services %s %s" % (target1, target2))
         self.db.execute("SELECT count(1) FROM SERVICES WHERE IP=%s and PORT=%s ", (target1, target2))
         self.db_conn.commit()
-        i=self.db.fetchone()
+        i = self.db.fetchone()
         if i['count(1)'] == 0:
             self.db.execute("INSERT INTO SERVICES (IP,PORT) VALUES (%s,%s)", (target1, target2))
             self.db_conn.commit()
@@ -83,7 +90,7 @@ class db:
         self.logger.debug("DB: get_ip_no_scan %s" % (target,))
         self.db.execute("SELECT IP from SCAN WHERE METHOD NOT LIKE %s LIMIT 1", ("%@#" + target + "%",))
         self.db_conn.commit()
-        i=self.db.fetchone()
+        i = self.db.fetchone()
         try:
             return i['IP']
         except Exception:
@@ -93,7 +100,7 @@ class db:
         self.logger.debug("DB: get_ip_no_port %s" % (target,))
         self.db.execute("SELECT IP from IP WHERE METHOD NOT LIKE %s LIMIT 1", ("%@#" + target + "%",))
         self.db_conn.commit()
-        i=self.db.fetchone()
+        i = self.db.fetchone()
         try:
             return i['IP']
         except Exception:
@@ -103,7 +110,7 @@ class db:
         self.logger.debug("DB: get_ip_no_services %s" % (target,))
         cursor = self.db.execute("SELECT IP,PORT from SERVICES WHERE METHOD NOT LIKE %s LIMIT 1",
                                  ("%@#" + target + "%",))
-        i=self.db.fetchone()
+        i = self.db.fetchone()
         try:
             return i['IP'], i['PORT']
         except Exception:
@@ -137,6 +144,16 @@ class db:
             ("@#" + target3, target1, target2))
         self.db_conn.commit()
 
+    def add_api(self, target1, target2, target3):
+        self.logger.debug("DB: add_api %s %s %s" % (target1, target2, target3))
+        self.db.execute(
+            "DELETE FROM API WHERE IP=%s AND METHOD=%s",
+            (target1, target2))
+        self.db.execute(
+            "INSERT INTO API (IP,METHOD,CONTENT) VALUES (%s,%s,%s)",
+            (target1, target2, target3))
+        self.db_conn.commit()
+
     def update_ip_scan_timestamp(self, target1, target2):
         self.logger.debug("DB: update_ip_scan_timestamp %s %s" % (target1, target2))
         self.db.execute(
@@ -168,16 +185,16 @@ class db:
         except Exception:
             return None
 
-    def get_service_from_ip(self,target):
+    def get_service_from_ip(self, target):
         # todo: 查询出端口，协议，service_app
         port = ''
         protocol = ''
         service_app = ''
         return port, protocol, service_app
 
-    def get_deviceinfo_from_ip(self,target):
+    def get_deviceinfo_from_ip(self, target):
         self.logger.debug("DB: get_deviceinfo_from_ip %s" % (target,))
-        self.db.execute("SELECT DEVICEINFO FROM IP where IP=%s",(target,))
+        self.db.execute("SELECT DEVICEINFO FROM IP where IP=%s", (target,))
         self.db_conn.commit()
         i = self.db.fetchone()
         try:
@@ -185,18 +202,19 @@ class db:
         except Exception:
             return None
 
-    def get_honeypot_from_ip(self,target):
+    def get_honeypot_from_ip(self, target):
         self.logger.debug("DB: get_honeypot_from_ip %s" % (target,))
-        self.db.execute("SELECT HONEYPOT FROM IP where IP=%s",(target,))
+        self.db.execute("SELECT HONEYPOT FROM IP where IP=%s", (target,))
         self.db_conn.commit()
         i = self.db.fetchone()
         try:
             return i['HONEYPOT']
         except Exception:
             return None
-    def get_timestamp_from_ip(self,target):
+
+    def get_timestamp_from_ip(self, target):
         self.logger.debug("DB: get_timestamp_from_ip %s" % (target,))
-        self.db.execute("SELECT TIMESTAMP FROM IP where IP=%s",(target,))
+        self.db.execute("SELECT TIMESTAMP FROM IP where IP=%s", (target,))
         self.db_conn.commit()
         i = self.db.fetchone()
         try:
