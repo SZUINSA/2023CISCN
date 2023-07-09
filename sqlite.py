@@ -46,6 +46,7 @@ class db:
     def add_scan(self, target):
         self.logger.debug("DB: add_scan %s" % (target,))
         cursor = self.db.execute("SELECT count() FROM SCAN WHERE IP=?", (target,))
+        self.db.commit()
         for i in cursor:
             if i[0] == 0:
                 self.db.execute("INSERT INTO SCAN (IP) VALUES (?)", (target,))
@@ -57,6 +58,7 @@ class db:
     def add_ip(self, target):
         self.logger.debug("DB: add_ip %s" % (target,))
         cursor = self.db.execute("SELECT count() FROM IP WHERE IP=?", (target,))
+        self.db.commit()
         for i in cursor:
             if i[0] == 0:
                 self.db.execute("INSERT INTO IP (IP) VALUES (?)", (target,))
@@ -68,6 +70,7 @@ class db:
     def add_services(self, target1, target2):
         self.logger.debug("DB: add_services %s %s" % (target1, target2))
         cursor = self.db.execute("SELECT count() FROM SERVICES WHERE IP=? and PORT=? ", (target1, target2))
+        self.db.commit()
         for i in cursor:
             if i[0] == 0:
                 self.db.execute("INSERT INTO SERVICES (IP,PORT) VALUES (?,?)", (target1, target2))
@@ -79,18 +82,21 @@ class db:
     def get_ip_no_scan(self, target):
         self.logger.debug("DB: get_ip_no_scan %s" % (target,))
         cursor = self.db.execute("SELECT IP from SCAN WHERE METHOD NOT LIKE ? LIMIT 1", ("%@#" + target + "%",))
+        self.db.commit()
         for i in cursor:
             return i[0]
 
     def get_ip_no_port(self, target):
         self.logger.debug("DB: get_ip_no_port %s" % (target,))
         cursor = self.db.execute("SELECT IP from IP WHERE METHOD NOT LIKE ? LIMIT 1", ("%@#" + target + "%",))
+        self.db.commit()
         for i in cursor:
             return i[0]
 
     def get_ip_no_services(self, target):
         self.logger.debug("DB: get_ip_no_services %s" % (target,))
         cursor = self.db.execute("SELECT IP,PORT from SERVICES WHERE METHOD NOT LIKE ? LIMIT 1", ("%@#" + target + "%",))
+        self.db.commit()
         for i in cursor:
             return i[0],i[1]
 
@@ -146,6 +152,7 @@ class db:
     def get_all_ip(self):
         self.logger.debug("DB: get_all_ip")
         cursor = self.db.execute("SELECT IP FROM IP")
+        self.db.commit()
         return [(i[0],) for i in cursor]
 
     def get_service_from_ip(self,target):
@@ -158,18 +165,21 @@ class db:
     def get_deviceinfo_from_ip(self,target):
         self.logger.debug("DB: get_deviceinfo_from_ip %s" % (target,))
         cursor = self.db.execute("SELECT DEVICEINFO FROM IP where IP LIKE ?",(target,))
+        self.db.commit()
         for i in cursor:
             return i[0]
 
     def get_honeypot_from_ip(self,target):
         self.logger.debug("DB: get_honeypot_from_ip %s" % (target,))
         cursor = self.db.execute("SELECT HONEYPOT FROM IP where IP=?",(target,))
+        self.db.commit()
         results = cursor.fetchall()
         for i in cursor:
             return i[0]
     def get_timestamp_from_ip(self,target):
         self.logger.debug("DB: get_timestamp_from_ip %s" % (target,))
         cursor = self.db.execute("SELECT TIMESTAMP FROM IP where IP=?",(target,))
+        self.db.commit()
         for i in cursor:
             return i[0]
 

@@ -42,10 +42,12 @@ class db:
                     SERVICE_APP VARCHAR(10000) DEFAULT '',
                     TIMESTAMP DATETIME NULL
                     );''')
+        self.db_conn.commit()
 
     def add_scan(self, target):
         self.logger.debug("DB: add_scan %s" % (target,))
         self.db.execute("SELECT count(1) FROM SCAN WHERE IP=%s", (target,))
+        self.db_conn.commit()
         i = self.db.fetchone()
         if i['count(1)'] == 0:
             self.db.execute("INSERT INTO SCAN (IP) VALUES (%s)", (target,))
@@ -57,6 +59,7 @@ class db:
     def add_ip(self, target):
         self.logger.debug("DB: add_ip %s" % (target,))
         self.db.execute("SELECT count(1) FROM IP WHERE IP=%s", (target,))
+        self.db_conn.commit()
         i = self.db.fetchone()
         if i['count(1)'] == 0:
             self.db.execute("INSERT INTO IP (IP) VALUES (%s)", (target,))
@@ -68,6 +71,7 @@ class db:
     def add_services(self, target1, target2):
         self.logger.debug("DB: add_services %s %s" % (target1, target2))
         self.db.execute("SELECT count(1) FROM SERVICES WHERE IP=%s and PORT=%s ", (target1, target2))
+        self.db_conn.commit()
         i=self.db.fetchone()
         if i['count(1)'] == 0:
             self.db.execute("INSERT INTO SERVICES (IP,PORT) VALUES (%s,%s)", (target1, target2))
@@ -78,12 +82,14 @@ class db:
     def get_ip_no_scan(self, target):
         self.logger.debug("DB: get_ip_no_scan %s" % (target,))
         self.db.execute("SELECT IP from SCAN WHERE METHOD NOT LIKE %s LIMIT 1", ("%@#" + target + "%",))
+        self.db_conn.commit()
         i=self.db.fetchone()
         return i['IP']
 
     def get_ip_no_port(self, target):
         self.logger.debug("DB: get_ip_no_port %s" % (target,))
         self.db.execute("SELECT IP from IP WHERE METHOD NOT LIKE %s LIMIT 1", ("%@#" + target + "%",))
+        self.db_conn.commit()
         i=self.db.fetchone()
         return i['IP']
 
