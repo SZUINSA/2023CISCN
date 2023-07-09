@@ -75,8 +75,7 @@ def real_add_honeypot():
 def manage_honeypot(honeypot):
     honeypot_list = []
     if honeypot == '':
-        honeypot_list = ["null"]
-        return honeypot_list
+        return None
     pattern_honeypot = re.compile("@#([\d|\/|\w]+)")
     ipname_list = re.findall(pattern_honeypot, honeypot)
     for ipname in ipname_list:
@@ -87,21 +86,38 @@ def manage_honeypot(honeypot):
 
 def manage_protocol(protocol):
     if protocol[2:] == '':
-        return "null"
+        return None
     return protocol[2:]
 
 def manage_serviceapp(service_app):
     serviceapp_list = []
     if service_app == '':
-        serviceapp_list = ["null"]
-        return serviceapp_list
+        # serviceapp_list = ["null"]
+        return None
     # pattern_serviceapp = re.compile("@#([\d|\/|\w]+)")
     # ipname_list = re.findall(pattern_honeypot, honeypot)
-    # service_app_list = []
-    service_app_list = service_app.split("@#")
+    service_app_list = []
+    # 根据@#分割，返回数组
+    service_app_list_tmp = service_app.split("@#")
+    for service_app_list_ in service_app_list_tmp:
+        # 根据\t; 分割，返回数组
+        service_app_list_tmp2 = service_app_list_.split("\t; ")
+        print(service_app_list_tmp2)
+        for i in service_app_list_tmp2:
+            # 全部结果塞到service_app_list里
+            service_app_list.append(i.strip('\t'))
+
+    # 去重
     for service_app_ in service_app_list:
         if service_app_ not in serviceapp_list:
             serviceapp_list.append(service_app_)
+    serviceapp_list.pop(0)
+
+    # 判断是否有版本，没有则/N
+    for i in range(len(serviceapp_list)):
+        if "/" not in serviceapp_list[i]:
+            serviceapp_list[i] = serviceapp_list[i] + '/N'
+
     return serviceapp_list
 
 
@@ -121,40 +137,44 @@ def manage_service(service):
 
 service = db.get_service_from_ip("16.163.13.0")
 result = manage_service(service)
-print(result)
+# print(result)
 
 
 
 
 
-# json_ip_list = []
-# json_ip = ''
-#
-# ip_list = []
-# ip_list = db.get_all_ip()
-# # print(ip_list)
-#
-# for ip in ip_list:
-#
-#     deviceinfo = db.get_deviceinfo_from_ip(ip) #缺乏数据，理论上可以了
-#
-#     honeypot = db.get_honeypot_from_ip(ip) # 测试可以
-#     honeypot = manage_honeypot(honeypot)
-#
-#     timestamp = db.get_timestamp_from_ip(ip) # 测试可以
-#
-#
-#     ipdata = {
-#         "services": [],
-#         "deviceinfo": deviceinfo,
-#         "honeypot": honeypot,
-#         "timestamp": timestamp
-#     }
-#
-#
-#     json_ip = {ip: ipdata}
-#     # if honeypot != ["null"]:
-#     #     print(json.dumps(json_ip))
-#     json_ip_list.append(json_ip)
+json_ip_list = []
+json_ip = ''
+
+ip_list = []
+ip_list = db.get_all_ip()
+# print(ip_list)
+
+for ip in ip_list:
+
+    service = db.get_service_from_ip(ip)
+    service = manage_service(service)
+
+
+    deviceinfo = db.get_deviceinfo_from_ip(ip) #缺乏数据，理论上可以了
+
+    honeypot = db.get_honeypot_from_ip(ip) # 测试可以
+    honeypot = manage_honeypot(honeypot)
+
+    timestamp = db.get_timestamp_from_ip(ip) # 测试可以
+
+
+    ipdata = {
+        "services": service,
+        "deviceinfo": deviceinfo,
+        "honeypot": honeypot,
+        "timestamp": timestamp
+    }
+
+
+    json_ip = {ip: ipdata}
+    if service != ["null"]:
+        print(json.dumps(json_ip))
+    json_ip_list.append(json_ip)
 
 
