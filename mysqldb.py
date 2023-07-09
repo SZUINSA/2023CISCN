@@ -187,7 +187,7 @@ class db:
 
     def get_service_from_ip(self, target):
         self.logger.debug("DB: get_service_from_ip: ")
-        self.db.execute("SELECT PORT,PROTOCOL,SERVICE_APP FROM SERVICES WHERE IP = ?", (target,))
+        self.db.execute("SELECT PORT,PROTOCOL,SERVICE_APP FROM SERVICES WHERE IP = %s", (target,))
         self.db.commit()
         cursor = self.db.fetchall()
         try:
