@@ -102,7 +102,7 @@ def manage_serviceapp(service_app):
     for service_app_list_ in service_app_list_tmp:
         # 根据\t; 分割，返回数组
         service_app_list_tmp2 = service_app_list_.split("\t; ")
-        print(service_app_list_tmp2)
+        # print(service_app_list_tmp2)
         for i in service_app_list_tmp2:
             # 全部结果塞到service_app_list里
             service_app_list.append(i.strip('\t'))
@@ -115,8 +115,18 @@ def manage_serviceapp(service_app):
 
     # 判断是否有版本，没有则/N
     for i in range(len(serviceapp_list)):
-        if "/" not in serviceapp_list[i]:
+        if "/" not in serviceapp_list[i] :
             serviceapp_list[i] = serviceapp_list[i] + '/N'
+        elif "/N" in serviceapp_list[i]:
+            continue
+        else:
+            # 处理这种骚的： OpenSSH/7.6p1 Ubuntu 4ubuntu0.5
+            pattern_version = re.compile("\/([\d|\.]+)")
+            version_list = re.findall(pattern_version, serviceapp_list[i])
+            # print(version_list[0])  #只选第一个匹配的结果
+            pos = serviceapp_list[i].find(version_list[0])
+            serviceapp_list[i] = serviceapp_list[i][:pos] + version_list[0]
+            # print(serviceapp_list[i])
 
     return serviceapp_list
 
@@ -135,9 +145,9 @@ def manage_service(service):
     return service_list
 
 
-service = db.get_service_from_ip("16.163.13.0")
+service = db.get_service_from_ip("159.65.92.10")
 result = manage_service(service)
-# print(result)
+print(result)
 
 
 
