@@ -37,8 +37,15 @@ class method_nmap:
 
         if not nm:
             self.logger.debug("nmap fastscan can't find port")
+        else:
+            for host in nm.all_hosts():
+                for proto in nm[host].all_protocols():
+                    lport = nm[host][proto].keys()
+                    for port in lport:
+                        if nm[host][proto][port]["state"] == "open":
+                            self.db.add_services(host, port)
 
-        return nm
+        return []
 
 
 class method_nmap_allscan:
@@ -72,8 +79,15 @@ class method_nmap_allscan:
 
         if not nm:
             self.logger.debug("nmap allscan(1-65535) can't find port")
+        else:
+            for host in nm.all_hosts():
+                for proto in nm[host].all_protocols():
+                    lport = nm[host][proto].keys()
+                    for port in lport:
+                        if nm[host][proto][port]["state"] == "open":
+                            self.db.add_services(host, port)
 
-        return nm
+        return []
 
 class method_fofa:
     name = "port-fofa"
@@ -209,13 +223,7 @@ class app:
                 self.logger.info("PORT-CHECK %s %s" % (self.method.name,ip,))
                 self.db.update_ip_port_timestamp(self.method.name,ip)
                 result = self.method.port(ip)
-                if result:
-                    for host in result.all_hosts():
-                        for proto in result[host].all_protocols():
-                            lport = result[host][proto].keys()
-                            for port in lport:
-                                if result[host][proto][port]["state"] == "open":
-                                    self.db.add_services(host,port)
+
 
                 # self.logger.debug(str(result))
                 self.logger.info("PORT-CHECK %s %s SUCCESS" % (self.method.name,ip,))
