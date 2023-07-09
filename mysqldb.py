@@ -164,7 +164,7 @@ class db:
         self.db_conn.commit()
         cursor = self.db.fetchall()
         try:
-            return [(i['IP'],) for i in cursor]
+            return [i['IP'] for i in cursor]
         except Exception:
             return None
 
