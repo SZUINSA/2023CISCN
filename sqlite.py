@@ -164,7 +164,7 @@ class db:
 
     def get_deviceinfo_from_ip(self,target):
         self.logger.debug("DB: get_deviceinfo_from_ip %s" % (target,))
-        cursor = self.db.execute("SELECT DEVICEINFO FROM IP where IP LIKE ?",(target,))
+        cursor = self.db.execute("SELECT DEVICEINFO FROM IP where IP=?",(target,))
         self.db.commit()
         for i in cursor:
             return i[0]
