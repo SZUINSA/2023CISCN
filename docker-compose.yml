@@ -14,7 +14,7 @@ services:
       - .:/opt/
   port-fscan:
     build: .
-    command: "python main.py --port port-fscan --scale --mysql"
+    command: "python main.py --port port-namp --scale --mysql"
     restart: always
     volumes:
       - .:/opt/
