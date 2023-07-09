@@ -84,38 +84,77 @@ def manage_honeypot(honeypot):
             honeypot_list.append(ipname)
     return honeypot_list
 
-honeypot = db.get_honeypot_from_ip("16.163.13.0")
-print(honeypot)
-print(manage_honeypot(honeypot))
 
-json_ip_list = []
-json_ip = ''
+def manage_protocol(protocol):
+    if protocol[2:] == '':
+        return "null"
+    return protocol[2:]
 
-ip_list = []
-ip_list = db.get_all_ip()
-# print(ip_list)
-
-for ip in ip_list:
-
-    deviceinfo = db.get_deviceinfo_from_ip(ip) #缺乏数据，理论上可以了
-
-    honeypot = db.get_honeypot_from_ip(ip) # 测试可以
-    honeypot = manage_honeypot(honeypot)
-
-    timestamp = db.get_timestamp_from_ip(ip) # 测试可以
-
-
-    ipdata = {
-        "services": [],
-        "deviceinfo": deviceinfo,
-        "honeypot": honeypot,
-        "timestamp": timestamp
-    }
+def manage_serviceapp(service_app):
+    serviceapp_list = []
+    if service_app == '':
+        serviceapp_list = ["null"]
+        return serviceapp_list
+    # pattern_serviceapp = re.compile("@#([\d|\/|\w]+)")
+    # ipname_list = re.findall(pattern_honeypot, honeypot)
+    # service_app_list = []
+    service_app_list = service_app.split("@#")
+    for service_app_ in service_app_list:
+        if service_app_ not in serviceapp_list:
+            serviceapp_list.append(service_app_)
+    return serviceapp_list
 
 
-    json_ip = {ip: ipdata}
-    # if honeypot != ["null"]:
-    #     print(json.dumps(json_ip))
-    json_ip_list.append(json_ip)
+def manage_service(service):
+    service_list = []
+    service_element = {}
+    for i in service:
+        service_element = {
+            "port": int(i[0]),
+            "protocol": manage_protocol(i[1]),
+            "service_app": manage_serviceapp(i[2]),
+
+        }
+        service_list.append(service_element)
+    return service_list
+
+
+service = db.get_service_from_ip("16.163.13.0")
+result = manage_service(service)
+print(result)
+
+
+
+
+
+# json_ip_list = []
+# json_ip = ''
+#
+# ip_list = []
+# ip_list = db.get_all_ip()
+# # print(ip_list)
+#
+# for ip in ip_list:
+#
+#     deviceinfo = db.get_deviceinfo_from_ip(ip) #缺乏数据，理论上可以了
+#
+#     honeypot = db.get_honeypot_from_ip(ip) # 测试可以
+#     honeypot = manage_honeypot(honeypot)
+#
+#     timestamp = db.get_timestamp_from_ip(ip) # 测试可以
+#
+#
+#     ipdata = {
+#         "services": [],
+#         "deviceinfo": deviceinfo,
+#         "honeypot": honeypot,
+#         "timestamp": timestamp
+#     }
+#
+#
+#     json_ip = {ip: ipdata}
+#     # if honeypot != ["null"]:
+#     #     print(json.dumps(json_ip))
+#     json_ip_list.append(json_ip)
 
 

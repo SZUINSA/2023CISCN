@@ -157,10 +157,14 @@ class db:
 
     def get_service_from_ip(self,target):
         # todo: 查询出端口，协议，service_app
-        port = ''
-        protocol = ''
-        service_app = ''
-        return port, protocol, service_app
+        # SELECT PORT,PROTOCOL,SERVICE_APP FROM "SERVICES" WHERE IP = '16.163.13.0'
+
+        self.logger.debug("DB: get_service_from_ip: ")
+        self.logger.debug("DB: SELECT PORT,PROTOCOL,SERVICE_APP FROM \"SERVICES\" WHERE IP = : " + target)
+        cursor = self.db.execute("SELECT PORT,PROTOCOL,SERVICE_APP FROM \"SERVICES\" WHERE IP = ?",(target,))
+        self.db.commit()
+
+        return cursor
 
     def get_deviceinfo_from_ip(self,target):
         self.logger.debug("DB: get_deviceinfo_from_ip %s" % (target,))
