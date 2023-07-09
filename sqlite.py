@@ -102,16 +102,17 @@ class db:
 
     def get_ip_no_services(self, target):
         self.logger.debug("DB: get_ip_no_services %s" % (target,))
-        cursor = self.db.execute("SELECT IP,PORT from SERVICES WHERE METHOD NOT LIKE ? LIMIT 1", ("%@#" + target + "%",))
+        cursor = self.db.execute("SELECT IP,PORT from SERVICES WHERE METHOD NOT LIKE ? LIMIT 1",
+                                 ("%@#" + target + "%",))
         self.db.commit()
         for i in cursor:
-            return i[0],i[1]
+            return i[0], i[1]
 
     def add_honeypot(self, target1, target2):
         self.logger.debug("DB: add_honeypot %s %s" % (target1, target2))
         cursor = self.db.execute(
             "UPDATE IP SET HONEYPOT=HONEYPOT||?,TIMESTAMP=DATETIME(CURRENT_TIMESTAMP,'localtime') WHERE IP=?",
-            ("@#" + target2, ''+target1))
+            ("@#" + target2, '' + target1))
         self.db.commit()
 
     def add_deviceinfo(self, target1, target2):
@@ -120,6 +121,7 @@ class db:
             "UPDATE IP SET DEVICEINFO=DEVICEINFO||?,TIMESTAMP=DATETIME(CURRENT_TIMESTAMP,'localtime') WHERE IP=?",
             ("@#" + target2, target1))
         self.db.commit()
+
     def add_protocol(self, target1, target2, target3):
         self.logger.debug("DB: add_protocol %s %s %s" % (target1, target2, target3))
         cursor = self.db.execute(
@@ -158,13 +160,12 @@ class db:
             ("@#" + target1, target2))
         self.db.commit()
 
-    def update_ip_services_timestamp(self, target1, target2 , target3):
-        self.logger.debug("DB: update_ip_services_timestamp %s %s %s" % (target1, target2 , target3))
+    def update_ip_services_timestamp(self, target1, target2, target3):
+        self.logger.debug("DB: update_ip_services_timestamp %s %s %s" % (target1, target2, target3))
         cursor = self.db.execute(
             "UPDATE SERVICES SET METHOD=METHOD||?,TIMESTAMP=DATETIME(CURRENT_TIMESTAMP,'localtime') WHERE IP=? and PORT=?",
-            ("@#" +target1, target2, target3))
+            ("@#" + target1, target2, target3))
         self.db.commit()
-
 
     def get_all_ip(self):
         self.logger.debug("DB: get_all_ip")
@@ -172,34 +173,29 @@ class db:
         self.db.commit()
         return [i[0] for i in cursor]
 
-    def get_service_from_ip(self,target):
-        # todo: 查询出端口，协议，service_app
-        # SELECT PORT,PROTOCOL,SERVICE_APP FROM "SERVICES" WHERE IP = '16.163.13.0'
-
+    def get_service_from_ip(self, target):
         self.logger.debug("DB: get_service_from_ip: ")
-        self.logger.debug("DB: SELECT PORT,PROTOCOL,SERVICE_APP FROM \"SERVICES\" WHERE IP = : " + target)
-        cursor = self.db.execute("SELECT PORT,PROTOCOL,SERVICE_APP FROM \"SERVICES\" WHERE IP = ?",(target,))
+        cursor = self.db.execute("SELECT PORT,PROTOCOL,SERVICE_APP FROM SERVICES WHERE IP=?", (target,))
         self.db.commit()
+        return [(i[0], i[1], i[2]) for i in cursor]
 
-        return cursor
-
-    def get_deviceinfo_from_ip(self,target):
+    def get_deviceinfo_from_ip(self, target):
         self.logger.debug("DB: get_deviceinfo_from_ip %s" % (target,))
-        cursor = self.db.execute("SELECT DEVICEINFO FROM IP where IP=?",(target,))
+        cursor = self.db.execute("SELECT DEVICEINFO FROM IP where IP=?", (target,))
         self.db.commit()
         for i in cursor:
             return i[0]
 
-    def get_honeypot_from_ip(self,target):
+    def get_honeypot_from_ip(self, target):
         self.logger.debug("DB: get_honeypot_from_ip %s" % (target,))
-        cursor = self.db.execute("SELECT HONEYPOT FROM IP where IP=?",(target,))
-        self.db.commit()
-        for i in cursor:
-            return i[0]
-    def get_timestamp_from_ip(self,target):
-        self.logger.debug("DB: get_timestamp_from_ip %s" % (target,))
-        cursor = self.db.execute("SELECT TIMESTAMP FROM IP where IP=?",(target,))
+        cursor = self.db.execute("SELECT HONEYPOT FROM IP where IP=?", (target,))
         self.db.commit()
         for i in cursor:
             return i[0]
 
+    def get_timestamp_from_ip(self, target):
+        self.logger.debug("DB: get_timestamp_from_ip %s" % (target,))
+        cursor = self.db.execute("SELECT TIMESTAMP FROM IP where IP=?", (target,))
+        self.db.commit()
+        for i in cursor:
+            return i[0]

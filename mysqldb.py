@@ -186,11 +186,14 @@ class db:
             return None
 
     def get_service_from_ip(self, target):
-        # todo: 查询出端口，协议，service_app
-        port = ''
-        protocol = ''
-        service_app = ''
-        return port, protocol, service_app
+        self.logger.debug("DB: get_service_from_ip: ")
+        self.db.execute("SELECT PORT,PROTOCOL,SERVICE_APP FROM SERVICES WHERE IP = ?", (target,))
+        self.db.commit()
+        cursor = self.db.fetchall()
+        try:
+            return [(i['PORT'], i['PROTOCOL'], i['SERVICE_APP']) for i in cursor]
+        except Exception:
+            return None
 
     def get_deviceinfo_from_ip(self, target):
         self.logger.debug("DB: get_deviceinfo_from_ip %s" % (target,))
