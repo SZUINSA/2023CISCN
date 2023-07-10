@@ -35,9 +35,9 @@ if __name__ == "__main__":
         db = sqlite.db(logger)
 
     import default
-    for item in default.ip_src:
-         db.add_scan(item)
 
+    for item in default.ip_src:
+        db.add_scan(item)
 
     if "--scan" in argv or "-s" in argv:
         logger.debug("SCAN Mode")
@@ -73,6 +73,7 @@ if __name__ == "__main__":
     if "--honeypot" in argv or "-h" in argv:
         logger.debug("HONEYPOT Mode")
         import honeypot
+
         if "honeypot-quake" in argv:
             app = honeypot.app(db, logger, method="honeypot-quake")
         elif "honeypot-quake-dump" in argv:
@@ -84,6 +85,7 @@ if __name__ == "__main__":
         logger.debug("SCALE Mode")
         import time
         import random
-        time.sleep(random.randint(1,60))
+
+        time.sleep(random.randint(1, 60))
 
     app.run()
