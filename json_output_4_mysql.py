@@ -74,21 +74,27 @@ def manage_protocol(protocol):
         return "null"
     if protocol[2:] == '':
         return "null"
+
     return protocol[2:]
 
 def manage_serviceapp(service_app):
+
     print(service_app)
     serviceapp_list = []
     if service_app == None:
         return "null"
     if service_app == '':
         return "null"
+    # 有些数据真的骚，有\r\n
+    service_app = service_app.replace("\r\n", "")
     service_app_list = []
     # 根据@#分割，返回数组
     service_app_list_tmp = service_app.split("@#")
     for service_app_list_ in service_app_list_tmp:
         # 根据\t; 分割，返回数组
         service_app_list_tmp2 = service_app_list_.split("\t; ")
+        if "MiniServ/(" in service_app:
+            service_app_list_tmp2 = service_app_list_.split("; ")
         # print(service_app_list_tmp2)
         for i in service_app_list_tmp2:
             # 全部结果塞到service_app_list里
@@ -113,6 +119,25 @@ def manage_serviceapp(service_app):
             version_list = re.findall(pattern_version, serviceapp_list[i])
             pos = serviceapp_list[i].find("/")
             serviceapp_list[i] = serviceapp_list[i][:pos+1] + version_list[0]
+        elif "MiniServ/(" in serviceapp_list[i]:
+            # # 处理这种骚的：@#MiniServ/([\d.]+)\r\n|s p; MiniServ; Webmin httpd
+
+            print(serviceapp_list[i])
+            # serviceapp_list[i] = serviceapp_list[i].replace("([\d.]+)\r\n|s p","")
+            # try :
+            #     pattern_version = re.compile("\/.*?(\d+[\d|\.]+)")
+            #     version_list = re.findall(pattern_version, serviceapp_list[i])
+            # except :
+            version_list = []
+            version_list.append("N")
+            pos = serviceapp_list[i].find("/")
+            serviceapp_list[i] = serviceapp_list[i][:pos + 1] + version_list[0]
+        elif "Apache Jserv" in serviceapp_list[i]:
+            version_list = []
+            version_list.append("N")
+            pos = serviceapp_list[i].find("/")
+            serviceapp_list[i] = serviceapp_list[i][:pos + 1] + version_list[0]
+
 
         else:
             pattern_version = re.compile("\/([\d|\.]+)")
@@ -120,7 +145,11 @@ def manage_serviceapp(service_app):
             pos = serviceapp_list[i].find("/")
             serviceapp_list[i] = serviceapp_list[i][:pos+1] + version_list[0]
 
-    return serviceapp_list
+    # 再次去重
+    new_list = []
+    [new_list.append(x) for x in serviceapp_list if x not in new_list]
+
+    return new_list
 
 def manage_service(service):
     service_list = []
@@ -137,9 +166,9 @@ def manage_service(service):
 
 
 
-# logger = logs(level=logging.WARNING)
-# logger.info("Program Start")
-# db = mysqldb.db(logger)
+logger = logs(level=logging.WARNING)
+logger.info("Program Start")
+db = mysqldb.db(logger)
 
 
 # service = db.get_service_from_ip("45.83.43.23")
@@ -148,6 +177,8 @@ def manage_service(service):
 # print(manage_serviceapp("@#Microsoft ftp/N"))
 # print(manage_serviceapp("@#OpenSSH/for_Windows_7.7"))
 # print(manage_serviceapp("@#OpenSSH/7.6p1 Ubuntu 4ubuntu0.5"))
+# print(manage_serviceapp("@#MiniServ/([\d.]+)\r\n|s p; MiniServ; Webmin httpd"))
+# print(manage_serviceapp("@#Apache Jserv/ i"))
 
 
 

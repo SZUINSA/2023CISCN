@@ -24,6 +24,7 @@ def get_honneypot(data,ip):
 
 
 import sqlite
+import mysqldb
 import logging
 import sys
 import logging
@@ -47,7 +48,9 @@ def logs(filename='logs.txt', level=logging.DEBUG):
 ### test   ###3
 logger = logs()
 logger.info("Program Start")
-db = sqlite.db(logger)
+# db = sqlite.db(logger)
+db = mysqldb.db(logger)
+
 # db.add_honeypot('16.163.13.106','honneymt')
 
 
@@ -145,9 +148,10 @@ def manage_service(service):
     return service_list
 
 
-service = db.get_service_from_ip("159.65.92.10")
-result = manage_service(service)
-print(result)
+# service = db.get_service_from_ip("159.65.92.10")
+# print(service)
+# result = manage_service(service)
+# print(result)
 
 
 
@@ -158,7 +162,7 @@ json_ip = ''
 
 ip_list = []
 ip_list = db.get_all_ip()
-# print(ip_list)
+print(ip_list)
 
 for ip in ip_list:
 
@@ -183,8 +187,10 @@ for ip in ip_list:
 
 
     json_ip = {ip: ipdata}
-    if service != ["null"]:
-        print(json.dumps(json_ip))
+    # if service != ["null"]:
+    #     print(json.dumps(json_ip))
+
+    print(json.dumps(json_ip))
     json_ip_list.append(json_ip)
 
 
