@@ -1,4 +1,3 @@
-
 import os
 import json
 import re
@@ -8,20 +7,22 @@ import sys
 import logging
 import default
 
-def get_ip(data):
 
+def get_ip(data):
     datastr = str(data)
     pattern_ip = re.compile("\'(\d+\.\d+\.\d+\.\d+)\'")
     ipname_list = re.findall(pattern_ip, datastr)
     # print(ipname_list)
     return ipname_list
 
-def get_honneypot(data,ip):
+
+def get_honneypot(data, ip):
     datastr = str(data[ip])
     pattern_honneypot = re.compile("\s\'(\d+\/.*?)\'")
     honneypot_list = re.findall(pattern_honneypot, datastr)
     # print(honneypot_list)
     return honneypot_list
+
 
 def logs(filename='logs.txt', level=logging.DEBUG):
     logger = logging.getLogger(__name__)
@@ -38,6 +39,7 @@ def logs(filename='logs.txt', level=logging.DEBUG):
     logger.addHandler(ch)
     return logger
 
+
 def real_add_honeypot():
     # 这个测试没问题了
 
@@ -53,10 +55,11 @@ def real_add_honeypot():
             for ip in ip_list:
                 honeypot_list = get_honneypot(data, ip)
                 for honeypot in honeypot_list:
-                    print(ip," ",honeypot)
+                    print(ip, " ", honeypot)
 
                     # db.add_honeypot('16.163.13.106', honeypot)
-                    db.add_honeypot('\''+ip+'\'',honeypot)
+                    db.add_honeypot('\'' + ip + '\'', honeypot)
+
 
 def manage_honeypot(honeypot):
     honeypot_list = []
@@ -78,15 +81,15 @@ def manage_protocol(protocol):
 
     if "@#" in protocol:
         protocol_list = protocol.split("@#")
-        print(protocol_list)
+        # print(protocol_list)
         if protocol_list[1] == '':
             return "null"
         return protocol_list[1]
 
     return protocol[2:]
 
-def manage_serviceapp(service_app):
 
+def manage_serviceapp(service_app):
     # print(service_app)
     serviceapp_list = []
     if service_app == None:
@@ -116,7 +119,7 @@ def manage_serviceapp(service_app):
 
     # 判断是否有版本，没有则/N
     for i in range(len(serviceapp_list)):
-        if "/" not in serviceapp_list[i] :
+        if "/" not in serviceapp_list[i]:
             serviceapp_list[i] = serviceapp_list[i] + '/N'
         elif "/N" in serviceapp_list[i]:
             continue
@@ -126,7 +129,7 @@ def manage_serviceapp(service_app):
             pattern_version = re.compile("\/.*?([\d|\.]+)")
             version_list = re.findall(pattern_version, serviceapp_list[i])
             pos = serviceapp_list[i].find("/")
-            serviceapp_list[i] = serviceapp_list[i][:pos+1] + version_list[0]
+            serviceapp_list[i] = serviceapp_list[i][:pos + 1] + version_list[0]
         elif "MiniServ/(" in serviceapp_list[i]:
             # # 处理这种骚的：@#MiniServ/([\d.]+)\r\n|s p; MiniServ; Webmin httpd
 
@@ -145,13 +148,14 @@ def manage_serviceapp(service_app):
             pattern_version = re.compile("\/([\d|\.]+)")
             version_list = re.findall(pattern_version, serviceapp_list[i])
             pos = serviceapp_list[i].find("/")
-            serviceapp_list[i] = serviceapp_list[i][:pos+1] + version_list[0]
+            serviceapp_list[i] = serviceapp_list[i][:pos + 1] + version_list[0]
 
     # 再次去重
     new_list = []
     [new_list.append(x) for x in serviceapp_list if x not in new_list]
 
     return new_list
+
 
 def manage_service(service):
     service_list = []
@@ -165,6 +169,7 @@ def manage_service(service):
         }
         service_list.append(service_element)
     return service_list
+
 
 def manage_deviceinfo(service):
     # 根据主办方提供的指纹，在serviceapp中寻找相应的内容，规范化填入deviceinfo
@@ -197,6 +202,7 @@ def manage_deviceinfo(service):
         return "null"
     return deviceinfo
 
+
 def manage_service_plus(service):
     finger_list = ["windows", "java", "iis", "centos", "node.js", "nginx", "ubuntu", "express", "micro_httpd",
                    "openssh", "asp.net", "openresty", "openssl", "php", "grafana", "wordpress", "microsoft-httpapi",
@@ -212,7 +218,7 @@ def manage_service_plus(service):
         tmp_list = []
 
         for i in range(len(service_ele["service_app"])):
-            print(service_ele["service_app"][i])
+            # print(service_ele["service_app"][i])
             flag = 0
             for finger in finger_list:
                 if finger in service_ele["service_app"][i].lower():
@@ -245,10 +251,10 @@ def manage_service_plus(service):
 
     return service
 
+
 logger = logs(level=logging.WARNING)
 logger.info("Program Start")
 db = mysqldb.db(logger)
-
 
 # service = db.get_service_from_ip("45.83.43.23")
 # print(service)
@@ -258,8 +264,6 @@ db = mysqldb.db(logger)
 # print(manage_serviceapp("@#OpenSSH/7.6p1 Ubuntu 4ubuntu0.5"))
 # print(manage_serviceapp("@#MiniServ/([\d.]+)\r\n|s p; MiniServ; Webmin httpd"))
 # print(manage_serviceapp("@#Apache Jserv/ i"))
-
-
 
 
 json_ip_list = {}
@@ -279,16 +283,14 @@ for ip in ip_list:
     service = manage_service(service)
     # print(service)
 
+    deviceinfo = db.get_deviceinfo_from_ip(ip)  # 缺乏数据，理论上可以了
+    deviceinfo = manage_deviceinfo(service)  # 根据主办方的要求重新规范deviceinfo
+    service = manage_service_plus(service)  # 根据主办方的要求重新规范service
 
-    deviceinfo = db.get_deviceinfo_from_ip(ip) #缺乏数据，理论上可以了
-    deviceinfo = manage_deviceinfo(service)    # 根据主办方的要求重新规范deviceinfo
-    service = manage_service_plus(service)     # 根据主办方的要求重新规范service
-
-
-    honeypot = db.get_honeypot_from_ip(ip) # 测试可以
+    honeypot = db.get_honeypot_from_ip(ip)  # 测试可以
     honeypot = manage_honeypot(honeypot)
 
-    timestamp = db.get_timestamp_from_ip(ip) # 测试可以
+    timestamp = db.get_timestamp_from_ip(ip)  # 测试可以
 
     ipdata = {
         "services": service,
@@ -296,7 +298,6 @@ for ip in ip_list:
         "honeypot": honeypot,
         "timestamp": str(timestamp)
     }
-
 
     json_ip = {ip: ipdata}
     if service != ["null"]:
@@ -306,9 +307,9 @@ for ip in ip_list:
     # print(json.dumps(json_ip))
     # print(json_ip)
     json_ip_list.update(json_ip)
+    break
 
-
+json_output = json.dumps(json_ip_list)
+json_output = json_output.replace("\"null\"", "null")
 with open("tmp/result/output.json", "w") as f:
-    json.dump(json_ip_list, f)
-
-
+    f.write(json_output)
