@@ -311,5 +311,8 @@ for ip in ip_list:
 
 json_output = json.dumps(json_ip_list)
 json_output = json_output.replace("\"null\"", "null")
-with open("tmp/result/output.json", "w") as f:
+filepath= "tmp/result"
+if not os.path.exists(filepath):
+    os.mkdir(filepath)
+with open(filepath+"/output.json", "w") as f:
     f.write(json_output)
