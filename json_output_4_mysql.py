@@ -307,7 +307,7 @@ for ip in ip_list:
     # print(json.dumps(json_ip))
     # print(json_ip)
     json_ip_list.update(json_ip)
-    break
+
 
 json_output = json.dumps(json_ip_list)
 json_output = json_output.replace("\"null\"", "null")
