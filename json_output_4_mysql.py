@@ -75,6 +75,10 @@ def manage_protocol(protocol):
     if protocol[2:] == '':
         return "null"
 
+    if "@#" in protocol:
+        protocol_list = protocol.split("@#")
+        return protocol_list[0]
+
     return protocol[2:]
 
 def manage_serviceapp(service_app):
@@ -183,7 +187,7 @@ db = mysqldb.db(logger)
 
 
 
-json_ip_list = []
+json_ip_list = {}
 json_ip = ''
 
 ip_list = []
@@ -192,7 +196,9 @@ ip_list = db.get_all_ip()
 
 for ip in ip_list:
 
-
+    # 根据主办方要求缩小范围
+    if not default.ip_in_list(ip):
+        continue
 
     service = db.get_service_from_ip(ip)
     service = manage_service(service)
