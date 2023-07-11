@@ -32,6 +32,14 @@ services:
       replicas: 5
     volumes:
       - .:/opt/
+  port-allscan:
+    image: cicsn
+    command: "python main.py --port port-allscan --scale --mysql"
+    restart: always
+    deploy:
+      replicas: 0
+    volumes:
+      - .:/opt/
   services:
     image: cicsn
     command: "python main.py --services --scale --mysql"
@@ -46,6 +54,37 @@ services:
     restart: always
     deploy:
       replicas: 5
+    volumes:
+      - .:/opt/
+  honeypot:
+    image: cicsn
+    command: "python main.py --honeypot --scale --mysql"
+    restart: always
+    deploy:
+      replicas: 0
+    environment:
+      - fofa_email=offical@szu.moe
+      - fofa_key=ThisIsFofaKey
+    volumes:
+      - .:/opt/
+  honeypot-quake:
+    image: cicsn
+    command: "python main.py --honeypot honeypot-quake --scale --mysql"
+    restart: always
+    deploy:
+      replicas: 0
+    environment:
+      - quake_key=ThisIsQuakeKey
+    volumes:
+      - .:/opt/
+  honeypot-quake-dump:
+    image: cicsn
+    command: "python main.py --honeypot honeypot-quake-dump --scale --mysql"
+    restart: always
+    deploy:
+      replicas: 0
+    environment:
+      - quake_dump_file=tmp/honeypot/
     volumes:
       - .:/opt/
         
