@@ -6,6 +6,7 @@ import mysqldb
 import logging
 import sys
 import logging
+import default
 
 def get_ip(data):
 
@@ -77,13 +78,16 @@ def manage_protocol(protocol):
 
     if "@#" in protocol:
         protocol_list = protocol.split("@#")
-        return protocol_list[0]
+        print(protocol_list)
+        if protocol_list[1] == '':
+            return "null"
+        return protocol_list[1]
 
     return protocol[2:]
 
 def manage_serviceapp(service_app):
 
-    print(service_app)
+    # print(service_app)
     serviceapp_list = []
     if service_app == None:
         return "null"
@@ -126,12 +130,6 @@ def manage_serviceapp(service_app):
         elif "MiniServ/(" in serviceapp_list[i]:
             # # 处理这种骚的：@#MiniServ/([\d.]+)\r\n|s p; MiniServ; Webmin httpd
 
-            print(serviceapp_list[i])
-            # serviceapp_list[i] = serviceapp_list[i].replace("([\d.]+)\r\n|s p","")
-            # try :
-            #     pattern_version = re.compile("\/.*?(\d+[\d|\.]+)")
-            #     version_list = re.findall(pattern_version, serviceapp_list[i])
-            # except :
             version_list = []
             version_list.append("N")
             pos = serviceapp_list[i].find("/")
@@ -168,7 +166,84 @@ def manage_service(service):
         service_list.append(service_element)
     return service_list
 
+def manage_deviceinfo(service):
+    # 根据主办方提供的指纹，在serviceapp中寻找相应的内容，规范化填入deviceinfo
+    # print(service)
+    deviceinfo = []
+    if service == "null":
+        return "null"
+    for service_ele in service:
+        for i in service_ele["service_app"]:
+            if "pfsense" in i.lower():
+                deviceinfo.append("firewall/pfsense")
+            elif "Hikvision" in i.lower():
+                deviceinfo.append("Webcam/Hikvision")
+            elif "dahua" in i.lower():
+                deviceinfo.append("Webcam/dahua")
+            elif "synology" in i.lower():
+                deviceinfo.append("Nas/synology")
+            elif "cisco" in i.lower():
+                deviceinfo.append("switch/cisco")
+            elif "firewall" in i.lower():
+                deviceinfo.append("firewall/N")
+            elif "Webcam" in i.lower():
+                deviceinfo.append("Webcam/N")
+            elif "switch" in i.lower():
+                deviceinfo.append("switch/N")
+            elif "nas" in i.lower():
+                deviceinfo.append("Nas/N")
 
+    if not deviceinfo:
+        return "null"
+    return deviceinfo
+
+def manage_service_plus(service):
+    finger_list = ["windows", "java", "iis", "centos", "node.js", "nginx", "ubuntu", "express", "micro_httpd",
+                   "openssh", "asp.net", "openresty", "openssl", "php", "grafana", "wordpress", "microsoft-httpapi",
+                   "weblogic", "litespeed", "rabbitmq", "elasticsearch", "jetty", "apache", "debian"]
+    regular_service_list = []
+    # if service == "null":
+    #     return "null"
+
+    for service_ele in service:
+        if service_ele["service_app"] == "null":
+            continue
+
+        tmp_list = []
+
+        for i in range(len(service_ele["service_app"])):
+            print(service_ele["service_app"][i])
+            flag = 0
+            for finger in finger_list:
+                if finger in service_ele["service_app"][i].lower():
+                    ## 替换
+                    pattern_serviceinfo = re.compile("(.*)\/[N|\d+]")
+                    serviceinfo = re.findall(pattern_serviceinfo, service_ele["service_app"][i])
+
+                    pattern_version = re.compile("\/([\d|\.|N]+)")
+                    version_list = re.findall(pattern_version, service_ele["service_app"][i])
+
+                    ## 存到新数组
+                    tmp_list.append(finger + '/' + version_list[0])
+
+                    ## 退出
+                    flag = 1
+                    break
+            # ## 没有指纹,删除
+            # if flag == 0:
+            #     del service_ele["service_app"][i]
+            #     i = i - 1
+
+        ## 查重
+        new_list = []
+        [new_list.append(x) for x in tmp_list if x not in new_list]
+
+        service_ele["service_app"] = new_list
+
+        if service_ele["service_app"] == []:
+            service_ele["service_app"] = "null"
+
+    return service
 
 logger = logs(level=logging.WARNING)
 logger.info("Program Start")
@@ -195,16 +270,20 @@ ip_list = db.get_all_ip()
 # print(ip_list)
 
 for ip in ip_list:
-
+    # ip = "159.65.92.104"
     # 根据主办方要求缩小范围
     if not default.ip_in_list(ip):
         continue
 
     service = db.get_service_from_ip(ip)
     service = manage_service(service)
+    # print(service)
 
 
     deviceinfo = db.get_deviceinfo_from_ip(ip) #缺乏数据，理论上可以了
+    deviceinfo = manage_deviceinfo(service)    # 根据主办方的要求重新规范deviceinfo
+    service = manage_service_plus(service)     # 根据主办方的要求重新规范service
+
 
     honeypot = db.get_honeypot_from_ip(ip) # 测试可以
     honeypot = manage_honeypot(honeypot)
@@ -222,13 +301,14 @@ for ip in ip_list:
     json_ip = {ip: ipdata}
     if service != ["null"]:
         print(json_ip)
-
+    # if deviceinfo != "null":
+    #     print(json_ip)
     # print(json.dumps(json_ip))
     # print(json_ip)
-    json_ip_list.append(json_ip)
+    json_ip_list.update(json_ip)
 
 
-with open("output.json", "w") as f:
+with open("tmp/result/output.json", "w") as f:
     json.dump(json_ip_list, f)
 
 
