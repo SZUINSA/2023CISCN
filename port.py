@@ -72,7 +72,7 @@ class method_nmap_allscan:
     def port(self, target):
         return self.allscan(target)
 
-    def allscan(self, target):\
+    def allscan(self, target):
         nm = nmap.PortScanner()
         nm.scan(hosts=target, arguments='-p1-65535')
 
