@@ -224,3 +224,13 @@ class db:
             return i['TIMESTAMP']
         except Exception:
             return None
+
+    def get_api_from_ip_and_method(self, target1, target2):
+        self.logger.debug("DB: get_api_from_ip_and_method %s %s" % (target1,target2))
+        self.db.execute("SELECT CONTENT FROM API where IP=%s AND METHOD=%s", (target1,target2))
+        self.db_conn.commit()
+        i = self.db.fetchone()
+        try:
+            return i['CONTENT']
+        except Exception:
+            return None

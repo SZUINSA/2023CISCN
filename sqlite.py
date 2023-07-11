@@ -199,3 +199,9 @@ class db:
         self.db.commit()
         for i in cursor:
             return i[0]
+    def get_api_from_ip_and_method(self, target1, target2):
+        self.logger.debug("DB: get_api_from_ip_and_method %s %s" % (target1,target2))
+        cursor = self.db.execute("SELECT CONTENT FROM API where IP=? AND METHOD=?", (target1,target2))
+        self.db.commit()
+        for i in cursor:
+            return i[0]

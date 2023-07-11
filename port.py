@@ -118,10 +118,12 @@ class method_fofa:
         json = json.loads(response.text)
         self.logger.debug(json)
         if json['error'] == False:
-            self.db.add_api(target,self.name,response.text)
             self.logger.debug("PORT: fofa run")
+            self.db.add_api(target,self.name,response.text)
         else:
             self.logger.debug("PORT: fofa error")
+            time.sleep(1000)
+            quit()
         time.sleep(1)
         return None
 class method_fscan_port:
