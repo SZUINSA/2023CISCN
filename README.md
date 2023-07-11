@@ -30,7 +30,7 @@ default is sqlite
 `--SERVICES services-fscan-protocol` Using fscan to identify the protocols used by the corresponding IP addresses, it is worth noting that, due to the characteristics of fscan itself, in order to save resources and improve efficiency, we have saved the web application detection by fscan during port scanning
 
 
-`--honeypot` 木大你来写吧
+`--honeypot` Check honeypot use the api
 
 `--scale` if you use scale mode in docker-compose, please make sure you have this options to hava a random delay before running
 
