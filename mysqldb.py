@@ -119,7 +119,7 @@ class db:
     def add_honeypot(self, target1, target2):
         self.logger.debug("DB: add_honeypot %s %s" % (target1, target2))
         self.db.execute(
-            "UPDATE IP SET HONEYPOT=CONCAT(HONEYPOT, %s),TIMESTAMP=DATETIME(CURRENT_TIMESTAMP,'localtime') WHERE IP=%s",
+            "UPDATE IP SET HONEYPOT=CONCAT(HONEYPOT, %s),TIMESTAMP=NOW() WHERE IP=%s",
             ("@#" + target2, target1))
         self.db_conn.commit()
 

@@ -130,6 +130,7 @@ class method_quake_dump:
                             self.logger.warning("HONEYPOT: ip in file not available")
             except Exception:
                 pass
+        return None
 
 class app:
     def __init__(self, db, logger, method='honeypot-fofa'):
@@ -145,15 +146,16 @@ class app:
     def run(self, sleep=60):
 
         while True:
-            ip = self.db.get_ip_no_services(self.method.name)
+            ip = self.db.get_ip_no_port(self.method.name)
             if ip is not None:
-                self.logger.info("HONEYPOT-CHECK %s %s" % (self.method.name, ip,))
-                self.db.update_ip_scan_timestamp(self.method.name, ip)
+                self.logger.info("HONEYPOT-CHECK %s %s" % (self.method.name, ip))
+                self.db.update_ip_port_timestamp(self.method.name, ip)
 
                 result = self.method.honeypot(ip)
                 try:
-                    self.db.add_ip(ip, result)
-                    self.logger.debug(str(result))
+                    if result is not None:
+                        self.db.add_honeypot(ip, result)
+                        self.logger.debug(str(result))
                 except Exception:
                     pass
 

@@ -3,6 +3,8 @@ dan# 2023CISCN
 ## RUN IN DOCKER
 
 ```bash
+docker build -t cicsn .
+#build it first
 docker-compose up --scale services=X --scale port=Y --scale scan=Z -d
 ```
 

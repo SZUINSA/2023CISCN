@@ -1,26 +1,52 @@
-version: '2'
+version: '3'
 services:
   scan:
-    build: .
+    image: cicsn
     command: "python main.py --scan --scale --mysql"
     restart: always
+    deploy:
+      replicas: 1
+    volumes:
+      - .:/opt/
+  scan-fscan:
+    image: cicsn
+    command: "python main.py --scan scan-fscan --scale --mysql"
+    restart: always
+    deploy:
+      replicas: 1
     volumes:
       - .:/opt/
   port:
-    build: .
+    image: cicsn
     command: "python main.py --port --scale --mysql"
     restart: always
+    deploy:
+      replicas: 5
     volumes:
       - .:/opt/
   port-fscan:
-    build: .
-    command: "python main.py --port port-namp --scale --mysql"
+    image: cicsn
+    command: "python main.py --port port-fscan --scale --mysql"
     restart: always
+    deploy:
+      replicas: 5
     volumes:
       - .:/opt/
   services:
-    build: .
+    image: cicsn
     command: "python main.py --services --scale --mysql"
     restart: always
+    deploy:
+      replicas: 5
     volumes:
       - .:/opt/
+  services-fscan:
+    image: cicsn
+    command: "python main.py --services services-fscan-protocol --scale --mysql"
+    restart: always
+    deploy:
+      replicas: 5
+    volumes:
+      - .:/opt/
+        
+        

@@ -223,8 +223,7 @@ class app:
                 self.db.update_ip_port_timestamp(self.method.name,ip)
                 result = self.method.port(ip)
 
-
-                # self.logger.debug(str(result))
+                self.logger.debug(str(result))
                 self.logger.info("PORT-CHECK %s %s SUCCESS" % (self.method.name,ip,))
             else:
                 self.logger.debug("PORT: sleep")
