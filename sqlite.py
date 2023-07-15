@@ -46,7 +46,7 @@ class db:
                             ID INTEGER PRIMARY KEY AUTOINCREMENT,
                             IP VARCHAR(16) NULL,
                             METHOD VARCHAR(1000) DEFAULT '',
-                            CONTENT VARCHAR(10000) DEFAULT ''
+                            CONTENT TEXT DEFAULT ''
                             );''')
         self.db.commit()
 
