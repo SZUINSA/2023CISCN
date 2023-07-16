@@ -7,9 +7,9 @@ class db:
         self.logger = logger
 
         import pymysql.cursors
-        self.db_conn = pymysql.connect(host='ctf.szu.edu.cn',
-                                       user='ciscn',
-                                       password='ciscn',
+        self.db_conn = pymysql.connect(host='127.0.0.1',
+                                       user='root',
+                                       password='1021294680gnib',
                                        database='ciscn',
                                        cursorclass=pymysql.cursors.DictCursor)
         self.logger.info("Connect Mysql Database Succeed.")
@@ -47,7 +47,7 @@ class db:
                             ID INTEGER PRIMARY KEY AUTO_INCREMENT,
                             IP VARCHAR(16) NULL,
                             METHOD VARCHAR(1000) DEFAULT '',
-                            CONTENT TEXT DEFAULT ''
+                            CONTENT TEXT 
                             );''')
         self.db_conn.commit()
 

@@ -72,7 +72,13 @@ def manage_honeypot(honeypot):
             honeypot_list.append(ipname)
     return honeypot_list
 
-
+def magage_protocol_again(protocol):
+    # 主办方要求只能是这几个协议
+    white_list = ["ssh","http","https","rtsp","ftp","telnet","amqp","mongodb","redis","mysql"]
+    for i in white_list:
+        if i in protocol.lower():
+            return i
+    return "null"
 def manage_protocol(protocol):
     if protocol == None:
         return "null"
@@ -84,9 +90,9 @@ def manage_protocol(protocol):
         # print(protocol_list)
         if protocol_list[1] == '':
             return "null"
-        return protocol_list[1]
+        return magage_protocol_again(protocol_list[1])
 
-    return protocol[2:]
+    return magage_protocol_again(protocol[2:])
 
 
 def manage_serviceapp(service_app):
