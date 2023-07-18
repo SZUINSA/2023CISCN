@@ -19,7 +19,7 @@ def logs(filename='logs.txt', level=logging.DEBUG):
 
 
 if __name__ == "__main__":
-    logger = logs()
+    logger = logs(level=logging.INFO)
     logger.info("Program Start")
 
     argv = [x.lower() for x in sys.argv]
@@ -86,7 +86,7 @@ if __name__ == "__main__":
         logger.debug("OUTPUT Mode")
         import output
 
-        if len(argv)>1:
+        if len(argv) > 1:
             app = output.app(db, logger, name=argv[1])
         else:
             app = output.app(db, logger, name=argv)
