@@ -7,9 +7,9 @@ class db:
         self.logger = logger
 
         import pymysql.cursors
-        self.db_conn = pymysql.connect(host='127.0.0.1',
-                                       user='root',
-                                       password='1021294680gnib',
+        self.db_conn = pymysql.connect(host='db',
+                                       user='ciscn',
+                                       password='ciscn',
                                        database='ciscn',
                                        cursorclass=pymysql.cursors.DictCursor)
         self.logger.info("Connect Mysql Database Succeed.")

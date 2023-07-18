@@ -1,8 +1,17 @@
 version: '3'
 services:
+  db:
+    image: mysql
+    restart: always
+    environment:
+      - MYSQL_DATABASE=ciscn
+      - MYSQL_USER=ciscn
+      - MYSQL_PASSWORD=ciscn
+    volumes:
+        - ./data:/var/lib/mysql
   scan:
     image: cicsn
-    command: "python csicn.py --scan --scale --mysql"
+    command: "python ciscn.py --scan --scale --mysql"
     restart: always
     deploy:
       replicas: 1
@@ -10,7 +19,7 @@ services:
       - .:/opt/
   scan-fscan:
     image: cicsn
-    command: "python csicn.py --scan scan-fscan --scale --mysql"
+    command: "python ciscn.py --scan scan-fscan --scale --mysql"
     restart: always
     deploy:
       replicas: 1
@@ -18,7 +27,7 @@ services:
       - .:/opt/
   port:
     image: cicsn
-    command: "python csicn.py --port --scale --mysql"
+    command: "python ciscn.py --port --scale --mysql"
     restart: always
     deploy:
       replicas: 1
@@ -26,7 +35,7 @@ services:
       - .:/opt/
   port-fscan:
     image: cicsn
-    command: "python csicn.py --port port-fscan --scale --mysql"
+    command: "python ciscn.py --port port-fscan --scale --mysql"
     restart: always
     deploy:
       replicas: 1
@@ -34,7 +43,7 @@ services:
       - .:/opt/
   port-allscan:
     image: cicsn
-    command: "python csicn.py --port port-allscan --scale --mysql"
+    command: "python ciscn.py --port port-allscan --scale --mysql"
     restart: always
     deploy:
       replicas: 1
@@ -42,7 +51,7 @@ services:
       - .:/opt/
   port-fofa:
     image: cicsn
-    command: "python csicn.py --port port-fofa --scale --mysql"
+    command: "python ciscn.py --port port-fofa --scale --mysql"
     restart: always
     deploy:
       replicas: 1
