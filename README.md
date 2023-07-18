@@ -1,35 +1,45 @@
-dan# 2023CISCN
+# 2023CISCN
 
-## RUN IN DOCKER
+## 用Linux系统作测试
 
 ```bash
 docker build -t cicsn .
-#build it first
+#在运行前先将dockerfile先build了
 docker-compose up -d
+#你可以更改其中的replicas参数来启用多个容器实现并发扫描
 ```
 
-## FUNCTION
+## 命令
 
-`--mysql` use mysql,default is sqlite
+```bash
+python main.py <OPTIONS>
+#运行指令
+python json.py <FILENAME>
+#导出文件，FILENAME为导出文件名，默认为output.json
+```
+OPTIONS有如下：
 
-`--scan` scan the ip which is alive,  default it uses nmap
+`--mysql` 使用MYSQL模块（支持分布式），默认使用为SQLITE模块（不支持分布式）
 
-`--scan scan-fscan`, use fscan which is faster than the default one
+`--scan` 使用默认探活工具NAMP
 
-`--port` find the open port from an ip, default it uses nmap
+`--scan scan-fscan`, 使用探活工具FSCAN
 
-`--port port-allscan`, use nmap to scan 1-65535 port, it takes lots of time so be careful when using
+`--port` 使用默认端口扫描工具NMAP
 
-`--port port-fscan`, use fscan which is faster than the default one
+`--port port-allscan`, 使用NMAP进行全端口扫描
 
-
-`--services` find the web service fingerprint, protocol and more information on certain ip
-
-`--services services-fscan-protocol` Using fscan to identify the protocols used by the corresponding IP addresses, it is worth noting that, due to the characteristics of fscan itself, in order to save resources and improve efficiency, we have saved the web application detection by fscan during port scanning
+`--port port-fscan`, 使用FSCAN进行端口扫描
 
 
-`--honeypot` check honeypot use the quake api
+`--services` 使用默认工具KSCAN进行端口/协议/服务探测
 
-`--scale` if you use scale mode in docker-compose, please make sure you have this options to hava a random delay before running
+`--services services-fscan-protocol` 使用FSCAN进行协议探测，前提是以及执行过FSCAN端口探测
+
+`--honeypot` 使用默认的工具QUAKE识别蜜罐
+
+`--honeypot quake-dump` 使用QUAKE的DUMP数据识别蜜罐
+
+`--scale` 如果你在并发执行，请在命令中加入该选项以随机启动时间
 
 

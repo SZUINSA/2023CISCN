@@ -48,7 +48,7 @@ class method_fofa:
 
 
 class method_quake:
-    def __init__(self, db, logger, name="honeypot-fofa"):
+    def __init__(self, db, logger, name="honeypot-quake"):
         self.db = db
         self.logger = logger
         self.name = name
@@ -67,7 +67,7 @@ class method_quake:
         else:
             self.logger.info("HONEYPOT: quake apikey error")
 
-    def honeypot(self, target):
+    def port(self, target):
         import json
         import requests
         url = "https://quake.360.cn/api/v3/search/quake_service"

@@ -4,10 +4,9 @@ import nmap
 
 
 class method_nmap:
-
     name = "port-nmap"
 
-    def __init__(self, db, logger, name = "port-nmap"):
+    def __init__(self, db, logger, name="port-nmap"):
         self.db = db
         self.logger = logger
         self.name = name
@@ -29,8 +28,7 @@ class method_nmap:
     def port(self, target):
         return self.fastscan(target)
 
-
-    def fastscan(self,target):
+    def fastscan(self, target):
         self.name = "port-nmap-fastscan"
         nm = nmap.PortScanner()
         nm.scan(hosts=target, arguments='-F')
@@ -88,8 +86,10 @@ class method_nmap_allscan:
 
         return []
 
+
 class method_fofa:
     name = "port-fofa"
+
     def __init__(self, db, logger, name="port-fofa"):
         self.db = db
         self.logger = logger
@@ -108,6 +108,7 @@ class method_fofa:
             self.logger.info("PORT: fofa apikey load")
         else:
             self.logger.info("PORT: fofa apikey error")
+
     def port(self, target):
         import json
         import requests
@@ -119,19 +120,61 @@ class method_fofa:
         self.logger.debug(json)
         if json['error'] == False:
             self.logger.debug("PORT: fofa run")
-            self.db.add_api(target,self.name,response.text)
+            self.db.add_api(target, self.name, response.text)
         else:
             self.logger.debug("PORT: fofa error")
             time.sleep(1000)
             quit()
         time.sleep(1)
         return None
-class method_fscan_port:
 
-    def __init__(self, db, logger,name = "port-fscan-port"):
+
+class method_quake:
+    def __init__(self, db, logger, name="port-quake"):
         self.db = db
         self.logger = logger
-        self.name=name
+        self.name = name
+        import os
+        import json
+        import requests
+        self.key = os.environ['quake_key']
+        self.proxies = {"http": "", "https": ""}
+        url = "https://quake.360.cn/api/v3/user/info"
+        headers = {"X-QuakeToken": self.key}
+        response = requests.get(url, header=headers, proxies=self.proxies)
+        logger.debug(response.text)
+        json = json.loads(response.text)
+        if json['code'] == 0:
+            self.logger.info("PORT: quake apikey load")
+        else:
+            self.logger.info("PORT: quake apikey error")
+
+    def honeypot(self, target):
+        import json
+        import requests
+        url = "https://quake.360.cn/api/v3/search/quake_service"
+        headers = {"X-QuakeToken": self.key}
+        data = {"query": f"ip: \"{target}\""}
+        self.logger.debug("PORT: quake run")
+        response = requests.post(url, headers=headers, json=data, proxies=self.proxies)
+        json = json.loads(response.text)
+        self.logger.debug(json)
+        if len(json["data"]) != 0:
+            self.logger.debug("PORT: quake run")
+            self.db.add_api(target, self.name, response.text)
+        else:
+            self.logger.debug("PORT: quake error")
+            time.sleep(1000)
+            quit()
+        time.sleep(1)
+
+
+class method_fscan_port:
+
+    def __init__(self, db, logger, name="port-fscan-port"):
+        self.db = db
+        self.logger = logger
+        self.name = name
         import os
         if os.name == 'posix':
             if not os.path.exists('tools/fscan/fscan'):
@@ -146,6 +189,7 @@ class method_fscan_port:
                 self.logger.info("PORT: fscan found")
         else:
             self.logger.info("PORT: fscan not support")
+
     def port(self, target):
 
         result = self.fscan_port(target)
@@ -156,7 +200,7 @@ class method_fscan_port:
 
         return []
 
-    def fscan_port(self,target):
+    def fscan_port(self, target):
         import os
         import subprocess
 
@@ -202,11 +246,13 @@ class method_fscan_port:
 
 
 class app:
-    def __init__(self, db, logger,method='port-nmap'):
+    def __init__(self, db, logger, method='port-nmap'):
         self.db = db
         self.logger = logger
         if method == 'port-fofa':
             self.method = method_fofa(db, logger)
+        if method == 'port-quake':
+            self.method = method_quake(db, logger)
         elif method == "port-fscan":
             self.method = method_fscan_port(db, logger)
         elif method == "port-allscan":
@@ -214,20 +260,17 @@ class app:
         else:
             self.method = method_nmap(db, logger)
 
-
     def run(self, sleep=60):
-
 
         while True:
             ip = self.db.get_ip_no_port(self.method.name)
             if ip is not None:
-                self.logger.info("PORT-CHECK %s %s" % (self.method.name,ip,))
-                self.db.update_ip_port_timestamp(self.method.name,ip)
+                self.logger.info("PORT-CHECK %s %s" % (self.method.name, ip,))
+                self.db.update_ip_port_timestamp(self.method.name, ip)
                 result = self.method.port(ip)
 
                 self.logger.debug(str(result))
-                self.logger.info("PORT-CHECK %s %s SUCCESS" % (self.method.name,ip,))
+                self.logger.info("PORT-CHECK %s %s SUCCESS" % (self.method.name, ip,))
             else:
                 self.logger.debug("PORT: sleep")
                 time.sleep(sleep)
-
