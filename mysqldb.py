@@ -131,6 +131,8 @@ class db:
         self.db_conn.commit()
 
     def add_protocol(self, target1, target2, target3):
+        # UPDATE SERVICES SET PROTOCOL=CONCAT(PROTOCOL,'http'),TIMESTAMP=NOW() WHERE IP='103.252.118.176' and PORT='7980'
+
         self.logger.debug("DB: add_protocol %s %s %s" % (target1, target2, target3))
         self.db.execute(
             "UPDATE SERVICES SET PROTOCOL=CONCAT(PROTOCOL,%s),TIMESTAMP=NOW() WHERE IP=%s and PORT=%s",

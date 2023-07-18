@@ -15,7 +15,12 @@ db = mysqldb.db(logger)
 # print(content["results"])
 
 iplist = db.get_all_ip()
+flag = 0
 for ip in iplist:
+    print(ip)
+    # if ip == '165.22.22.166':
+    #     flag = 1
+    # if flag == 1:
     content_str = db.get_api_from_ip_and_method(ip, "port-fofa")
     if content_str is not None:
     # print(content_str)
@@ -28,4 +33,5 @@ for ip in iplist:
                 serviceapp = i[4].replace(',','\t; ')
             except:
                 serviceapp = i[4]
-            db.add_service_app(serviceapp,i[1],i[2])
+            db.add_services(i[1],i[2])
+            db.add_service_app(i[1],i[2],serviceapp)

@@ -6,7 +6,7 @@ import main
 
 def deal_quake():
     ## init db
-    logger = main.logs(level=logging.WARNING)
+    logger = main.logs()
     # logger = main.logs()
     logger.info("Program Start")
     db = mysqldb.db(logger)
@@ -35,6 +35,11 @@ def deal_quake():
             if transport == 'tcp':
                 print(ip + ':' + str(port) + ' ' + transport + ' is tcp ' + service_name)
                 # print(data[i])
+
+                db.add_ip(ip)
+                db.add_services(ip,str(port))
+                db.add_protocol(ip,str(port),service_name)
+
                 try:
                     components = data[i]['components']
                 except:
@@ -45,12 +50,18 @@ def deal_quake():
                     else:
                         version = components[j]['version']
                     print(components[j]['product_name_en'] + "/" + version)
-                    db.add_service_app(components[j]['product_name_en'] + "/" + version,ip,str(port))
-                sth_to_write[i] = {"ip":ip,"port":port,"transport":transport,"service_name":service_name}
-                db.add_ip(ip)
-                db.add_services(ip,str(port))
-                db.add_protocol(service_name,ip,str(port))
+                    db.add_service_app(ip,str(port),components[j]['product_name_en'] + "/" + version)
+                # sth_to_write[i] = {"ip":ip,"port":port,"transport":transport,"service_name":service_name}
 
-# deal_quake()
+
+deal_quake()
+
+
+# ## init db
+# logger = main.logs()
+# # logger = main.logs()
+# logger.info("Program Start")
+# db = mysqldb.db(logger)
+# db.add_protocol('103.252.118.176','7980','http')
 
 
