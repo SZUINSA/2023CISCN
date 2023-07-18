@@ -10,13 +10,11 @@ docker-compose up -d
 
 ## FUNCTION
 
-`--mysql` use mysql
-default is sqlite
+`--mysql` use mysql,default is sqlite
 
 `--scan` scan the ip which is alive,  default it uses nmap
 
 `--scan scan-fscan`, use fscan which is faster than the default one
-
 
 `--port` find the open port from an ip, default it uses nmap
 
@@ -27,10 +25,10 @@ default is sqlite
 
 `--services` find the web service fingerprint, protocol and more information on certain ip
 
-`--SERVICES services-fscan-protocol` Using fscan to identify the protocols used by the corresponding IP addresses, it is worth noting that, due to the characteristics of fscan itself, in order to save resources and improve efficiency, we have saved the web application detection by fscan during port scanning
+`--services services-fscan-protocol` Using fscan to identify the protocols used by the corresponding IP addresses, it is worth noting that, due to the characteristics of fscan itself, in order to save resources and improve efficiency, we have saved the web application detection by fscan during port scanning
 
 
-`--honeypot` Check honeypot use the api
+`--honeypot` check honeypot use the quake api
 
 `--scale` if you use scale mode in docker-compose, please make sure you have this options to hava a random delay before running
 

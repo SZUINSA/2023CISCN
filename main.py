@@ -34,10 +34,11 @@ if __name__ == "__main__":
 
         db = sqlite.db(logger)
 
-    import default
+    if "--default" in argv or "-d" in argv:
+        import default
 
-    for item in default.ip_src:
-        db.add_scan(item)
+        for item in default.ip_src:
+            db.add_scan(item)
 
     if "--scan" in argv or "-s" in argv:
         logger.debug("SCAN Mode")
