@@ -95,7 +95,7 @@ class method_fofa:
         self.logger = logger
         self.name = name
         import os
-        import json
+        import output
         import requests
         self.email = os.environ['fofa_email']
         self.key = os.environ['fofa_key']
@@ -110,7 +110,7 @@ class method_fofa:
             self.logger.info("PORT: fofa apikey error")
 
     def port(self, target):
-        import json
+        import output
         import requests
         query = f"ip=\"{target}\"";
         query = base64.b64encode(query.encode()).decode()
@@ -135,7 +135,7 @@ class method_quake:
         self.logger = logger
         self.name = name
         import os
-        import json
+        import output
         import requests
         self.key = os.environ['quake_key']
         self.proxies = {"http": "", "https": ""}
@@ -150,7 +150,7 @@ class method_quake:
             self.logger.info("PORT: quake apikey error")
 
     def honeypot(self, target):
-        import json
+        import output
         import requests
         url = "https://quake.360.cn/api/v3/search/quake_service"
         headers = {"X-QuakeToken": self.key}

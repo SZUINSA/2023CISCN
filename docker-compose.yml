@@ -2,7 +2,7 @@ version: '3'
 services:
   scan:
     image: cicsn
-    command: "python main.py --scan --scale --mysql"
+    command: "python csicn.py --scan --scale --mysql"
     restart: always
     deploy:
       replicas: 1
@@ -10,7 +10,7 @@ services:
       - .:/opt/
   scan-fscan:
     image: cicsn
-    command: "python main.py --scan scan-fscan --scale --mysql"
+    command: "python csicn.py --scan scan-fscan --scale --mysql"
     restart: always
     deploy:
       replicas: 1
@@ -18,50 +18,71 @@ services:
       - .:/opt/
   port:
     image: cicsn
-    command: "python main.py --port --scale --mysql"
+    command: "python csicn.py --port --scale --mysql"
     restart: always
     deploy:
-      replicas: 5
+      replicas: 1
     volumes:
       - .:/opt/
   port-fscan:
     image: cicsn
-    command: "python main.py --port port-fscan --scale --mysql"
+    command: "python csicn.py --port port-fscan --scale --mysql"
     restart: always
     deploy:
-      replicas: 5
+      replicas: 1
     volumes:
       - .:/opt/
   port-allscan:
     image: cicsn
-    command: "python main.py --port port-allscan --scale --mysql"
+    command: "python csicn.py --port port-allscan --scale --mysql"
     restart: always
     deploy:
-      replicas: 0
+      replicas: 1
+    volumes:
+      - .:/opt/
+  port-fofa:
+    image: cicsn
+    command: "python csicn.py --port port-fofa --scale --mysql"
+    restart: always
+    deploy:
+      replicas: 1
+    environment:
+      - fofa_email=offical@szu.moe
+      - fofa_key=ThisIsFofaKey
+    volumes:
+      - .:/opt/
+  port-quake:
+    image: cicsn
+    command: "python csicn.py --port port-quake --scale --mysql"
+    restart: always
+    deploy:
+      replicas: 1
+    environment:
+      - quake_key=ThisIsQuakeKey
     volumes:
       - .:/opt/
   services:
     image: cicsn
-    command: "python main.py --services --scale --mysql"
+    command: "python csicn.py --services --scale --mysql"
     restart: always
     deploy:
-      replicas: 5
+      replicas: 1
     volumes:
       - .:/opt/
   services-fscan:
     image: cicsn
-    command: "python main.py --services services-fscan-protocol --scale --mysql"
+    command: "python csicn.py --services services-fscan-protocol --scale --mysql"
     restart: always
     deploy:
-      replicas: 5
+      replicas: 1
     volumes:
       - .:/opt/
   honeypot:
     image: cicsn
-    command: "python main.py --honeypot --scale --mysql"
+    command: "python csicn.py --honeypot --scale --mysql"
     restart: always
     deploy:
-      replicas: 0
+      replicas: 1
     environment:
       - fofa_email=offical@szu.moe
       - fofa_key=ThisIsFofaKey
@@ -69,22 +90,30 @@ services:
       - .:/opt/
   honeypot-quake:
     image: cicsn
-    command: "python main.py --honeypot honeypot-quake --scale --mysql"
+    command: "python csicn.py --honeypot honeypot-quake --scale --mysql"
     restart: always
     deploy:
-      replicas: 0
+      replicas: 1
     environment:
       - quake_key=ThisIsQuakeKey
     volumes:
       - .:/opt/
   honeypot-quake-dump:
     image: cicsn
-    command: "python main.py --honeypot honeypot-quake-dump --scale --mysql"
+    command: "python csicn.py --honeypot honeypot-quake-dump --scale --mysql"
+    restart: always
+    deploy:
+      replicas: 1
+    environment:
+      - quake_dump_file=tmp/honeypot/
+    volumes:
+      - .:/opt/
+  output:
+    image: cicsn
+    command: "python csicn.py --output"
     restart: always
     deploy:
       replicas: 0
-    environment:
-      - quake_dump_file=tmp/honeypot/
     volumes:
       - .:/opt/
         

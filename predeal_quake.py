@@ -1,8 +1,8 @@
-import json
+import output
 import os
 import mysqldb
 import logging
-import main
+import ciscn
 
 def deal_quake():
     ## init db

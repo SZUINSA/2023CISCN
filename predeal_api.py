@@ -1,7 +1,7 @@
 import mysqldb
-import main
+import ciscn
 import logging
-import json
+import output
 
 ## init db
 logger = main.logs()

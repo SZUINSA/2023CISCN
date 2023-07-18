@@ -82,6 +82,15 @@ if __name__ == "__main__":
         else:
             app = honeypot.app(db, logger)
 
+    if "--output" in argv:
+        logger.debug("OUTPUT Mode")
+        import output
+
+        if len(argv)>1:
+            app = output.app(db, logger, name=argv[1])
+        else:
+            app = output.app(db, logger, name=argv)
+
     if "--scale" in argv:
         logger.debug("SCALE Mode")
         import time

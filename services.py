@@ -35,7 +35,7 @@ class method_kscan:
         return random_str
     def services(self, ip,port):
         import os
-        import json
+        import output
         import subprocess
         if os.name == 'nt':
             cmd="tools\\kscan\\kscan.exe"
@@ -145,7 +145,7 @@ class method_fscan:
 
     def services(self, ip, port):
         import os
-        import json
+        import output
         import subprocess
         if os.name == 'nt':
             cmd="tools\\fscan\\fscan.exe"
