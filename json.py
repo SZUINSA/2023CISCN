@@ -191,7 +191,7 @@ def manage_deviceinfo(service):
                 deviceinfo.append("Webcam/Hikvision")
             elif "dahua" in i.lower():
                 deviceinfo.append("Webcam/dahua")
-            elif "synology" in i.lower():
+            elif "synology" == i.lower():
                 deviceinfo.append("Nas/synology")
             elif "cisco" in i.lower():
                 deviceinfo.append("switch/cisco")
@@ -201,7 +201,7 @@ def manage_deviceinfo(service):
                 deviceinfo.append("Webcam/N")
             elif "switch" in i.lower():
                 deviceinfo.append("switch/N")
-            elif "nas" in i.lower():
+            elif " nas" == i.lower() or "nas " == i.lower():
                 deviceinfo.append("Nas/N")
 
     if not deviceinfo:
