@@ -129,7 +129,7 @@ def manage_serviceapp(service_app):
             serviceapp_list[i] = serviceapp_list[i] + '/N'
         elif "/N" in serviceapp_list[i]:
             continue
-        elif "OpenSSH" in serviceapp_list[i]:
+        elif "openssh" in serviceapp_list[i].lower():
             # 处理这种骚的： OpenSSH/7.6p1 Ubuntu 4ubuntu0.5
             # 处理这种骚的： OpenSSH/for_Windows_7.7
             pattern_version = re.compile("\/.*?([\d|\.]+)")
@@ -279,11 +279,15 @@ ip_list = []
 ip_list = db.get_all_ip()
 # print(ip_list)
 
+
+flag = 0
 for ip in ip_list:
     # ip = "159.65.92.104"
     # 根据主办方要求缩小范围
     if not default.ip_in_list(ip):
         continue
+
+
 
     service = db.get_service_from_ip(ip)
     service = manage_service(service)
