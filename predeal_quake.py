@@ -30,11 +30,6 @@ def deal_quake():
 
         sth_to_write = {}
 
-        ## todo
-        ## add_service_app 47.243.241.29 80 PHP/N
-        ## pymysql.err.DataError: (1406, "Data too long for column 'SERVICE_APP' at row 484")
-
-
         for i in range(len(data)):
             ip = data[i]['ip']
             port = data[i]['port']
