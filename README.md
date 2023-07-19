@@ -31,12 +31,17 @@ OPTIONS有如下：
 
 `--port port-fscan`, 使用FSCAN进行端口扫描
 
+`--port port-fofa`, 使用FOFA进行端口扫描
+
+`--port port-quake`, 使用QUAKE进行端口扫描
 
 `--services` 使用默认工具KSCAN进行端口/协议/服务探测
 
 `--services services-fscan-protocol` 使用FSCAN进行协议探测，前提是以及执行过FSCAN端口探测
 
 `--honeypot` 使用默认的工具QUAKE识别蜜罐
+
+`--honeypot fofa` 使用FOFA识别蜜罐
 
 `--honeypot quake-dump` 使用QUAKE的DUMP数据识别蜜罐
 
